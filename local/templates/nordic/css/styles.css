@@ -1,0 +1,204 @@
+ body {
+        margin: 0px;
+        width: 100%;
+    }
+    .all-screen{
+	background-color: #e3e3e5;
+    }
+    .all-body {
+	min-width: 1000px;
+	text-align: center;
+	margin: 0 auto;
+	max-width:1304px;
+	background-color: white;
+    }
+    .header-and-main {
+        width: 100%;
+        text-align: center;
+        min-height: calc(100vh - 60px);
+    }
+    .header-and-main-limited {
+        display: inline-block;
+        //max-width: 1200px;
+	width: 100%;
+    }
+    .header {
+        align-content: center;
+    }
+    .main {
+        display: inline-block;
+    }
+    .main-inside {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 990px;
+        align-content: center;
+    }
+    .footer {
+        height: 60px;
+        background: white;
+        
+    }
+
+    #logo {
+        margin-right: 6%;
+        margin-left: 157px;
+        float:left;
+        display: inline-block;
+        //margin-left: -20px;
+        margin-top: 9px;
+        
+    }
+    #logo a img {
+        max-width: 210px;
+    }
+    .menu {
+        float: right;
+        margin-right: 5px;
+    }
+    .menu ul li{
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        height: 65px;
+        line-height: 60px;
+        margin-top: 6px;
+        width: 150px;
+        border-bottom-width: 13px;
+        border-bottom-style: solid;
+        border-bottom-color: #d7d7d7;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: #d7d7d7;
+        margin-right: -5px;
+    }
+    .menu-current{
+        border-bottom-color: #b21a43 !important;
+    }
+    .last{	
+        border-right-width: 1px; 
+        border-right-style: solid; 
+        border-right-color: #d7d7d7; 
+
+    }
+    .menu ul li:hover{
+        border-bottom-color: #b21a43;
+    }
+    .menu ul li a{
+        color: #0f5575;
+        text-decoration: none;
+        background-color: #ffffff;
+        font-family: Open Sans Light, Raleway, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 17px;
+    }
+    
+    .block{
+
+        display:inline-block;
+        vertical-align: top;
+        margin-right: 2%;
+        margin-top: 35px;
+        text-align: left;
+    }
+    .block-last {
+        margin-right: 0px;
+    }
+     .block2{
+        //margin:10pt;
+        //padding:10pt;
+        vertical-align: middle;
+       // padding-bottom: 150px;
+    }
+    .block-img{
+        display:inline-block;
+        margin-bottom: 220px;
+    }
+    .delimiter {
+        clear: both;
+    }
+    #contacts-title-word{
+        margin-top: 35px;
+        margin-left: 0px;
+        margin-bottom: 15px;
+        font-size: 28px;
+        font-family: Open Sans Semibold, Raleway, sans-serif;
+        text-align:left;
+
+    }
+    #contacts-email{
+        font-size: 23px;
+        text-align: center;
+        color: #0f5575;
+        font-family: Open Sans Light, Raleway, sans-serif;
+    }
+    .contacts-city-adress{
+        margin-top: 10px; 
+        display: inline-block;
+        
+    }
+
+    .contacts-city-photo {
+        display: inline;
+    }
+    
+    .contacts-city-photo img {
+        //max-height: 70%;
+       // max-width: 70%;
+         width: 312px;
+    }
+
+    .contacts-city-adress-city{
+        font-size: 26px;
+        color: #0f5575;
+        text-align: left;
+        margin-bottom: 10px;
+
+        font-family: Open Sans Light, Raleway, sans-serif;
+    }
+
+    .contacts-city-adress-city-grey{
+       color: darkgrey; 
+    }
+
+    .contacts-city-adress-adress{
+        font-size: 18px;
+        text-align: left;
+        font-family: Open Sans Light, Raleway, sans-serif;
+        display: inline;
+    }
+    .in-developing {
+        position	: relative;
+    }    
+    .in-developing img{
+       -webkit-transition: all 1s ease;
+         -moz-transition: all 1s ease;
+           -o-transition: all 1s ease;
+          -ms-transition: all 1s ease;
+              transition: all 1s ease;
+        -webkit-filter: opacity(35%);
+    }
+
+    .in-developing span{
+        position	: absolute;
+        top		: 40%;
+        left		: 18%;
+        //width		: 100%;
+        font-size: 28px;
+        font-family: Open Sans Semibold, Raleway, sans-serif;
+        color: #ffffff;
+
+    }
+    .yt_container {
+        position: relative;
+        width: auto;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    .yt_video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
