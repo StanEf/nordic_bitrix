@@ -54,7 +54,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                 </div>
                  <div style="clear:both;"></div>
                 <div class="contacts-city-adress">
-                    <div class="contacts-city-adress-city contacts-city-adress-city-grey">
+                    <div class="contacts-city-adress-city">
                         Владивосток
                     </div>
                     <div style="clear:both;"></div>
