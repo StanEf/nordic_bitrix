@@ -1,5 +1,21 @@
 <? require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); ?>
+<script>
+    console.log("load");
+    $(function() {
+        $("body").on("click", ".services-list-item-inner", function(event){
+            event.stopPropagation();
+            console.log("link click");
+            console.log($(this));
+            var href = $(this).find(".services-list-item__link a").data("href");
+            console.log(href);
+            location.reload(href);
+        });
+        /*$("#logo").on("click", function(){
+            console.log("logo click");
+        });*/
+    });
 
+</script>
 <div class="carousel">
     <div class="carousel-info">
         <div class="carousel-info-inner">
@@ -63,81 +79,145 @@
             <div class="services-list-items">
                 <div class="services-list-item">
                     <div class="services-list-item-inner">
+                        <div class="services-list-item__link">
+                            <a href="#" data-href="#"></a>
+                        </div>
+                        <div class="services-list-item__background-opacity"></div>
+                        <div class="services-list-item__background">
+                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-engineering.jpg" alt="Логотип" />
+                        </div>
                         <div class="services-list-item__picture">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon001.png" alt="Логотип" />
+                            <div class="services-list-item__picture-inner">
+                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon001.png" alt="Логотип" class="mod" />
+                            </div>
                         </div>
                         <div class="services-list-item__title">
-                            Инжиниринг
+                            <div class="services-list-item__title-inner">
+                                Инжиниринг
+                            </div>
                         </div>
                         <div class="services-list-item__text">
-                            Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            <div class="services-list-item__text-inner">
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="services-list-item">
                     <div class="services-list-item-inner">
+                        <div class="services-list-item__background-opacity"></div>
+                        <div class="services-list-item__background">
+                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-projecting.jpg" alt="Логотип" />
+                        </div>
                         <div class="services-list-item__picture">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon002.png" alt="Логотип" />
+                            <div class="services-list-item__picture-inner">
+                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon002.png" alt="Логотип" />
+                            </div>
                         </div>
                         <div class="services-list-item__title">
-                            Проектирование
+                            <div class="services-list-item__title-inner">
+                                Проектирование
+                            </div>
                         </div>
                         <div class="services-list-item__text">
-                            Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            <div class="services-list-item__text-inner">
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="services-list-item services-list-item-right">
                     <div class="services-list-item-inner">
+                        <div class="services-list-item__background-opacity"></div>
+                        <div class="services-list-item__background">
+                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-consulting.jpg" alt="Логотип" />
+                        </div>
                         <div class="services-list-item__picture">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon003.png" alt="Логотип" />
+                            <div class="services-list-item__picture-inner">
+                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon003.png" alt="Логотип" />
+                            </div>
                         </div>
                         <div class="services-list-item__title">
-                            Консалтинг
+                            <div class="services-list-item__title-inner">
+                                Консалтинг
+                            </div>
                         </div>
                         <div class="services-list-item__text">
-                            Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            <div class="services-list-item__text-inner">
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div style="clear: both;"></div>
+
                 <div class="services-list-item">
                     <div class="services-list-item-inner">
+                        <div class="services-list-item__background-opacity"></div>
+                        <div class="services-list-item__background">
+                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-production.jpg" alt="Логотип" />
+                        </div>
                         <div class="services-list-item__picture">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon006.png" alt="Логотип" />
+                            <div class="services-list-item__picture-inner">
+                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon006.png" alt="Логотип" />
+                            </div>
                         </div>
                         <div class="services-list-item__title">
-                            Производство оборудования
+                            <div class="services-list-item__title-inner">
+                                Сопровождение строительства
+                            </div>
                         </div>
                         <div class="services-list-item__text">
-                            Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            <div class="services-list-item__text-inner">
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="services-list-item">
                     <div class="services-list-item-inner">
+                        <div class="services-list-item__background-opacity"></div>
+                        <div class="services-list-item__background">
+                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-support.jpg" alt="Логотип" />
+                        </div>
                         <div class="services-list-item__picture">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon005.png" alt="Логотип" />
+                            <div class="services-list-item__picture-inner">
+                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon005.png" alt="Логотип" />
+                            </div>
                         </div>
                         <div class="services-list-item__title">
-                            Сопровождение строительства
+                            <div class="services-list-item__title-inner">
+                                Сопровождение строительства
+                            </div>
                         </div>
                         <div class="services-list-item__text">
-                            Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            <div class="services-list-item__text-inner">
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="services-list-item services-list-item-right">
                     <div class="services-list-item-inner">
+                        <div class="services-list-item__background-opacity"></div>
+                        <div class="services-list-item__background">
+                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-post-warranty.jpg" alt="Логотип" />
+                        </div>
                         <div class="services-list-item__picture">
-                            <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon004.png" alt="Логотип" />
+                            <div class="services-list-item__picture-inner">
+                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/icon004.png" alt="Логотип" />
+                            </div>
                         </div>
                         <div class="services-list-item__title">
-                            Послегарантийное
-                            обслуживание
+                            <div class="services-list-item__title-inner">
+                                Послегарантийное
+                                обслуживание
+                            </div>
                         </div>
                         <div class="services-list-item__text">
+                            <div class="services-list-item__text-inner">
                             Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,6 +237,7 @@
 
                 <div class="last-news-list-item">
                     <div class="last-news-list-item-inner">
+                        <div class="last-news-list-item__background-opacity"></div>
                         <div class="last-news-list-item__picture">
                             <img src="<?= SITE_TEMPLATE_PATH ?>/img/last_news_1.jpg" alt="Логотип" />
                         </div>
@@ -175,6 +256,7 @@
 
                 <div class="last-news-list-item">
                     <div class="last-news-list-item-inner">
+                        <div class="last-news-list-item__background-opacity"></div>
                         <div class="last-news-list-item__picture">
                             <img src="<?= SITE_TEMPLATE_PATH ?>/img/last_news_2.jpg" alt="Логотип" />
                         </div>
@@ -193,6 +275,7 @@
 
                 <div class="last-news-list-item">
                     <div class="last-news-list-item-inner">
+                        <div class="last-news-list-item__background-opacity"></div>
                         <div class="last-news-list-item__picture">
                             <img src="<?= SITE_TEMPLATE_PATH ?>/img/last_news_3.jpg" alt="Логотип" />
                         </div>

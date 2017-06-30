@@ -1,33 +1,52 @@
 $(document).ready(function() {
+    fullyearInFooter();
 
-/*    var margin_left = $(".main-inside").css("margin-left");
-    console.log(margin_left);
-    if(margin_left != 0) {
-       $("#logo").css("margin-left", margin_left);
-    }*/
-    $(window).resize(function(){
-        var margin_left = $(".main-inside").css("margin-left");
-        console.log(margin_left);
-        $("#logo").css("margin-left", margin_left);
+    $(document).on('click', '.time-stripe .time-stripe-year', function() {
+        $('.time-stripe .time-stripe-year').removeClass('active');
+        $(this).addClass('active');
+        $('.buildings .building').fadeOut();
+        $('.buildings .building.'+$(this).data('year')).fadeIn();
     });
 
-    if(location.href.indexOf("ru/index.php") != -1){
-        $(".footer").css("height", getFooterHeight());
+    $('.time-stripe .time-stripe-year:last-child').click();
 
-    }
-    function getFooterHeight(){
-        var header_and_main_limited_height = $(".header-and-main-limited").css("height");
-        console.log("header_and_main_limited_height " + header_and_main_limited_height);
-        $(".header-and-main-limited").css("margin-bottom", "-5px");
-        $(".header-and-main").css("min-height", 0);
-        $(".header-and-main").css("height", header_and_main_limited_height);
-
-        var body_height = $("body").css("height");
-        body_height = window.screen.height;
-        console.log("body_height " + body_height);
-        var footer_height = parseInt(body_height) - parseInt(header_and_main_limited_height)+ "px";
-        console.log("footer_height " + footer_height);
-        return footer_height;
+    if ($(window).width() > 750) {
+        setEqualHeight($(".newslist_name"));
+        setEqualHeight($(".newslist_text"));
     }
 
+    var widthBox = $('.position_img').width();
+    $('.position_img').height(widthBox);
+
+    $('#reviews').height($('.current_item').height());
 });
+
+$(window).resize(function(){
+    var widthBox = $('.position_img').width();
+    $('.position_img').height(widthBox); 
+
+    if (document.body.clientWidth > 750) {
+        setEqualHeight($(".newslist_name"));
+        setEqualHeight($(".newslist_text"));
+    }
+
+    $('#reviews').height($('.current_item').height());
+});
+
+function fullyearInFooter() {
+    var year = new Date().getFullYear();
+    $('#year').html(year);
+}
+
+function setEqualHeight(columns) {
+    var tallestcolumn = 0;
+    columns.each(
+        function() {
+            currentHeight = $(this).height();
+            if(currentHeight > tallestcolumn) {
+                tallestcolumn = currentHeight;
+            }
+        }
+    );
+    columns.height(tallestcolumn);
+}
