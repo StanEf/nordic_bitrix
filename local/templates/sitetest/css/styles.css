@@ -41,7 +41,7 @@
     }
 
     #logo {
-        margin-right: 6%;
+        //margin-right: 6%;
         margin-left: 157px;
         float:left;
         display: inline-block;
@@ -55,6 +55,9 @@
     .menu {
         float: right;
         margin-right: 5px;
+    }
+    .menu ul {
+        padding-left: 0px;
     }
     .menu ul li{
         display: inline-block;
@@ -244,6 +247,7 @@
         font-style: normal;
         font-size: 13px;
         text-transform: uppercase;
+        cursor: pointer;
 
     }
      .about-company {
@@ -461,6 +465,7 @@ z-index: 22222;
      opacity: 0.9;
      background-color: #36708b;
      position: absolute;
+     z-index: 1;
  }
  .last-news__caption {
      padding-left: 12%;
@@ -484,8 +489,16 @@ z-index: 22222;
 .last-news-list-item-inner {
     position: relative;
 }
- .last-news-list-item__picture img{
+ .last-news-list-item__picture{
      width: 300px;
+     height: 357px;
+     overflow: hidden;
+ }
+ .last-news-list-item__picture img{
+    height: 100%;
+     margin: 0 0 0 -50%;
+     position: relative;
+     left: 25%;
  }
  .last-news-list-item__title{
     width: 280px;
@@ -497,15 +510,17 @@ z-index: 22222;
      color: white;
      text-align: left;
      margin-left: 25px;
+     z-index: 2;
  }
  .last-news-list-item__title:hover{
      color: #0d4863;
+     display: none;
  }
  .last-news-list-item__button{
      top: 80%;
      left: 30%;
      position: absolute;
-
+     z-index: 2;
      padding: 2% 7%;
      background-color: #28627d;
      border: 1px solid white;
@@ -517,7 +532,9 @@ z-index: 22222;
      text-transform: uppercase;
      display: inline;
  }
-
+ .last-news-list-item__button{
+    // display: none;
+ }
  .last-news-list-item__cover-bg {
      display: none;
      position: absolute;
@@ -539,8 +556,9 @@ z-index: 22222;
      cursor: pointer;
  }
  .last-news-list-item:hover .last-news-list-item__title{
-     color: #0d4863;
-     z-index: 100;
+     //color: #0d4863;
+     //z-index: 100;
+     display:none;
    }
 
  .last-news-list-item:hover .last-news-list-item__background-opacity{
@@ -592,6 +610,57 @@ z-index: 22222;
      font-size: 23px;
  }
  .page-about-company-text__text {
+     font-size: 15px;
+     padding: 20px 70px 20px 50px;
+
+ }
+
+ .page-engineering-inner {
+     padding-left: 12%;
+ }
+ .page-engineering__caption {
+     font-family: Open Sans Semibold, Raleway, sans-serif;
+     font-weight: 300;
+     font-style: normal;
+     font-size: 23px;
+     text-transform: uppercase;
+     display: inline;
+     float: left;
+     margin-top: 70px;
+ }
+ .page-engineering__title {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-weight: 300;
+     font-style: normal;
+     font-size: 23px;
+     text-transform: uppercase;
+     display: inline;
+     float: left;
+     color: #0d4863;
+     text-align: left;
+     margin-top: 70px;
+     max-width: 400px;
+ }
+ .page-engineering__picture {
+     float: left;
+     margin-top: 30px;
+     margin-bottom: 50px;
+ }
+ .page-engineering__picture img {
+     width: 800px;
+ }
+ .page-engineering__text {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-weight: 300;
+     font-style: normal;
+     width: 800px;
+     text-align: left;
+     margin-bottom: 100px;
+ }
+ .page-engineering-text__caption {
+     font-size: 23px;
+ }
+ .page-engineering-text__text {
      font-size: 15px;
      padding: 20px 70px 20px 50px;
 
@@ -783,6 +852,7 @@ width: 80px;
      height: 30px;
      align-items: center;
      display: flex;
+     cursor: pointer;
  }
  .page-project-top-nav-img {
 
@@ -792,6 +862,9 @@ width: 80px;
  }
  .page-project-top-nav-img img{
      width: 12px;
+ }
+ .page-project-top-nav__link {
+     display: none;
  }
  .page-project-title {
      float: left;
@@ -810,7 +883,7 @@ width: 80px;
  }
 .page-project-underline {
     background-color: #0f5575;
-    height: 4px;
+    height: 3px;
     margin-top:20px;
 }
 .page-project-description {
@@ -900,4 +973,222 @@ width: 80px;
  }
  .page-project-detail-item__picture-mod img {
      width: 250px;
+ }
+ .page-certificates-inner {
+     margin-left: 157px;
+     margin-right: 11%;
+ }
+ .page-certificates-text {
+    /* display: inline-block;
+     margin-top: 50px;
+     margin-bottom: 20px;
+     text-align: left;*/
+ }
+ .page-certificates-text-inner {
+     //display: inline-block;
+     margin-top: 50px;
+     margin-bottom: 70px;
+     text-align: left;
+ }
+ .page-certificates-text-title {
+     display: inline-block;
+     //float: left;
+     font-family: Open Sans Semibold, Raleway, sans-serif;
+     font-size: 23px;
+     text-transform: uppercase;
+     margin-right: 20px;
+
+ }
+ .page-certificates-text-text {
+     display: inline-block;
+     //float: left;
+     text-align: left;
+     font-family: Open Sans Lighe, Raleway, sans-serif;
+     font-size: 12px;
+     max-width: 54%;
+     padding-top: 5px;
+ }
+ .page-certificates-pictures {
+    /* display: flex;
+     flex-wrap:wrap;
+     flex-direction: row;
+     justify-content: space-between;
+     margin: auto;*/
+     float: left;
+     display: inline-block;
+     width: 100%;
+     margin-bottom: 70px;
+ }
+ .page-certificates-picture-row {
+     width: 100%;
+ }
+ .page-certificates-picture {
+     float: left;
+     width: 33%;
+     margin-bottom: 30px;
+ }
+ .text-align-left {
+      text-align: left;
+  }
+ .text-align-center {
+     text-align: center;
+ }
+ .text-align-right {
+     text-align: right;
+ }
+ .page-certificates-picture img{
+     width: 300px;
+     height: 424px;
+ }
+ .page-news-inner {
+     margin-left: 157px;
+     margin-right: 157px;
+ }
+ .page-news-list {
+     margin-bottom: 80px;
+ }
+.page-news-item {
+    margin-top: 40px;
+}
+.page-news-title {
+   // display: inline-block;
+    text-align: left;
+    font-family: Open Sans Semibold, Raleway, sans-serif;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+ .page-news-item-picture {
+     //overflow: hidden;
+     width: 250px;
+     height: 182px;
+     margin-right: 40px;
+     //width: 30%;
+     float:left;
+     text-align: left;
+     cursor:pointer;
+
+ }
+ .page-news-item-picture img {
+     //margin: 0 -50% 0 0;
+     //position: relative;
+     //top: -31%;
+     width: 100%;
+ }
+ .page-news-item-text {
+     width: 60%;
+     float:left;
+     text-align: left;
+ }
+
+.page-news-item-text-date {
+    font-family: Open Sans Regular, Raleway, sans-serif;
+    font-size: 10px;
+    color: #a5a5a5;
+}
+ .page-news-item-text-title {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-size: 18px;
+     text-transform: uppercase;
+     color: #0f5575;
+     margin-top: 15px;
+     margin-bottom: 15px;
+     cursor:pointer;
+ }
+ .page-news-item-text-text {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-size: 13px;
+ }
+ .page-news-detail-inner {
+     margin-left: 157px;
+     margin-right: 157px;
+ }
+ .page-news-detail-title {
+     text-align: left;
+     font-family: Open Sans Semibold, Raleway, sans-serif;
+     font-size: 23px;
+     text-transform: uppercase;
+     margin-right: 20px;
+     margin-top: 40px;
+     margin-bottom: 40px;
+ }
+ .page-news-detail-one {
+     min-height: 1059px;
+     width: 68%;
+     float: left;
+     text-align: left;
+     position: relative;
+ }
+ .page-news-detail-one-line{
+    background-color: #105576;
+    height: 2px;
+ }
+ .page-news-detail-list {
+     width: 27%;
+     float: right;
+     text-align: left;
+ }
+ .page-news-detail-list-item {
+     margin-bottom: 30px;
+ }
+ .page-news-detail-list-item-picture img {
+     width: 100%;
+ }
+ .page-news-detail-list-item-text-date {
+      font-family: Open Sans Regular, Raleway, sans-serif;
+      font-size: 10px;
+      color: #a5a5a5;
+      margin-top: 5px;
+  }
+ .page-news-detail-list-item-text-title {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-size: 15px;
+     text-transform: uppercase;
+     color: #0f5575;
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+ .page-news-detail-list-item-text-text {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-size: 13px;
+ }
+ .page-news-detail-list-item-text-text a img {
+     width: 10px;
+ }
+
+ .page-news-detail-one-date {
+     font-family: Open Sans Regular, Raleway, sans-serif;
+     font-size: 10px;
+     color: #a5a5a5;
+     margin-top: 20px;
+ }
+
+ .page-news-detail-one-title {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-size: 15px;
+     text-transform: uppercase;
+     color: #0f5575;
+     margin-top: 20px;
+     margin-bottom: 20px;
+ }
+ .page-news-detail-one-picture img {
+     width: 100%;
+ }
+ .page-news-detail-one-text {
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-size: 13px;
+     margin-top: 20px;
+     margin-bottom: 60px;
+     padding-left: 10px;
+     padding-right: 10px;
+ }
+ .page-news-detail-one-line-bottom{
+     background-color: #105576;
+     height: 2px;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
  }

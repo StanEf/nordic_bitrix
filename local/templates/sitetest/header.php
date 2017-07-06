@@ -8,14 +8,11 @@
     <link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH ?>/img/f_logo.ico" type="image/x-icon">
     <link href="<?= SITE_TEMPLATE_PATH ?>/css/styles.css" type="text/css" rel="stylesheet" />
 
-<!--для подключения карусели слайдера-->
-    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/slider/css/slideshow.css">
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/slider/example.css">
 
-    <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
-    <script src="<?/*= SITE_TEMPLATE_PATH */?>/slider/js/gallery.js"></script>
-    <script type="text/javascript"></script>-->
+    <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery-1.11.2.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +25,7 @@
                 <div class="header">
 
                     <div id="logo">
-                        <a href="index.php"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.jpg" alt="Логотип" /></a>
+                        <a href="/"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.jpg" alt="Логотип" /></a>
                     </div>
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",

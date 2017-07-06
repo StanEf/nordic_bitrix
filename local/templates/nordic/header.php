@@ -22,12 +22,12 @@
                 <div class="header">
 
                     <div id="logo">
-                        <a href="index.php"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.jpg" alt="Логотип" /></a>
+                        <a href=""><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.jpg" alt="Логотип" /></a>
                     </div>
                     <div class="menu">
                         <ul style="margin-bottom: 0px;">
 
-                            <li class="<?if($_SERVER['PHP_SELF'] == "/index.php"):?>menu-current<?endif;?>"><a href="/index.php">Главная</a></li>
+                            <li class="<?if($_SERVER['PHP_SELF'] == "/"):?>menu-current<?endif;?>"><a href="/index.php">Главная</a></li>
                             <li class="<?if($_SERVER['PHP_SELF'] == "/contacts.php"):?>menu-current<?endif;?>"><a href="/contacts.php">Контакты</a></li>
                         </ul>
                     </div>

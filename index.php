@@ -1,10 +1,85 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-?>
-            
-           <div class="yt_container">
-            <video class="yt_video" controls autoplay loop preload="auto">
-                <source src="<?= SITE_TEMPLATE_PATH ?>/video/nordic.mp4" type='video/mp4'>
-            </video>
+<? require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); ?>
+<div class="carousel">
+    <div class="carousel-info">
+        <div class="carousel-info-inner">
+            <div class="carousel-info__text">
+                Мировой лидер в производстве<br/>
+                высокотехнологичных и инновационных судов
+                в области арктического судоходства
+            </div>
+            <div class="carousel-info__button">
+                Подробнее
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about-company">
+    <div class="about-company-text">
+        <div class="about-company-text__caption">
+            О КОМПАНИИ
+        </div>
+        <div style="clear: both;"></div>
+        <div class="about-company-text__logo">
+
+        </div>
+        <div style="clear: both;"></div>
+        <div class="about-company-text__text">
+            <div class="about-company-text__text-caption">
+                Высокотехнологичное судостроение
+            </div>
+            <div style="clear: both;"></div>
+            <div class="about-company-text__text-text">
+                Являясь лидером в высокотехнологичном судостроении, «Нордик Ярдс» концентрируется на производстве судов специального назначения, таких как ледокольные и ледоходные суда, специализированные танкеры, паромы и оффшорные конструкции. Компания сочетает инновационное высокотехнологичное производство с неукоснительным соблюдением сроков поставки и отличается высочайшим качеством своих судов.
+            </div>
+            <div class="about-company-text__text-text">
+                «Нордик Ярдс» располагает двумя верфями в Висмаре и Варнемюнде с прямым выходом в Балтийское море. Оба предприятия входят в число самых крупных, современных и эффективных верфей в мире. С момента их основания в 1946 году на верфях в Висмаре и Варнемюнде было построено более 900 судов в 74 различных конфигурациях. После успешного перепрофилирования «Нордик Ярдс» в долгосрочной перспективе обеспечит занятость до 1.600 высококвалифицированных сотрудников.
+            </div>
+        </div>
+    </div>
+    <div class="about-company-images">
+        <div class="about-company-images__image">
+            <img src="<?= SITE_TEMPLATE_PATH ?>/img/main_about_company_1.jpg" alt="Логотип" />
+        </div>
+        <div class="about-company-images__image">
+            <img src="<?= SITE_TEMPLATE_PATH ?>/img/main_about_company_2.jpg" alt="Логотип" />
+        </div>
+
+    </div>
+</div>
+<div style="clear: both;"></div>
+<div class="services">
+    <div class="services__caption">
+        Услуги
+    </div>
+    <div style="clear: both;"></div>
+    <div class="services__text">
+        Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах
+        Текстовый блок об услугах Текстовый блок об услугах
+    </div>
+    <?$ElementID = $APPLICATION->IncludeComponent(
+        "bitrix:nordic.services",
+        "def",
+        Array(),
+        false
+    );?>
+
+</div>
+
+
+
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "news_on_main",
+    Array(
+        "IBLOCK_TYPE" => "site_information",
+        "IBLOCK_ID" => 1,
+        "NEWS_COUNT" => 3,
+        "SORT_BY1" => "TIMESTAMP_X",
+        "SORT_ORDER1" => "DESC",
+    ),
+    $component
+);?>
+
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -2,19 +2,43 @@
 $aMenuLinks = Array(
 
 	Array(
-		"Главная", 
-		"/", 
+		"О компании",
+		"about.php",
 		Array(), 
 		Array(), 
 		"" 
 	),
 
 	Array(
-		"Профиль", 
-		"/personal/", 
+		"Услуги",
+		"services/",
 		Array(), 
 		Array(), 
 		"" 
 	),
+
+    Array(
+        "Сертификаты",
+        "certificates.php",
+        Array(),
+        Array(),
+        ""
+    ),
+
+    Array(
+        "Новости",
+        "news/",
+        Array(),
+        Array(),
+        ""
+    ),
+
+    Array(
+        "Контакты",
+        "contacts.php",
+        Array(),
+        Array(),
+        ""
+    ),
 );
 ?>

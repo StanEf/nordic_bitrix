@@ -11,7 +11,7 @@ $aMenuLinks = Array(
 
 	Array(
 		"Услуги",
-		"services.php",
+		"services/",
 		Array(), 
 		Array(), 
 		"" 
@@ -19,7 +19,7 @@ $aMenuLinks = Array(
 
     Array(
         "Сертификаты",
-        "/",
+        "certificates.php",
         Array(),
         Array(),
         ""
@@ -27,7 +27,7 @@ $aMenuLinks = Array(
 
     Array(
         "Новости",
-        "/",
+        "news.php",
         Array(),
         Array(),
         ""
@@ -35,7 +35,7 @@ $aMenuLinks = Array(
 
     Array(
         "Контакты",
-        "/",
+        "contacts.php",
         Array(),
         Array(),
         ""
