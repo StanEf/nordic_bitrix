@@ -1,5 +1,5 @@
 <? require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); ?>
-<div class="carousel">
+<!--<div class="carousel">
     <div class="carousel-info">
         <div class="carousel-info-inner">
             <div class="carousel-info__text">
@@ -12,8 +12,12 @@
             </div>
         </div>
     </div>
+</div>-->
+<div class="main-video">
+    <video class="yt_video" controls=""  loop="" preload="auto" muted autoplay>
+        <source src="/local/templates/sitetest/video/nordic.mp4" type="video/mp4">
+    </video>
 </div>
-
 <div class="about-company">
     <div class="about-company-text">
         <div class="about-company-text__caption">
@@ -57,16 +61,15 @@
         Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах
         Текстовый блок об услугах Текстовый блок об услугах
     </div>
+    <div class="services-list services-list-main">
     <?$ElementID = $APPLICATION->IncludeComponent(
         "bitrix:nordic.services",
         "def",
         Array(),
         false
     );?>
-
+    </div>
 </div>
-
-
 
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",

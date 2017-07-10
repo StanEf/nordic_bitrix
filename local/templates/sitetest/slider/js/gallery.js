@@ -13,11 +13,12 @@ console.log('gallery.js');
 	GALLERY.find('.thumb').on('click', function() {
 		loadClickedImage($(this).data('thumb-id'));
 	});
-	GALLERY.find('#prev-btn').on('click', function() {
+	GALLERY.find('#page-project-prev-btn').on('click', function() {
 
 		slidePrev();
 	});
-	GALLERY.find('#next-btn').on('click', function() {
+	GALLERY.find('#page-project-next-btn').on('click', function() {
+		console.log('slide next');
 		slideNext();
 	});
 	$(document).keydown(function(e){
@@ -177,6 +178,8 @@ console.log("active " + active);
             console.log('video pause');
             console.log(video);
             video[0].pause();
+            video[0].currentTime = 0.0;
+            //video[0].stop();
         }
     }
 

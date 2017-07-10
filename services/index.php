@@ -11,12 +11,14 @@
             </div>
             <div style="clear: both;"></div>
         </div>
+        <div class="services-list">
         <?$ElementID = $APPLICATION->IncludeComponent(
             "bitrix:nordic.services",
             "def",
             Array(),
             false
         );?>
+        </div>
     </div>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

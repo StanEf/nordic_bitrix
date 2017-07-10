@@ -2,7 +2,9 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 ?>
-<div class="main-inside">
+<div class="page-contacts">
+    <div class="page-contacts-inner">
+        <div class="main-inside">
             <div class="block2" style="width:auto;">
                <div id="content" >
                     <div id="contacts-title-word">
@@ -11,7 +13,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                     <div id="contacts-email">
                         Единый e-mail: info@nordiceng.ru
                     </div>
-                </div> 
+                </div>
 
             </div>
             <div class="delimiter"></div>
@@ -61,5 +63,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                     <div class="contacts-city-adress-adress">
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

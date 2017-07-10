@@ -1,7 +1,56 @@
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic);*/
+/*@font-face {
+    font-family: 'Open Sans';
+   //src: url(local/templates/sitetest/fonts/OpenSans-Light.ttf);
+  // src: url(local/templates/sitetest/fonts/OpenSans-Regular.ttf);
+    src: url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff');
+}*/
+/*@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Semibold'),
+    url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff');
+    font-weight: 300;
+}*/
+/*@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'),
+    url('local/templates/sitetest/fonts/OpenSans-Semibold.ttf');
+    font-weight: 300;
+}*/
+/*@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans'),
+    url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff');
+    font-weight: 300;
+}*/
+/*@font-face {
+    font-family: 'Open Sans Semibold';
+    src: url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff2') format('woff2'),
+    url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff') format('woff');
+
+}*/
+/*@import url(//fonts.googleapis.com/css?family=Open+Sans);*/
+@font-face {
+    font-family: "OpenSansSemiBold";
+    src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot");
+    src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OpenSansSemiBold/OpenSansSemiBold.woff") format("woff"),
+    url("../fonts/OpenSansSemiBold/OpenSansSemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
  body {
         margin: 0px;
         width: 100%;
     }
+ ul{
+     margin-bottom: 0px;
+     padding-left: 0px;
+ }
+ li {
+     list-style-type: none;
+     text-align: left;
+ }
     .all-screen{
 	background-color: #e3e3e5;
     }
@@ -15,7 +64,7 @@
     .header-and-main {
         width: 100%;
         text-align: center;
-        min-height: calc(100vh - 160px);
+        min-height: calc(100vh - 180px);
     }
     .header-and-main-limited {
         display: inline-block;
@@ -28,14 +77,18 @@
     .main {
         display: inline-block;
     }
+    .page-contacts-inner {
+        margin-left: 157px;
+        margin-bottom: 150px;
+    }
     .main-inside {
-        margin: 0 auto;
-        width: 100%;
+        //margin: 0 auto;
+        //width: 100%;
         max-width: 990px;
         align-content: center;
     }
     .footer {
-        height: 160px;
+        height: 180px;
         background: #b8b8b8;
         
     }
@@ -122,10 +175,10 @@
         clear: both;
     }
     #contacts-title-word{
-        margin-top: 35px;
+        margin-top: 60px;
         margin-left: 0px;
         margin-bottom: 15px;
-        font-size: 28px;
+        font-size: 23px;
         font-family: Open Sans Semibold, Raleway, sans-serif;
         text-align:left;
         color: #a2b0bb;
@@ -250,9 +303,20 @@
         cursor: pointer;
 
     }
+ .main-video {
+     position: relative;
+     width: auto;
+     height: 733px;
+ }
+ .yt_video {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+ }
      .about-company {
          padding-left: 12%;
-         margin-top: 100px;
+         margin-top: 50px;
      }
 
     .about-company-text {
@@ -283,7 +347,7 @@
      }
 
      .about-company-text__text {
-         margin-top: 200px;
+         margin-top: 50px;
          max-width: 80%;
      }
 
@@ -299,10 +363,12 @@
      .about-company-text__text-text {
          margin-top: 15px;
          text-align: left;
+         font-family: Open Sans Light, Raleway, sans-serif;
+         font-size: 14px;
      }
 
      .about-company-images {
-
+         margin-bottom: 30px;
      }
      .about-company-images__image {
          margin-bottom: 20px;
@@ -311,7 +377,7 @@
         width: 60%;
      }
      .services__caption {
-          background-color: #d7d7d7;
+          background-color: #dddddd;
           padding-left: 12%;
           padding-top: 3%;
           padding-bottom: 2%;
@@ -335,18 +401,20 @@
         text-align: left;
     }
     .services-list {
-        background-color: #d7d7d7;
         padding-top: 20px;
         padding-bottom: 50px;
     }
+    .services-list-main {
+        background-color: #dddddd;
+    }
     .services-list-centered {
-         background-color: #d7d7d7;
+        //background-color: #d7d7d7;
         margin: 0 auto;
         max-width: 1000px;
         min-width: 1000px;
     }
     .services-list-items {
-         background-color: #d7d7d7;
+         //background-color: #d7d7d7;
          margin-top: 20px;
          margin-bottom: 40px;
          height: 420px;
@@ -366,6 +434,7 @@
         //padding: 20px;
         position: relative;
 z-index: 22222;
+        height: 219px;
     }
     .services-list-item-right {
         margin-right: 0px;
@@ -450,7 +519,9 @@ z-index: 22222;
 
  }
 
-.last-news {  }
+.last-news {
+    margin-bottom: 40px;
+}
 .last-news-list {
     margin: 0 auto;
 }
@@ -475,6 +546,7 @@ z-index: 22222;
      margin-top: 30px;
      margin-bottom:30px;
      float: left;
+     text-transform: uppercase;
  }
  .last-news-list-centered {
      float: left;
@@ -488,6 +560,7 @@ z-index: 22222;
  }
 .last-news-list-item-inner {
     position: relative;
+    cursor:pointer;
 }
  .last-news-list-item__picture{
      width: 300px;
@@ -511,6 +584,7 @@ z-index: 22222;
      text-align: left;
      margin-left: 25px;
      z-index: 2;
+     line-height: 115%;
  }
  .last-news-list-item__title:hover{
      color: #0d4863;
@@ -564,6 +638,7 @@ z-index: 22222;
  .last-news-list-item:hover .last-news-list-item__background-opacity{
      display: none;
  }
+
 .page-about-company-inner {
     padding-left: 12%;
 }
@@ -575,7 +650,8 @@ z-index: 22222;
      text-transform: uppercase;
      display: inline;
      float: left;
-     margin-top: 70px;
+     margin-top: 60px;
+     color: #a2b0bb;
  }
  .page-about-company__title {
      font-family: Open Sans Light, Raleway, sans-serif;
@@ -626,7 +702,8 @@ z-index: 22222;
      text-transform: uppercase;
      display: inline;
      float: left;
-     margin-top: 70px;
+     margin-top: 60px;
+     color: #a2b0bb;
  }
  .page-engineering__title {
      font-family: Open Sans Light, Raleway, sans-serif;
@@ -671,7 +748,7 @@ z-index: 22222;
      font-style: normal;
      display: block;
      //float: left;
-     margin-top: 70px;
+     margin-top: 60px;
      margin-left: 157px;
      margin-bottom: 60px;
     // margin-right: 60px;
@@ -683,7 +760,7 @@ z-index: 22222;
         display: block;
      float: left;
      margin-right: 20px;
-
+     color: #a2b0bb;
 
    }
  .page-services-text__text {
@@ -697,10 +774,13 @@ z-index: 22222;
  .page-projects-text__caption{
      margin-left: 157px;
      text-align: left;
-     font-family: Open Sans Semibold, Raleway, sans-serif;
+     font-family: OpenSansSemiBold;
      font-size: 23px;
-     margin-top: 50px;
+     margin-top: 60px;
      margin-bottom: 20px;
+     color: #a2b0bb;
+     margin-bottom: 50px;
+     text-transform: uppercase;
  }
  .page-projects-list-inner {
      margin-left: 157px;
@@ -727,8 +807,8 @@ width: 100%;
      //display: inline-block;
      padding-left: 40px;
      border-left: 1px solid #0f5575;
-     padding-top: 10px;
-     padding-bottom: 10px;
+     //padding-top: 10px;
+     //padding-bottom: 10px;
  }
  .page-projects-list-col-inner-right {
      border-right: 1px solid #0f5575;
@@ -740,13 +820,14 @@ width: 100%;
      padding-bottom: 20px;
 }
 .page-projects-list-caption {
-     font-family: Open Sans Semibold, Raleway, sans-serif;
-     //margin-top: 20px;
+     font-family: 'OpenSansSemiBold';
+
      margin-bottom: 20px;
  }
- .page-projects-list-caption:first-child {
-     //margin-top: 0px;
- }
+/* .page-projects-list-caption:first-child {
+     margin-top: 0px;
+     font-family: 'Open Sans Semibold';
+ }*/
 
 .page-projects-list-item{
      font-family: Open Sans Light, Raleway, sans-serif;
@@ -767,7 +848,7 @@ width: 100%;
  }
 
  .page-projects-detail-text__caption{
-
+     color: #a2b0bb;
      text-align: left;
      font-family: Open Sans Semibold, Raleway, sans-serif;
      font-size: 23px;
@@ -986,7 +1067,7 @@ width: 80px;
  }
  .page-certificates-text-inner {
      //display: inline-block;
-     margin-top: 50px;
+     margin-top: 60px;
      margin-bottom: 70px;
      text-align: left;
  }
@@ -997,6 +1078,7 @@ width: 80px;
      font-size: 23px;
      text-transform: uppercase;
      margin-right: 20px;
+     color: #a2b0bb;
 
  }
  .page-certificates-text-text {
@@ -1057,8 +1139,10 @@ width: 80px;
     font-size: 23px;
     text-transform: uppercase;
     margin-right: 20px;
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 40px;
+    color: #a2b0bb;
+
 }
  .page-news-item-picture {
      //overflow: hidden;
@@ -1089,9 +1173,9 @@ width: 80px;
     color: #a5a5a5;
 }
  .page-news-item-text-title {
-     font-family: Open Sans Light, Raleway, sans-serif;
+     font-family: Open Sans Regular, Raleway, sans-serif;
      font-size: 18px;
-     text-transform: uppercase;
+     //text-transform: uppercase;
      color: #0f5575;
      margin-top: 15px;
      margin-bottom: 15px;
@@ -1099,8 +1183,21 @@ width: 80px;
  }
  .page-news-item-text-text {
      font-family: Open Sans Light, Raleway, sans-serif;
-     font-size: 13px;
+     font-size: 14px;
  }
+ .page-news-item-text-text img{
+     height: 10px;
+ }
+/* .page-news-item-link-container-outer {
+     height: 12px;
+     position: relative;
+ }
+ .page-news-item-link-container-inner {
+     height: 12px;
+     position: absolute;
+     bottom: 0;
+ }*/
+
  .page-news-detail-inner {
      margin-left: 157px;
      margin-right: 157px;
@@ -1111,8 +1208,9 @@ width: 80px;
      font-size: 23px;
      text-transform: uppercase;
      margin-right: 20px;
-     margin-top: 40px;
-     margin-bottom: 40px;
+     margin-top: 60px;
+     margin-bottom: 60px;
+     color: #a2b0bb;
  }
  .page-news-detail-one {
      min-height: 1059px;
@@ -1135,6 +1233,7 @@ width: 80px;
  }
  .page-news-detail-list-item-picture img {
      width: 100%;
+     cursor: pointer;
  }
  .page-news-detail-list-item-text-date {
       font-family: Open Sans Regular, Raleway, sans-serif;
@@ -1143,12 +1242,13 @@ width: 80px;
       margin-top: 5px;
   }
  .page-news-detail-list-item-text-title {
-     font-family: Open Sans Light, Raleway, sans-serif;
+     font-family: Open Sans Regular, Raleway, sans-serif;
      font-size: 15px;
-     text-transform: uppercase;
+     //text-transform: uppercase;
      color: #0f5575;
      margin-top: 5px;
      margin-bottom: 5px;
+     cursor: pointer;
  }
  .page-news-detail-list-item-text-text {
      font-family: Open Sans Light, Raleway, sans-serif;
@@ -1166,9 +1266,9 @@ width: 80px;
  }
 
  .page-news-detail-one-title {
-     font-family: Open Sans Light, Raleway, sans-serif;
-     font-size: 15px;
-     text-transform: uppercase;
+     font-family: Open Sans Regular, Raleway, sans-serif;
+     font-size: 19px;
+     //text-transform: uppercase;
      color: #0f5575;
      margin-top: 20px;
      margin-bottom: 20px;
@@ -1178,17 +1278,86 @@ width: 80px;
  }
  .page-news-detail-one-text {
      font-family: Open Sans Light, Raleway, sans-serif;
-     font-size: 13px;
+     font-size: 14px;
      margin-top: 20px;
      margin-bottom: 60px;
+
+ }
+ .page-news-detail-one-text-inner {
      padding-left: 10px;
      padding-right: 10px;
  }
  .page-news-detail-one-line-bottom{
      background-color: #105576;
      height: 2px;
-     position: absolute;
+     margin-top: 40px;
+     /*position: absolute;
      bottom: 0;
      left: 0;
-     right: 0;
+     right: 0;*/
  }
+ .footer-inner {
+    /* margin-left: 157px;
+     margin-right: 157px;
+     border: 1px solid black;
+     height: 200px;
+     background:#b8b8b8;*/
+     text-align: left;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     display: inline-block;
+     width: 100%;
+     margin-top: 10px;
+ }
+ .footer-inner a {
+     text-decoration: none;
+     color: white;
+ }
+.footer-inner-about-company{
+    float: left;
+    margin-left: 100px;
+}
+ .footer-inner ul {
+     margin-top: 0px;
+ }
+.footer-menu {
+    font-family: Open Sans Light, Raleway, sans-serif;
+    font-size: 13px;
+    color: white;
+}
+ .footer-inner-services{
+     float: left;
+     margin-left: 100px;
+ }
+ /*.footer-inner-services ul{
+     margin-bottom: 0px;
+     padding-left: 0px;
+ }
+ .footer-inner-services ul{*/
+ .footer-inner-social-network{
+     float: left;
+     margin-left: 80px;
+ }
+ .footer-inner-about-contacts{
+     float: right;
+     text-align: right;
+     margin-right: 100px;
+ }
+ .footer-title {
+     //text-align: left;
+     font-family: Open Sans Semibold, Raleway, sans-serif;
+     font-size: 15px;
+     text-transform: uppercase;
+     //margin-right: 20px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     color: white;
+ }
+ .footer-text {
+
+     font-family: Open Sans Light, Raleway, sans-serif;
+     font-size: 13px;
+
+     color: white;
+ }
+

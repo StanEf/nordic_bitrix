@@ -11,7 +11,7 @@
                 <img src="<?= SITE_TEMPLATE_PATH ?>/img/chevron_left.png" alt="Логотип" />
             </div>
             <div class="page-project-top-nav-text">
-                все проэкты
+                все проекты
             </div>
         </div>
         <div class="page-project-title">

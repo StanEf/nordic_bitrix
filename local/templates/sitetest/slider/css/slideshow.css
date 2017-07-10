@@ -75,21 +75,21 @@
 		.thumbs-container.bottom {
 			bottom: 0;
 		}
-.prev{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	//height: 100px;
-	padding-top: 0px;
-}
-.next{
-	position: absolute;
-	bottom: 66px;
-	left: 0;
-	right: 0;
-	height: 100px;
-}
+		.prev{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			//height: 100px;
+			padding-top: 0px;
+		}
+		.next{
+			position: absolute;
+			bottom: 66px;
+			left: 0;
+			right: 0;
+			height: 100px;
+		}
 		.prev, .next {
 			//width: 3%;
 			//min-width: 40px;
@@ -129,16 +129,19 @@
 				width: 120px;
 				height: 68px;
 				margin: 10px;
-
+				text-align: center;
 				overflow: hidden;
 				background-size: cover;
 	    		background-position: center center;
-
 	    		cursor: pointer;
 			}
 			.thumb img {
 				width: 120px;
 				height: 68px;
+			}
+			.thumb-video img {
+				width: initial;
+				height: inherit;
 			}
 				.thumb:first-of-type {
 					//margin-left: 0px;

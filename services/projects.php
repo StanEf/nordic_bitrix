@@ -3,7 +3,7 @@
     <div class="page-projects-inner">
         <div class="page-projects-text">
             <div class="page-projects-text__caption">
-                ПРОЕКТЫ
+                ПРОЕКТЫ2
             </div>
             <div style="clear: both;"></div>
         </div>
