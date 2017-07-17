@@ -1,35 +1,3 @@
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic);*/
-/*@font-face {
-    font-family: 'Open Sans';
-   //src: url(local/templates/sitetest/fonts/OpenSans-Light.ttf);
-  // src: url(local/templates/sitetest/fonts/OpenSans-Regular.ttf);
-    src: url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff');
-}*/
-/*@font-face {
-    font-family: 'Open Sans';
-    src: local('Open Sans Semibold'),
-    url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff');
-    font-weight: 300;
-}*/
-/*@font-face {
-    font-family: 'Open Sans';
-    src: local('Open Sans'),
-    url('local/templates/sitetest/fonts/OpenSans-Semibold.ttf');
-    font-weight: 300;
-}*/
-/*@font-face {
-    font-family: 'Open Sans';
-    src: local('Open Sans'),
-    url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff');
-    font-weight: 300;
-}*/
-/*@font-face {
-    font-family: 'Open Sans Semibold';
-    src: url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff2') format('woff2'),
-    url('https://bitrix.primesoftpro.ru/local/templates/sitetest/fonts/OpenSans-Semibold.woff') format('woff');
-
-}*/
-/*@import url(//fonts.googleapis.com/css?family=Open+Sans);*/
 @font-face {
     font-family: "OpenSansSemiBold";
     src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot");
@@ -39,6 +7,14 @@
     font-style: normal;
     font-weight: normal;
 }
+*{
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
  body {
         margin: 0px;
         width: 100%;
@@ -51,11 +27,12 @@
      list-style-type: none;
      text-align: left;
  }
+
     .all-screen{
 	background-color: #e3e3e5;
     }
     .all-body {
-	min-width: 1000px;
+	//min-width: 1000px;
 	text-align: center;
 	margin: 0 auto;
 	max-width:1304px;
@@ -78,13 +55,14 @@
         display: inline-block;
     }
     .page-contacts-inner {
-        margin-left: 157px;
+        margin-left: 12%;
+        margin-right: 12%;
         margin-bottom: 150px;
     }
     .main-inside {
         //margin: 0 auto;
         //width: 100%;
-        max-width: 990px;
+        //max-width: 990px;
         align-content: center;
     }
     .footer {
@@ -95,7 +73,7 @@
 
     #logo {
         //margin-right: 6%;
-        margin-left: 157px;
+        margin-left: 12%;
         float:left;
         display: inline-block;
         //margin-left: -20px;
@@ -109,6 +87,9 @@
         float: right;
         margin-right: 5px;
     }
+    .menu-mobile-line {
+        display: none;
+    }
     .menu ul {
         padding-left: 0px;
     }
@@ -117,8 +98,8 @@
         position: relative;
         text-align: center;
         height: 61px;
-        line-height: 60px;
-        margin-top: 6px;
+        line-height: 49px;
+        margin-top: 32px;
         width: 150px;
         border-bottom-width: 13px;
         border-bottom-style: solid;
@@ -127,6 +108,9 @@
         border-left-style: solid;
         border-left-color: #d7d7d7;
         margin-right: -5px;
+    }
+    .menu ul li a{
+       display: none;
     }
     .menu-current{
         border-bottom-color: #b21a43 !important;
@@ -140,7 +124,7 @@
     .menu ul li:hover{
         border-bottom-color: #b21a43;
     }
-    .menu ul li a{
+    .menu ul li{
         color: #0f5575;
         text-decoration: none;
         background-color: #ffffff;
@@ -148,8 +132,12 @@
         font-weight: 300;
         font-style: normal;
         font-size: 17px;
+        cursor: pointer;
     }
-    
+
+    .menu-bottom-line{
+        height: 13px; background-color:#105576;
+    }
     .block{
 
         display:inline-block;
@@ -157,6 +145,7 @@
         margin-right: 2%;
         margin-top: 35px;
         text-align: left;
+        width: 30%;
     }
     .block-last {
         margin-right: 0px;
@@ -203,7 +192,7 @@
     .contacts-city-photo img {
         //max-height: 70%;
        // max-width: 70%;
-         width: 312px;
+         width: 100%;
     }
 
     .contacts-city-adress-city{
@@ -240,12 +229,13 @@
     .in-developing span{
         position	: absolute;
         top		: 40%;
-        left		: 18%;
+        left		: 0;
+        right		: 0;
         //width		: 100%;
         font-size: 28px;
         font-family: Open Sans Semibold, Raleway, sans-serif;
         color: #ffffff;
-
+text-align: center;
     }
     .yt_container {
         position: relative;
@@ -749,7 +739,7 @@ z-index: 22222;
      display: block;
      //float: left;
      margin-top: 60px;
-     margin-left: 157px;
+     margin-left: 12%;
      margin-bottom: 60px;
     // margin-right: 60px;
  }
@@ -772,7 +762,7 @@ z-index: 22222;
      text-align: left;
  }
  .page-projects-text__caption{
-     margin-left: 157px;
+     margin-left: 12%;
      text-align: left;
      font-family: OpenSansSemiBold;
      font-size: 23px;
@@ -783,8 +773,8 @@ z-index: 22222;
      text-transform: uppercase;
  }
  .page-projects-list-inner {
-     margin-left: 157px;
-     margin-right: 157px;
+     margin-left: 12%;
+     margin-right: 12%;
  }
  .page-projects-list-centered {
      //margin: 0 auto;
@@ -843,8 +833,8 @@ width: 100%;
      color: #0f5575;
  }
  .page-projects-detail-inner{
-     margin-left: 157px;
-     margin-right: 157px;
+     margin-left: 12%;
+     margin-right: 12%;
  }
 
  .page-projects-detail-text__caption{
@@ -906,7 +896,19 @@ width: 100%;
  .page-projects-detail-item-text-small {
      font-size: 10px;
  }
+.page-projects-detail-item__picture {
+    width: 200px;
+    height: 130px;
+    background-color: #d7d7d7;
+    position: relative;
+}
  .page-projects-detail-item__picture img {
+     position: absolute;
+     margin: auto;
+     left: 0;
+     top: 0;
+     bottom: 0;
+     right: 0;
      width: 200px;
  }
  .page-projects-detail-item__link {
@@ -918,7 +920,7 @@ width: 100%;
 width: 80px;
  }
  .page-project-inner {
-     margin-left: 157px;
+     margin-left: 12%;
      margin-right: 11%;
  }
  .page-project-top-nav {
@@ -1055,8 +1057,68 @@ width: 80px;
  .page-project-detail-item__picture-mod img {
      width: 250px;
  }
+.page-project-detail-list-inner {
+    float: left;
+    margin-top: 60px;
+}
+.page-project-detail-item {
+//border: 1px solid black;
+    width: 250px;
+    height: 220px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+.page-project-detail-item-text {
+    height: 56px;
+    width: 100%;
+    background-color: #0f5575;
+    color: white;
+    text-align: left;
+    font-family: Open Sans Light, Raleway, sans-serif;
+
+    display: table;
+
+}
+.page-project-detail-item-text:hover {
+    background-color: #b21a42;
+    cursor: pointer;
+}
+
+.page-project-detail-item-text-inner {
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+.page-project-detail-item-text-big {
+    font-size: 15px;
+}
+.page-project-detail-item-text-small {
+    font-size: 11px;
+}
+.page-project-detail-item__picture {
+    width: 250px;
+    height: 162.5px;
+    background-color: #d7d7d7;
+    position: relative;
+}
+.page-project-detail-item__picture img {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+}
+.page-project-detail-item__link {
+    display: none;
+}
+
+
  .page-certificates-inner {
-     margin-left: 157px;
+     margin-left: 12%;
      margin-right: 11%;
  }
  .page-certificates-text {
@@ -1123,8 +1185,8 @@ width: 80px;
      height: 424px;
  }
  .page-news-inner {
-     margin-left: 157px;
-     margin-right: 157px;
+     margin-left: 12%;
+     margin-right: 12%;
  }
  .page-news-list {
      margin-bottom: 80px;
@@ -1148,7 +1210,7 @@ width: 80px;
      //overflow: hidden;
      width: 250px;
      height: 182px;
-     margin-right: 40px;
+     margin-right: 3%;
      //width: 30%;
      float:left;
      text-align: left;
@@ -1199,8 +1261,8 @@ width: 80px;
  }*/
 
  .page-news-detail-inner {
-     margin-left: 157px;
-     margin-right: 157px;
+     margin-left: 12%;
+     margin-right: 12%;
  }
  .page-news-detail-title {
      text-align: left;
@@ -1315,19 +1377,19 @@ width: 80px;
  }
 .footer-inner-about-company{
     float: left;
-    margin-left: 100px;
+    margin-left: 7.67%;
 }
  .footer-inner ul {
      margin-top: 0px;
  }
 .footer-menu {
     font-family: Open Sans Light, Raleway, sans-serif;
-    font-size: 13px;
+    font-size: 0.92em;
     color: white;
 }
  .footer-inner-services{
      float: left;
-     margin-left: 100px;
+     margin-left: 7.67%;
  }
  /*.footer-inner-services ul{
      margin-bottom: 0px;
@@ -1336,12 +1398,12 @@ width: 80px;
  .footer-inner-services ul{*/
  .footer-inner-social-network{
      float: left;
-     margin-left: 80px;
+     margin-left: 6.13%;
  }
  .footer-inner-about-contacts{
      float: right;
      text-align: right;
-     margin-right: 100px;
+     margin-right: 7.67%;
  }
  .footer-title {
      //text-align: left;
@@ -1356,8 +1418,183 @@ width: 80px;
  .footer-text {
 
      font-family: Open Sans Light, Raleway, sans-serif;
-     font-size: 13px;
+     font-size: 0.92em;
 
      color: white;
  }
 
+@media (max-width: 1024px) {
+    #logo {
+        margin-left: 12%;
+        margin-top: 3px;
+    }
+    #logo a img {
+        max-width: 140px;
+    }
+    .menu ul {
+        margin-top: 2px;
+    }
+
+    .menu ul li {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        height: 47px;
+        line-height: 37px;
+        margin-top: 11px;
+        width: 125px;
+        border-bottom-width: 9px;
+        border-bottom-style: solid;
+        border-bottom-color: #d7d7d7;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: #d7d7d7;
+        margin-right: -5px;
+    }
+    .menu-bottom-line{
+         height: 9px;
+     }
+}
+
+@media (max-width: 890px) {
+    *{
+        font-size: 14px;
+    }
+    #logo {
+        margin-right: 2%;
+        margin-top: 3px;
+        margin-left: 2%;
+    }
+    .block {
+        width: 100%;
+    }
+
+    .footer {
+        height: auto;
+    }
+    .footer-inner-about-company {
+        margin-left: 12%;
+        width: 100%;
+    }
+    .footer-inner-services {
+        margin-left: 12%;
+        width: 100%;
+    }
+    .footer-inner-social-network {
+        margin-left: 12%;
+        width: 100%;
+    }
+    .footer-inner-about-contacts {
+        float: left;
+        text-align: left;
+        margin-left: 12%;
+        width: 100%;
+    }
+    .footer-title {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+    .page-news-item-picture {
+        width: 100%;
+        height: auto;
+    }
+    .page-news-item-text {
+        width: 100%;
+    }
+    .page-news-item-text {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+}
+@media (max-width: 810px) {
+    #logo {
+        margin-top: 12px;
+    }
+    #logo a img {
+        max-width: 105px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    *{
+        //font-size: 10px;
+    }
+    #logo {
+        display: none;
+    }
+    .menu {
+        float: none;
+        margin-right: 0;
+        position: relative;
+    }
+    .menu-list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 100;
+        display: none;
+    }
+    .menu-mobile-line {
+        display: block;
+        text-align: left;
+        background: #105576;
+        padding: 3px;
+        position: relative;
+    }
+    .menu-mobile__button {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 6px;
+        padding-right: 6px;
+        display: inline-block;
+        background: #b21a43;
+        color: white;
+        border-radius: 6px;
+    }
+    .menu ul {
+         margin-bottom: 0;
+     }
+    .menu ul li {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding-left: 2%;
+    }
+
+    .menu-bottom-line {
+        display: none;
+    }
+    .page-news-inner {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .page-news-detail-inner {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .footer-title, .footer-inner-services, .footer-inner-about-contacts, .footer-text span {
+        display: none;
+    }
+    .footer-inner-about-company {
+        margin-left: 5%;
+        width: 80%;
+    }
+    .footer-menu li {
+        display: inline;
+        margin-right: 4%;
+    }
+    .footer-inner-social-network {
+        margin-left: 0;
+        width: auto;
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+    .footer-inner-about-contacts {
+        margin-right: 0px;
+    }
+}

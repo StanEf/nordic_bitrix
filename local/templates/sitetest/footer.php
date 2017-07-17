@@ -53,12 +53,12 @@
                     <li class="">
                         <a href="https://www.facebook.com">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
-                            Facebook
+                            <span>Facebook</span>
                         </a></li>
                     <li class="">
                         <a href="https://ввсабwww.instagram.com">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
-                            Instagram
+                            <span>Instagram</span>
                         </a>
                     </li>
                 </ul>
@@ -133,7 +133,13 @@
         var href = $(this).closest(".page-news-detail-list-item").find(".page-news-detail-list-item-text-text a").attr("href");
         window.open(href, "_self");
     });
-
+    $(".menu-mobile__button").on("click", function(){
+        $(".menu-list").toggle();
+    });
+    $(".menu-list li").on("click", function(){
+        var href = $(this).find('a').attr("href");
+        window.open(href, "_self");
+    });
 
 </script>
 

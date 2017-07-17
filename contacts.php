@@ -52,7 +52,10 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
              <div class="block block-last in-developing">
                  <div class="contacts-city-photo">
                     <img src="<?= SITE_TEMPLATE_PATH ?>/img/contacts_vld.png" alt="Владивосток" />
-                     <span>планируется</span>
+
+                        <span>планируется</span>
+
+
                 </div>
                  <div style="clear:both;"></div>
                 <div class="contacts-city-adress">
