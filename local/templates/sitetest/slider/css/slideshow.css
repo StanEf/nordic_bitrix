@@ -139,9 +139,18 @@
 				width: 120px;
 				height: 68px;
 			}
+.thumb-video {
+	//background-position: center;
+	background-repeat:no-repeat;
+	//background-attachment:fixed;
+	background-position:center;
+
+}
 			.thumb-video img {
 				width: initial;
 				height: inherit;
+				height: 50%;
+				margin-top: 16px;
 			}
 				.thumb:first-of-type {
 					//margin-left: 0px;
