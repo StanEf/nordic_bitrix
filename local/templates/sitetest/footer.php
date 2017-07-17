@@ -95,6 +95,11 @@
         var href = $(this).find(".page-projects-detail-item__link a").attr("href");
         window.open(href, "_self");
     });
+    $(".page-project-detail-item").on("click", function(){
+        var href = $(this).find(".page-project-detail-item__link a").attr("href");
+        //alert(href);
+        window.open(href, "_self");
+    });
     $(".page-project-top-nav").on("click", function(){
         var href = $(this).find(".page-project-top-nav__link a").attr("href");
         window.open(href, "_self");
@@ -116,6 +121,7 @@
     $(".page-news-item-picture").on("click", function(){
         console.log('clickc');
         var href = $(this).closest(".page-news-item").find(".page-news-item__link").attr("href");
+        //alert(href);
         window.open(href, "_self");
     });
     $(".page-news-item-text-title").on("click", function(){
