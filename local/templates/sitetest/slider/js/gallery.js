@@ -58,7 +58,7 @@ console.log('gallery.js');
 	var loadNextImage = function(active) {
 		var next =  active.next(".img-wrapper").length ? active.next(".img-wrapper") : GALLERY.find('.img-wrapper:first'),
 			nextThumb = GALLERY.find('[data-thumb-id="' + next.data('img-id') + '"]');
-
+console.log("next "+ next.length);
 		// Setting next image & thumb properties
 		GALLERY.find('.thumb').removeClass('active');
 		nextThumb.addClass('active');
