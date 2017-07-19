@@ -19,7 +19,7 @@ $aMenuLinks = Array(
 
     Array(
         "Сертификаты",
-        "certificates.php",
+        "certificates/",
         Array(),
         Array(),
         ""
