@@ -73,15 +73,7 @@ $APPLICATION->SetTitle("Главная страница"); ?><!--<div class="car
     );?>
 	</div>
 </div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"news_on_main",
-	Array(
-		"IBLOCK_ID" => 1,
-		"IBLOCK_TYPE" => "site_information",
-		"NEWS_COUNT" => 3,
-		"SORT_BY1" => "TIMESTAMP_X",
-		"SORT_ORDER1" => "DESC"
-	),
-$component
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<div class="last_news_ajax">
+</div>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

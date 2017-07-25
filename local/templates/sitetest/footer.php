@@ -35,7 +35,7 @@
             </div>
             <div class="footer-text">
                 <ul>
-                    <li class=""><a href="/services/engineering.php">Инжиниринг</a></li>
+                    <li class=""><a href="/services/engineering/">Инжиниринг</a></li>
                     <li class=""><a href="/services/projects/">Проэктирование</a></li>
                     <li class=""><a href="#">Консалтинг</a></li>
                     <li class=""><a href="#">Производство оборудования</a></li>
@@ -90,6 +90,8 @@
 
 
 <!--<script src="<?/*= SITE_TEMPLATE_PATH */?>/slider/js/gallery.js"></script>-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js'></script>
+<script src="<?= SITE_TEMPLATE_PATH ?>/slick/js/index.js"></script>
 <script>
     $(".page-projects-detail-item-text").on("click", function(){
         var href = $(this).find(".page-projects-detail-item__link a").attr("href");
@@ -147,6 +149,88 @@
         window.open(href, "_self");
     });
 
+    $(".prev-slick.slick-arrow").on("click", function(){
+        runCurrentVideoStopOther();
+    });
+    $(".next-slick.slick-arrow").on("click", function(){
+        runCurrentVideoStopOther();
+    });
+    $(".prev-mobile.slick-arrow").on("click", function(){
+        runCurrentVideoStopOther();
+    });
+    $(".next-mobile.slick-arrow").on("click", function(){
+        runCurrentVideoStopOther();
+    });
+
+    function runCurrentVideoStopOther(){
+        var current = $(".slider-for").find(".slick-active");
+        console.log(current.data("slick-index"));
+        if(current.find("video").length != 0) {
+            current.find("video")[0].play();
+        }
+        $(".slider-for .slick-slide").each(function(index){
+            var video = $(this).find("video");
+            if(!$(this).hasClass("slick-active") && video.length != 0){
+                console.log($(this).hasClass("slick-active"));
+                console.log('index ' + index);
+                video[0].pause();
+                video[0].currentTime = 0.0;
+            }
+        });
+    }
+    $(function() {
+        autoResizeServicesOnMain();
+        setTimeout(autoResizeVideoOnMain, 500);
+        autoResizePictureOnPageEngineering();
+        loadLastNews();
+    });
+    $(window).resize(function() {
+        autoResizeServicesOnMain();
+        autoResizeVideoOnMain();
+        autoResizePictureOnPageEngineering();
+    });
+    function autoResizeServicesOnMain(){
+        if(location.pathname == '/') {
+            var services_img_height =  $(".services-list-item__background img").height();
+            var services_list_item_height =  $(".services-list-item").height();
+            $(".services-list-item").each(function(index){
+                $(this).find(".services-list-item-inner").height(services_img_height);
+                $(this).find(".services-list-item__background-opacity").height(services_img_height);
+            });
+        }
+    }
+    function autoResizeVideoOnMain(){
+        var main_video_height = $(".main-video video").height();
+        //console.log("main_video_height "  +main_video_height);
+        $(".main-video").height(main_video_height);
+    }
+    function loadLastNews() {
+        if(location.pathname == '/') {
+            var template;
+            if(document.documentElement.clientWidth <= 960){
+                template = 'mobile';
+            } else {
+                template = 'desktop';
+            }
+            $.post(
+                "ajax/main_last_news.php",
+                {
+                    template: template
+                },
+                loadLastNewsSuccess
+            );
+        }
+    }
+    function loadLastNewsSuccess(data){
+        $(".last_news_ajax").html(data);
+    }
+
+    function autoResizePictureOnPageEngineering(){
+        if(location.pathname == '/services/engineering/') {
+            var page_engineering_picture_height = $(".page-engineering__picture img").height();
+            $(".page-engineering__picture").height(page_engineering_picture_height);
+        }
+    }
 </script>
 
 </body>
