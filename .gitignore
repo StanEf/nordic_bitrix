@@ -1,11 +1,11 @@
 .idea/
 .git/
-bitrix/
+/bitrix/
 images/
-personal/
-search/
+/personal/
+/search/
 upload/
-local/templates/nordic/video/
-local/templates/sitetest/video/
+/local/templates/nordic/video/
+/local/templates/sitetest/video/
 slider/
 /slick/
