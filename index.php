@@ -16,9 +16,7 @@ $APPLICATION->SetTitle("Главная страница"); ?><!--<div class="car
         </div>
     </div>
 </div>-->
-<div class="main-video">
- <video class="yt_video" controls="" loop="" preload="auto" muted="" autoplay=""> <source src="/local/templates/sitetest/video/nordic.mp4" type="video/mp4"> </video>
-</div>
+<div class="main-video"></div>
 <div class="about-company">
 	<div class="about-company-text">
 		<div class="about-company-text__caption">

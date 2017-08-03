@@ -14,8 +14,10 @@ echo '</pre>';*/
     </div>
     <div class="menu-list">
         <ul style="margin-bottom: 0px;">
+
             <?foreach($arResult as $item):?>
-                <li class="<?if(strpos($_SERVER['PHP_SELF'], $item["LINK"]) || $_SERVER['PHP_SELF'] == $item["LINK"] || $item['SELECTED'] == 1):?>menu-current<?endif;?>">
+                <li class="<?if(/*strpos($_SERVER['PHP_SELF'], $item["LINK"]) ||*/ $_SERVER['PHP_SELF'] == $item["LINK"] || $item['SELECTED'] == 1):?>menu-current<?endif;?>
+                        <? if($item["LINK"] == "/index.php") :?>menu-main-page-item<? endif;?>">
                     <?= $item["TEXT"]?>
                     <a href="<?= $item["LINK"]?>"></a>
                 </li>

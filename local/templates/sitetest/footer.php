@@ -179,18 +179,20 @@
         });
     }
     $(function() {
-        autoResizeServicesOnMain();
-        setTimeout(autoResizeVideoOnMain, 500);
+
         autoResizePictureOnPageEngineering();
-        loadLastNews();
+
+        /*setTimeout(autoResizeVideoOnMain, 500);*/
     });
     $(window).resize(function() {
         autoResizeServicesOnMain();
+
         autoResizeVideoOnMain();
+
         autoResizePictureOnPageEngineering();
     });
     function autoResizeServicesOnMain(){
-        if(location.pathname == '/') {
+        if(location.pathname == '/' || location.pathname == '/index.php' || location.pathname == '/services/') {
             var services_img_height =  $(".services-list-item__background img").height();
             var services_list_item_height =  $(".services-list-item").height();
             $(".services-list-item").each(function(index){
@@ -199,13 +201,18 @@
             });
         }
     }
+
     function autoResizeVideoOnMain(){
         var main_video_height = $(".main-video video").height();
-        //console.log("main_video_height "  +main_video_height);
+        console.log("main_video_height " + main_video_height);
+        if(main_video_height == null) {
+            main_video_height = "0px";
+        }
         $(".main-video").height(main_video_height);
     }
+
     function loadLastNews() {
-        if(location.pathname == '/') {
+        if(location.pathname == '/' || location.pathname == '/index.php') {
             var template;
             if(document.documentElement.clientWidth <= 960){
                 template = 'mobile';
@@ -224,6 +231,26 @@
     function loadLastNewsSuccess(data){
         $(".last_news_ajax").html(data);
     }
+    function loadMainVideo(){
+        console.log("load main video");
+        if(location.pathname == '/' || location.pathname == '/index.php') {
+            var template;
+            if(document.documentElement.clientWidth < 415){
+                template = 'mobile';
+            } else {
+                template = 'not_mobile';
+            }
+            $.post(
+                "ajax/main_video.php",
+                {
+                    template: template
+                },
+                function(data) {
+                    $(".main-video").html(data);
+                }
+            );
+        }
+    }
 
     function autoResizePictureOnPageEngineering(){
         if(location.pathname == '/services/engineering/') {
@@ -231,6 +258,31 @@
             $(".page-engineering__picture").height(page_engineering_picture_height);
         }
     }
+
+    if(location.pathname == '/' || location.pathname == '/index.php') {
+        $(function() {
+            /*autoResizeServicesOnMain();*/
+            loadLastNews();
+            loadMainVideo();
+        });
+
+        $(window).load(function () {
+            console.log('after load');
+            /*autoResizeVideoOnMain();*/
+            setTimeout(autoResizeVideoOnMain, 500);
+            setTimeout(autoResizeServicesOnMain, 500);
+            /*autoResizeServicesOnMain();*/
+
+        });
+    }
+    if(location.pathname == '/services/') {
+        $(window).load(function () {
+            console.log(location.pathname);
+            setTimeout(autoResizeServicesOnMain, 500);
+            /*autoResizeServicesOnMain();*/
+        });
+    }
+
 </script>
 
 </body>
