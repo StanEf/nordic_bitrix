@@ -82,23 +82,37 @@
         padding-bottom: 5px;
     }
     .col-left-menu{
-        padding-right: 15%;
+       /* padding-right: 15%;*/
+
         font-family: "RobotoLight";
         font-style: semibold;
         font-size: 24px;
     }
+    .menu-item-top-outer {
+        width: 100%;
+        margin-top: 10px;
+        height: 80px;
+    }
+    .menu-item-indicator-num {
+        width: 15%;
+        float: right;
+        height: 100%;
+    }
     .menu-item-top{
+        float: left;
+        width: 85%;
         background: white;
         height: 60px;
-        margin-top: 10px;
+        /*margin-top: 10px;*/
         //background: green;
-        padding-left: 40px;
+        /*padding-left: 40px;*/
         padding-top: 10px;
         padding-bottom: 10px;
         color: #003e63;
     }
     .menu-item-top-top {
         margin-top: 0px;
+
     }
    .menu-item-top2{
        //background: #00a070;
@@ -135,6 +149,67 @@
         width: 100%;
         height: 50%;
         background: #00a070;
+    }
+
+
+    .menu-top-level-item-outer {
+        width: 100%;
+        height: 80px;
+        //background: white;
+        margin-top: 10px;
+    }
+    .menu-top-level-item {
+
+        width: 100%;
+        height: 60px;
+    }
+    .menu-top-level-item-text-and-indicator-color {
+        float: left;
+        width: 85%;
+        background: white;
+        height: 60px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .menu-top-level-item-text {
+        display: table;
+        height: 100%;
+        width: 90%;
+        text-align: center;
+        float:left;
+    }
+    .menu-top-level-item-text-inner {
+        display: table-cell;
+        vertical-align: middle;
+
+    }
+    .menu-top-level-item-indicator-color {
+        width: 10%;
+        height: 60px;
+        float: right;
+        /*position: relative;*/
+
+
+    }
+    .menu-top-level-item-indicator-color2 {
+        height: 70%;
+        width: 12px;
+        padding-top: 9px;
+        float: right;
+    }
+    .menu-top-level-item-indicator-color-inner {
+        height: 100%;
+        width: 12px;
+
+    }
+    .menu-top-level-item-indicator-half {
+        height: 50%;
+        background: #00a070;
+    }
+    .menu-top-level-item-indicator-num {
+        width: 15%;
+        float: right;
+        height: 60px;
     }
 
 
@@ -517,50 +592,79 @@
         </div>
 
         <div class="col-left-menu">
+            <div class="menu-item-top-outer">
+                <div class="menu-item-top menu-item-top-top">
+                    <div class="menu-item-top2">
+                        <div class="menu-item-top-inner">
+                            <div class="menu-item-top-inner-text">
+                                Инженерный<br>комплекс
+                            </div>
+                            <div class="menu-item-indicator-cell">
+                                <div class="menu-item-indicator">
+                                    <div class="menu-item-indicator-half">
+                                    </div>
+                                    <div class="menu-item-indicator-half">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item-top-outer">
+                <div class="menu-item-top">
+                    <div class="menu-item-top2">
+                        <div class="menu-item-top-inner">
+                            <div class="menu-item-top-inner-text">
+                                THA - 1500
+                            </div>
+                            <div class="menu-item-indicator-cell">
+                                <div class="menu-item-indicator">
+                                    <div class="menu-item-indicator-half">
+                                    </div>
+                                    <div class="menu-item-indicator-half">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-indicator-num">
+                    <div class="menu-item-indicator-num-inner">
+                        5
+                    </div>
+                </div>
+            </div>
 
-            <div class="menu-item-top menu-item-top-top">
-                <div class="menu-item-top2">
-                    <div class="menu-item-top-inner">
-                        <div class="menu-item-top-inner-text">
-                            Инженерный<br>комплекс
+
+            <div class="menu-top-level-item-outer">
+                <div class="menu-top-level-item">
+                    <div class="menu-top-level-item-text-and-indicator-color">
+                        <div class="menu-top-level-item-text">
+                            <div class="menu-top-level-item-text-inner">
+                                THA - 1500
+                            </div>
                         </div>
-                        <div class="menu-item-indicator-cell">
-                            <div class="menu-item-indicator">
-                                <div class="menu-item-indicator-half">
-                                </div>
-                                <div class="menu-item-indicator-half">
+                        <div class="menu-top-level-item-indicator-color">
+                            <div class="menu-top-level-item-indicator-color2">
+                                <div class="menu-top-level-item-indicator-color-inner">
+                                    <div class="menu-top-level-item-indicator-half">
+                                    </div>
+                                    <div class="menu-top-level-item-indicator-half">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="menu-item-top">
-                <div class="menu-item-top2">
-                    <div class="menu-item-top-inner">
-                        <div class="menu-item-top-inner-text">
-                            THA - 1500
-                        </div>
-                        <div class="menu-item-indicator-cell">
-                            <div class="menu-item-indicator">
-                                <div class="menu-item-indicator-half">
-                                </div>
-                                <div class="menu-item-indicator-half">
-                                </div>
-                            </div>
+                    <div class="menu-top-level-item-indicator-num">
+                        <div class="menu-top-level-item-indicator-num-inner">
+                            5
                         </div>
                     </div>
                 </div>
+
             </div>
-            <!--<div class="menu-item-top">
-                <div class="menu-item-top2">
-                    <div class="menu-item-top-inner">
-                        <div class="menu-item-top-inner-text">
-                            THA - 1500
-                        </div>
-                    </div>
-                </div>
-            </div>-->
+
 
 
             <div class="menu-item-v1-top">
