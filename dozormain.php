@@ -39,6 +39,15 @@
     body {
         margin: 0px;
     }
+    .red {
+        background: #bb6767 !important;
+    }
+    .yellow {
+        background: #ffda73 !important;
+    }
+    .hidden {
+        display: none !important;
+    }
    .dozor-main-inner {
        /*margin-left: 12%;
        margin-right: 12%;
@@ -83,7 +92,7 @@
     }
     .col-left-menu{
        /* padding-right: 15%;*/
-
+        color: #003e63;
         font-family: "RobotoLight";
         font-style: semibold;
         font-size: 24px;
@@ -161,7 +170,10 @@
     .menu-top-level-item {
 
         width: 100%;
-        height: 60px;
+        height: 100%;
+    }
+    .menu-top-level-item2 {
+
     }
     .menu-top-level-item-text-and-indicator-color {
         float: left;
@@ -181,25 +193,35 @@
     .menu-top-level-item-text-inner {
         display: table-cell;
         vertical-align: middle;
-
+    }
+    .menu-top-level-item-text-inner2 {
+        width: 72%;
+        float: right;
     }
     .menu-top-level-item-indicator-color {
         width: 10%;
         height: 60px;
         float: right;
-        /*position: relative;*/
+        position: relative;
 
 
     }
     .menu-top-level-item-indicator-color2 {
-        height: 70%;
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        right: 0px;
         width: 12px;
-        padding-top: 9px;
-        float: right;
+    }
+    .menu-top-level-item-indicator-color2.mod {
+        top: 10px;
+        bottom: 10px;
+        right: -12px;
+        width: 24px;
     }
     .menu-top-level-item-indicator-color-inner {
         height: 100%;
-        width: 12px;
+        width: 100%;
 
     }
     .menu-top-level-item-indicator-half {
@@ -209,18 +231,30 @@
     .menu-top-level-item-indicator-num {
         width: 15%;
         float: right;
-        height: 60px;
+        height: 100%;
+        display: table;
     }
-
-
-
-
+    .menu-top-level-item-indicator-num-inner {
+        padding-left: 15px;
+        height: 80px;
+        /*line-height: 80px;*/
+        text-align: left;
+        display: table-cell;
+        vertical-align: middle;
+        color: white;
+    }
+    .menu-top-level-item-indicator-num-inner p {
+        /*line-height: 1.6;
+        display: inline-block;
+        vertical-align: middle;*/
+    }
     .menu-item-v1-top{
 
         height: 90px;
         //  margin-top: 10px;
         background: #003e63;
         padding-left: 15%;
+        padding-right: 15%;
        /* padding-top: 10px;
         padding-bottom: 10px;*/
 
@@ -592,7 +626,7 @@
         </div>
 
         <div class="col-left-menu">
-            <div class="menu-item-top-outer">
+        <!--    <div class="menu-item-top-outer">
                 <div class="menu-item-top menu-item-top-top">
                     <div class="menu-item-top2">
                         <div class="menu-item-top-inner">
@@ -659,6 +693,67 @@
                     <div class="menu-top-level-item-indicator-num">
                         <div class="menu-top-level-item-indicator-num-inner">
                             5
+                        </div>
+                    </div>
+                </div>
+
+            </div>-->
+            <div class="menu-top-level-item-outer">
+                <div class="menu-top-level-item">
+                    <div class="menu-top-level-item2">
+                        <div class="menu-top-level-item-text-and-indicator-color">
+                            <div class="menu-top-level-item-text">
+                                <div class="menu-top-level-item-text-inner">
+                                    <div class="menu-top-level-item-text-inner2">
+                                        Инженерный<br>комплекс
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-top-level-item-indicator-color">
+                                <div class="menu-top-level-item-indicator-color2 mod">
+                                    <div class="menu-top-level-item-indicator-color-inner">
+                                        <div class="menu-top-level-item-indicator-half red">
+                                        </div>
+                                        <div class="menu-top-level-item-indicator-half yellow">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-top-level-item-indicator-num">
+                            <div class="menu-top-level-item-indicator-num-inner">
+                                <p>5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-top-level-item-outer">
+                <div class="menu-top-level-item">
+                    <div class="menu-top-level-item-text-and-indicator-color">
+                        <div class="menu-top-level-item-text">
+                            <div class="menu-top-level-item-text-inner">
+                                <div class="menu-top-level-item-text-inner2">
+                                    THA - 1500
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-top-level-item-indicator-color">
+                            <div class="menu-top-level-item-indicator-color2">
+                                <div class="menu-top-level-item-indicator-color-inner">
+                                    <div class="menu-top-level-item-indicator-half">
+                                    </div>
+                                    <div class="menu-top-level-item-indicator-half">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-top-level-item-indicator-num hidden">
+                        <div class="menu-top-level-item-indicator-num-inner">
+                            <p>5</p>
                         </div>
                     </div>
                 </div>
@@ -974,7 +1069,7 @@
                                         <div class="col-right-item-pic">
                                             <div class="col-right-item-pic-icon">
                                                 <div>
-                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -986,7 +1081,7 @@
                                             </div>
                                             <div class="col-right-item-title-inner">
                                                 <div>
-                                                    СКУД
+                                                    Система<br/>ВТОРИЧНАЯ
                                                 </div>
                                             </div>
                                         </div>
@@ -996,7 +1091,7 @@
                                         <div class="col-right-item-pic">
                                             <div class="col-right-item-pic-icon">
                                                 <div>
-                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1008,12 +1103,160 @@
                                             </div>
                                             <div class="col-right-item-title-inner">
                                                 <div>
-                                                    СКУД
+                                                    КАБИНА<br/>НАДЗЕРКАЛЬНАЯ
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    РЕФЛЕКТОР
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    ЭЛЕКТРОПРИВОД<br/>НАВЕДЕНИЯ
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    УСТРОЙСТВО<br/>УПРАВЛЕНИЯ ПРИВОДОМ
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    СИСТЕМА<br/>ВИДЕОНАБЛЮДЕНИЯ
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    УСУК
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    КОНТРРЕФЛЕКТОР
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_radio_dish.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    СИСТЕМА УПРАВЛЕНИЯ<br/>ГЕКСАПОДОМ
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="col-right-double-right">
                                 <div class="col-right-double-left-inner">
@@ -1022,7 +1265,7 @@
                                         <div class="col-right-item-pic">
                                             <div class="col-right-item-pic-icon">
                                                 <div>
-                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                    <img src="/dozor_images/system_panel_2.png"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1034,7 +1277,7 @@
                                             </div>
                                             <div class="col-right-item-title-inner">
                                                 <div>
-                                                    СКУД
+                                                    ЩИТОВАЯ №2
                                                 </div>
                                             </div>
                                         </div>
@@ -1044,7 +1287,7 @@
                                         <div class="col-right-item-pic">
                                             <div class="col-right-item-pic-icon">
                                                 <div>
-                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                    <img src="/dozor_images/system_panel_3.png"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1056,11 +1299,139 @@
                                             </div>
                                             <div class="col-right-item-title-inner">
                                                 <div>
-                                                    СКУД
+                                                    ЩИТОВАЯ №3
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_weather_station.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    МЕТЕОСТАНЦИЯ
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_auto_air_dehydrator.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    АВТОМАТИЧЕСКИЙ<br/>ДЕГИДРАТОР ВОЗДУХА
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_arm_1.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    АРМ 1 КИС
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_arm_2.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    АРМ 2 КИС
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_arm_3.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    АРМ 3 КИС
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_arm_4.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    АРМ 4 КИС
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
