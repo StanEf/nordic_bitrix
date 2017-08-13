@@ -45,6 +45,10 @@
     .yellow {
         background: #ffda73 !important;
     }
+    .green {
+        background: #00a070 !important;
+    }
+
     .hidden {
         display: none !important;
     }
@@ -379,13 +383,31 @@
     }
     .info-status-block {
         width: 100%;
-        height: 140px;
+        height: 100px;
+        padding-left: 3%;
+        padding-top: 40px;
 
     }
+    .info-status-block-item {
+        float: left;
+        width: 18%;
+        margin-right: 1%;
+
+    }
+    .info-status-block-item-indicator{
+        width: 100%;
+        height: 20px;
+    }
+    .info-status-block-item-title {
+        text-align: center;
+    }
+
    .items-block {
        width: 100%;
        height: calc(100vh - 140px);
        font-size: 18px;
+       box-sizing: border-box;
+       padding-bottom: 15px;
    }
     .item-engineering-complex {
         width: 32.7%;
@@ -515,7 +537,7 @@
 
     .col-right-double-left-item{
         width: 91%;
-        height: 70px;
+        height: 50px;
         padding-left: 3%;
         padding-right: 6%;
         margin-bottom: 10px;
@@ -523,7 +545,7 @@
 
     .col-right-double-right-item{
         width: 91%;
-        height: 70px;
+        height: 50px;
         padding-left: 6%;
         padding-right: 3%;
         margin-bottom: 10px;
@@ -538,7 +560,7 @@
     }
     @media (max-width: 1280px) {
         .items-block {
-            font-size: 15px;
+            font-size: 14px;
         }
     }
     @media (max-width: 1024px) {
@@ -546,7 +568,7 @@
             font-size: 20px;
         }
         .items-block {
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .col-right-item {
@@ -608,6 +630,9 @@
             height: 50px;
             width: 10%;
             position: relative;
+        }
+        .info-status-block {
+            font-size: 15px;
         }
     }
 </style>
@@ -816,84 +841,44 @@
                     </div>
                 </div>
             </div>
-
-            <!--<div class="menu-item-sub">
-                <div class="line-delimiter"></div>
-                <div class="menu-item-sub2"
-                <div class="menu-item-sub-inner">
-                    <div class="menu-item-sub-inner-text">
-                        <div class="cube-outer-left">
-                            <div class="cube-left"></div>
-                        </div>
-                        <div class="text-center">PT THA</div>
-
-                        <div class="menu-item-sub-indicator">
-                            <div class="menu-item-sub-indicator-half">
-                            </div>
-                            <div class="menu-item-sub-indicator-half">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-item-sub">
-                <div class="line-delimiter"></div>
-                <div class="menu-item-sub2"
-                <div class="menu-item-sub-inner">
-                    <div class="menu-item-sub-inner-text">
-                        <div class="cube-outer-left">
-                            <div class="cube-left"></div>
-                        </div>
-                        <div class="text-center">PT THA</div>
-
-                        <div class="menu-item-sub-indicator">
-                            <div class="menu-item-sub-indicator-half">
-                            </div>
-                            <div class="menu-item-sub-indicator-half">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-item-sub">
-                <div class="line-delimiter"></div>
-                <div class="menu-item-sub2"
-                <div class="menu-item-sub-inner">
-                    <div class="menu-item-sub-inner-text">
-                        <div class="cube-outer-left">
-                            <div class="cube-left"></div>
-                        </div>
-                        <div class="text-center">Щитовая №2</div>
-                        <div class="cube-outer-right">
-                            <div class="cube-right"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-item-sub">
-                <div class="line-delimiter"></div>
-                <div class="menu-item-sub2"
-                <div class="menu-item-sub-inner">
-                    <div class="menu-item-sub-inner-text">
-                        <div class="cube-outer-left">
-                            <div class="cube-left"></div>
-                        </div>
-                        <div class="text-center">Щитовая №3</div>
-                        <div class="cube-outer-right">
-                            <div class="cube-right"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-
         </div>
     </div>
     <div class="col-right">
         <div class="col-right-inner">
             <div class="info-status-block">
+                <div class="info-status-block-inner">
+                    <div class="info-status-block-item">
+                        <div class="info-status-block-item-indicator green"></div>
+                        <div class="info-status-block-item-title">
+                            ТНA - 1500<br/>ИСПРАВЕН
+                        </div>
+                    </div>
+                    <div class="info-status-block-item">
+                        <div class="info-status-block-item-indicator yellow"></div>
+                        <div class="info-status-block-item-title">
+                            ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
+                        </div>
+                    </div>
+                    <div class="info-status-block-item">
+                        <div class="info-status-block-item-indicator red"></div>
+                        <div class="info-status-block-item-title">
+                            ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
+                        </div>
+                    </div>
+                    <div class="info-status-block-item">
+                        <div class="info-status-block-item-indicator red"></div>
+                        <div class="info-status-block-item-title">
+                            ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
+                        </div>
+                    </div>
+                    <div class="info-status-block-item">
+                        <div class="info-status-block-item-indicator red"></div>
+                        <div class="info-status-block-item-title">
+                            ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <div class="items-block">
                 <div class="item-engineering-complex">
