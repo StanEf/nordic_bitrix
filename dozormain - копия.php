@@ -537,7 +537,7 @@
 
     .col-right-double-left-item{
         width: 91%;
-        height: 70px;
+        height: 50px;
         padding-left: 3%;
         padding-right: 6%;
         margin-bottom: 10px;
@@ -545,7 +545,7 @@
 
     .col-right-double-right-item{
         width: 91%;
-        height: 70px;
+        height: 50px;
         padding-left: 6%;
         padding-right: 3%;
         margin-bottom: 10px;
@@ -564,12 +564,6 @@
         }
     }
     @media (max-width: 1024px) {
-        .col-right-double-left-item {
-            height: 50px;
-        }
-        .col-right-double-right-item {
-            height: 50px;
-        }
         .col-left-menu{
             font-size: 20px;
         }
