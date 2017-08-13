@@ -276,9 +276,10 @@
    .items-block {
        width: 100%;
        height: calc(100vh - 140px);
+       font-size: 18px;
    }
     .item-engineering-complex {
-        width: 33.333%;
+        width: 32.7%;
         height: 100%;
         float: left;
         display: inline-block;
@@ -299,9 +300,10 @@
         font-size: 18px;
         padding-top: 5px;
         padding-bottom: 20px;
+        height: 48px;
     }
     .item-pt-tha {
-        width: 66.666%;
+        width: 67.3%;
         height: 100%;
         display: inline-block;
         float: right;
@@ -324,7 +326,7 @@
         margin-bottom: 10px;
    }
     .col-right-item-pic {
-        width: 25%;
+        width: 70px;
         float: left;
     }
     .col-right-item-pic-icon {
@@ -348,10 +350,33 @@
         vertical-align: middle;
         align-self: center;
     }
-    .col-right-item-pic-line {
-        float: right;
-        height: 70px;
+
+    .col-right-item-title {
         width: calc(100% - 70px);
+        height: 70px;
+        float: left;
+
+        text-align: center;
+
+    }
+    .col-right-item-title-inner {
+        float: right;
+        background: #bfbfbf;
+        width: 90%;
+        display: table;
+        font-weight: 500;
+        height: 100%;
+    }
+    .col-right-item-title-inner div {
+
+        display: table-cell;
+        vertical-align: middle;
+
+    }
+    .col-right-item-pic-line {
+        float: left;
+        height: 70px;
+        width: 10%;
         position: relative;
     }
     .col-right-item-pic-line div{
@@ -362,45 +387,120 @@
         width: 100%;
     }
 
-    .col-right-item-title {
-        width: 75%;
-        height: 70px;
-        float: right;
-        background: #bfbfbf;
-        text-align: center;
-        display: table;
+    .col-right-double {
+        width: 100%;
+        height: calc(100% - 73px);
     }
-    .col-right-item-title-inner {
-        display: table-cell;
-        vertical-align: middle;
-        font-weight: 500;
-    }
-    .item-ac-top {
-        width: 24%;
+    .col-right-double-left {
+        width: 50%;
         height: 100%;
-        display: inline-block;
-        padding-left: 10px;
-        padding-right: 10px;
+        float: left;
+        border-right: 1px solid black;
         box-sizing: border-box;
-        vertical-align:top;
     }
-   .item-ac-top-inner {
-       border: 1px solid black;
-       height: 100%;
-   }
-   .item-pt-tha2 {
-       width: 24%;
-       height: 100%;
-       display: inline-block;
-       padding-left: 10px;
-       padding-right: 10px;
-       box-sizing: border-box;
-       vertical-align:top;
-   }
-   .item-pt-tha2-inner  {
-       border: 1px solid black;
-       height: 100%;
-   }
+    .col-right-double-right {
+        width: 50%;
+        height: 100%;
+        float: right;
+    }
+
+    .col-right-double-left-item{
+        width: 91%;
+        height: 70px;
+        padding-left: 3%;
+        padding-right: 6%;
+        margin-bottom: 10px;
+    }
+
+    .col-right-double-right-item{
+        width: 91%;
+        height: 70px;
+        padding-left: 6%;
+        padding-right: 3%;
+        margin-bottom: 10px;
+    }
+
+
+
+    @media (max-width: 1400px) {
+        .items-block {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 1280px) {
+        .items-block {
+            font-size: 15px;
+        }
+    }
+    @media (max-width: 1024px) {
+        .col-left-menu{
+            font-size: 20px;
+        }
+        .items-block {
+            font-size: 13px;
+        }
+
+        .col-right-item {
+            width: 94%;
+            height: 50px;
+            padding-left: 3%;
+            padding-right: 3%;
+            margin-bottom: 10px;
+        }
+        .col-right-item-pic {
+            width: 50px;
+            float: left;
+        }
+        .col-right-item-pic-icon {
+            float: left;
+            height: 50px;
+            width: 50px;
+            background: #00a070;
+            -webkit-border-radius: 25px;
+            display: table;
+
+            text-align: center;
+        }
+        .col-right-item-pic-icon div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .col-right-item-pic-icon img{
+            max-width: 25px;
+            max-height: 25px;
+            vertical-align: middle;
+            align-self: center;
+        }
+
+        .col-right-item-title {
+            width: calc(100% - 50px);
+            height: 50px;
+            float: left;
+
+            text-align: center;
+
+        }
+        .col-right-item-title-inner {
+            float: right;
+            background: #bfbfbf;
+            width: 90%;
+            display: table;
+            font-weight: 500;
+            height: 100%;
+        }
+        .col-right-item-title-inner div {
+
+            display: table-cell;
+            vertical-align: middle;
+
+        }
+        .col-right-item-pic-line {
+            float: left;
+            height: 50px;
+            width: 10%;
+            position: relative;
+        }
+    }
 </style>
 <body>
 <div class="dozor-main-inner">
@@ -609,15 +709,17 @@
                                     <img src="/dozor_images/system_water.png"/>
                                     </div>
                                 </div>
+                            </div>
 
-                            </div>
-                            <div class="col-right-item-pic-line">
-                                <div>
-                                </div>
-                            </div>
                             <div class="col-right-item-title">
+                                <div class="col-right-item-pic-line">
+                                    <div>
+                                    </div>
+                                </div>
                                 <div class="col-right-item-title-inner">
-                                    Система<br/>ВОДОСНАБЖЕНИЯ
+                                    <div>
+                                        Система<br/>ВОДОСНАБЖЕНИЯ
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -629,14 +731,17 @@
                                         <img src="/dozor_images/system_energy.png"/>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="col-right-item-title">
                                 <div class="col-right-item-pic-line">
                                     <div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-right-item-title">
                                 <div class="col-right-item-title-inner">
-                                    Система<br/>ЭНЕРГОСНАБЖЕНИЯ
+                                    <div>
+                                        Система<br/>ЭНЕРГОСНАБЖЕНИЯ
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -648,15 +753,17 @@
                                         <img src="/dozor_images/system_fire_alarm.png"/>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="col-right-item-title">
                                 <div class="col-right-item-pic-line">
                                     <div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-right-item-title">
                                 <div class="col-right-item-title-inner">
-                                    Система<br/>ПОЖАРНОЙ<br/>СИГНАЛИЗАЦИИ
-
+                                    <div>
+                                        Система<br/>ПОЖАРНОЙ<br/>СИГНАЛИЗАЦИИ
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -668,14 +775,17 @@
                                         <img src="/dozor_images/system_conditioning.png"/>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="col-right-item-title">
                                 <div class="col-right-item-pic-line">
                                     <div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-right-item-title">
                                 <div class="col-right-item-title-inner">
-                                    Система<br/>КОНДИЦИОНИРОВАНИЯ
+                                    <div>
+                                        Система<br/>КОНДИЦИОНИРОВАНИЯ
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -687,14 +797,17 @@
                                         <img src="/dozor_images/system_fire_fighting.png"/>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="col-right-item-title">
                                 <div class="col-right-item-pic-line">
                                     <div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-right-item-title">
                                 <div class="col-right-item-title-inner">
-                                    Система<br/>ПОЖАРОТУШЕНИЯ
+                                    <div>
+                                        Система<br/>ПОЖАРОТУШЕНИЯ
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -706,14 +819,17 @@
                                         <img src="/dozor_images/system_supervision.png"/>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="col-right-item-title">
                                 <div class="col-right-item-pic-line">
                                     <div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-right-item-title">
                                 <div class="col-right-item-title-inner">
-                                    Система<br/>ВИДЕОНАБЛЮДЕНИЯ
+                                    <div>
+                                        Система<br/>ВИДЕОНАБЛЮДЕНИЯ
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -725,24 +841,124 @@
                                         <img src="/dozor_images/system_remote_access_control.png"/>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="col-right-item-title">
                                 <div class="col-right-item-pic-line">
                                     <div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-right-item-title">
                                 <div class="col-right-item-title-inner">
-                                    СКУД
+                                    <div>
+                                        СКУД
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="item-pt-tha">
                     <div class="item-pt-tha1-inner">
                         <div class="item-pt-tha1-inner-title">
                             PT THA
+                        </div>
+                        <div class="col-right-double">
+                            <div class="col-right-double-left">
+                                <div class="col-right-double-left-inner">
+
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    СКУД
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-right-double-left-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    СКУД
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-right-double-right">
+                                <div class="col-right-double-left-inner">
+
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    СКУД
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-right-double-right-item">
+                                        <div class="col-right-item-pic">
+                                            <div class="col-right-item-pic-icon">
+                                                <div>
+                                                    <img src="/dozor_images/system_remote_access_control.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-right-item-title">
+                                            <div class="col-right-item-pic-line">
+                                                <div>
+                                                </div>
+                                            </div>
+                                            <div class="col-right-item-title-inner">
+                                                <div>
+                                                    СКУД
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
