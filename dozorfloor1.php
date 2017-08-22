@@ -503,10 +503,25 @@
         width: 94%;
         padding-right: 3%;
         padding-left: 3%;
-        text-align: justify;
+        /*text-align: justify;*/
         font-family: "RobotoRegular";
-        box-sizing: border-box;
+        /*box-sizing: border-box;*/
         height: 40px;
+        /*display: flex;
+        justify-content: center;*/
+
+        display: -webkit-flex;
+        display:    -moz-flex;
+        display:     -ms-flex;
+        display:      -o-flex;
+        display:         flex;
+
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+
     }
     .map-container-floor-outer {
         width: 32%;
@@ -531,7 +546,7 @@
         text-align: center;
     }
 
-    .map-container-floors:before{
+/*    .map-container-floors:before{
         content: '';
         display: block;
         width: 100%;
@@ -545,9 +560,75 @@
         overflow: hidden;
         content: '';
         display: inline-block;
+    }*/
+
+.map-container-map{
+    width: 100%;
+    height: calc(100% - 80px);
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.map-container-map-inner {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+    .map-container-map-inner-img {
+        display: block;
+        width: ;
+        margin: 0 auto;
+        height: 100%;
+        background-image: url("/dozor_images/map-floor.png");
+        background-repeat:no-repeat;
+        background-size: contain;
+        position: relative;
+    }
+    .map-container-map-inner-img {
+        
     }
 
 
+    .col-right-item-pic {
+        width: 50px;
+        float: left;
+    }
+    .col-right-item-pic-icon {
+        float: left;
+        height: 50px;
+        width: 50px;
+        background: #00a070;
+        -webkit-border-radius: 25px;
+        display: table;
+
+        text-align: center;
+    }
+    .col-right-item-pic-icon div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .col-right-item-pic-icon img{
+        max-width: 25px;
+        max-height: 25px;
+        vertical-align: middle;
+        align-self: center;
+    }
+
+    .system_water {
+        position: absolute;
+        left: 10%;
+        top: 15%;
+    }
+.system_conditioning {
+    position: absolute;
+    left: 19%;
+    top: 20%;
+}
+.system_fire_fighting {
+    position: absolute;
+    left: 30%;
+    top: 25%;
+}
 
 
     @media (max-width: 1400px) {
@@ -633,6 +714,18 @@
         }
     }
 </style>
+<script src="/dozor_js/jquery-1.11.2.min.js"></script>
+<script>
+function resizeMap(){
+    var height = $(".map-container-map-inner-img").height();
+    console.log(height);
+    height = height + 'px';
+    $(".map-container-map-inner-img").width(height);
+}
+$(function() {
+    resizeMap();
+});
+</script>
 <body>
 <div class="dozor-main-inner">
     <div class="col-left">
@@ -812,7 +905,41 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="map-container-map">
+                   <div class="map-container-map-inner">
+                        <div class="map-container-map-inner-img">
 
+                            <div class="indicator-pic system_water">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_radio_dish.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="indicator-pic system_conditioning">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_conditioning.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="indicator-pic system_fire_fighting">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_fire_fighting.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
