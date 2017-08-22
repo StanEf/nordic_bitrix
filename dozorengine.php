@@ -53,23 +53,23 @@
     .hidden {
         display: none !important;
     }
-   .dozor-main-inner {
-       /*margin-left: 12%;
-       margin-right: 12%;
-       border: 1px solid black;*/
-       height: 100vh;
-       background: #d9d9d9;
-       font-family: "RobotoLight";
-   }
+    .dozor-main-inner {
+        /*margin-left: 12%;
+        margin-right: 12%;
+        border: 1px solid black;*/
+        height: 100vh;
+        background: #d9d9d9;
+        font-family: "RobotoLight";
+    }
     .col-left{
-       width: 23%;
+        width: 23%;
         display: inline-block;
         height: 100%;
         background: #003e63;
         float: left;
     }
     .col-left-logo {
-       width: 100%;
+        width: 100%;
         height: 140px;
         color: white;
 
@@ -79,17 +79,17 @@
         display: inline-block;
     }
     .col-left-logo-inner {
-       /*margin-top: 10px;
-       margin-bottom: 10px;*/
-       padding-left: 15%;
-       padding-right: 15%;
+        /*margin-top: 10px;
+        margin-bottom: 10px;*/
+        padding-left: 15%;
+        padding-right: 15%;
 
-       text-align: center;
-       display: table-cell;
-       vertical-align: middle;
-       font-size: 30px;
-       cursor: pointer;
-   }
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 30px;
+        cursor: pointer;
+    }
 
     .col-left-logo-text{
         border: 1px solid white;
@@ -97,7 +97,7 @@
         padding-bottom: 5px;
     }
     .col-left-menu{
-       /* padding-right: 15%;*/
+        /* padding-right: 15%;*/
         color: #003e63;
         font-family: "RobotoLight";
         font-style: semibold;
@@ -108,7 +108,7 @@
     .menu-top-level-item-outer {
         width: 100%;
         height: 80px;
-        //background: white;
+    //background: white;
         margin-top: 10px;
     }
     .menu-top-level-item {
@@ -195,12 +195,12 @@
     .menu-item-v1-top{
 
         height: 90px;
-        //  margin-top: 10px;
+    //  margin-top: 10px;
         background: #003e63;
         padding-left: 15%;
         padding-right: 15%;
-       /* padding-top: 10px;
-        padding-bottom: 10px;*/
+        /* padding-top: 10px;
+         padding-bottom: 10px;*/
 
     }
     .menu-item-v1-top2{
@@ -266,7 +266,7 @@
         padding: 2px;
     }
     .col-left-video-video{
-       border: 1px solid black;
+        border: 1px solid black;
         background: white;
         height: -webkit-fill-available;
     }
@@ -304,13 +304,13 @@
         text-align: center;
     }
 
-   .items-block {
-       width: 100%;
-       height: calc(100vh - 140px);
-       font-size: 18px;
-       box-sizing: border-box;
-       padding-bottom: 15px;
-   }
+    .items-block {
+        width: 100%;
+        height: calc(100vh - 140px);
+        font-size: 18px;
+        box-sizing: border-box;
+        padding-bottom: 15px;
+    }
     .item-engineering-complex {
         width: 32.7%;
         height: 100%;
@@ -345,11 +345,11 @@
         box-sizing: border-box;
         vertical-align:top;
     }
-   .item-pt-tha1-inner {
-       border: 1px solid black;
-       height: 100%;
+    .item-pt-tha1-inner {
+        border: 1px solid black;
+        height: 100%;
 
-   }
+    }
 
     .col-right-item {
         width: 94%;
@@ -357,20 +357,20 @@
         padding-left: 3%;
         padding-right: 3%;
         margin-bottom: 10px;
-   }
+    }
     .col-right-item-pic {
         width: 70px;
         float: left;
     }
     .col-right-item-pic-icon {
         float: left;
-        //display: inline-block;
+    //display: inline-block;
         height: 70px;
         width: 70px;
         background: #00a070;
         -webkit-border-radius: 35px;
         display: table;
-        //width: 100%;
+    //width: 100%;
         text-align: center;
         cursor: pointer;
     }
@@ -532,9 +532,9 @@
         float: right;
         cursor: pointer;
     }
-.item-disconnection {
-    border-bottom: none !important;
-}
+    .item-disconnection {
+        border-bottom: none !important;
+    }
 
     .map-container-floors-outer {
         width: 100%;
@@ -590,37 +590,37 @@
         text-align: center;
     }
 
-/*    .map-container-floors:before{
-        content: '';
-        display: block;
+    /*    .map-container-floors:before{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 0;
+        }
+
+        .map-container-floors:after {
+            width: 100%;
+            height: 0;
+            visibility: hidden;
+            overflow: hidden;
+            content: '';
+            display: inline-block;
+        }*/
+
+    .map-container-map{
         width: 100%;
-        height: 0;
+        height: calc(100% - 80px);
+        padding-bottom: 20px;
+        box-sizing: border-box;
+        text-align: center;
     }
-
-    .map-container-floors:after {
-        width: 100%;
-        height: 0;
-        visibility: hidden;
-        overflow: hidden;
-        content: '';
+    .map-container-map-inner {
         display: inline-block;
-    }*/
-
-.map-container-map{
-    width: 100%;
-    height: calc(100% - 80px);
-    padding-bottom: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-.map-container-map-inner {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-}
+        height: 100%;
+        width: 100%;
+    }
     .map-container-map-inner-img {
         display: block;
-        //width: ;
+    //width: ;
         margin: 0 auto;
         height: 100%;
         background-image: url("/dozor_images/engine2.png");
@@ -629,7 +629,7 @@
         position: relative;
     }
     .map-container-map-inner-img {
-        
+
     }
 
 
@@ -657,13 +657,13 @@
         vertical-align: middle;
         align-self: center;
     }
-.item-pop-up-exit img {
-    /*height: 40px;*/
-    width: 20px;
-}
-.item-disconnection {
+    .item-pop-up-exit img {
+        /*height: 40px;*/
+        width: 20px;
+    }
+    .item-disconnection {
 
-}
+    }
 
     .system_water {
         position: absolute;
@@ -711,20 +711,20 @@
         width: 80%;
         color: grey;
     }
-.indicator-temperature-number-big {
-    height: 100%;
-    width: 80%;
-    float: left;
-    font-size: 40px;
-}
-.indicator-temperature-small {
-    height: 100%;
-    width: 20%;
-    float: right;
-}
-.indicator-temperature-temperature-sign {
-    height: 50%;
-}
+    .indicator-temperature-number-big {
+        height: 100%;
+        width: 80%;
+        float: left;
+        font-size: 40px;
+    }
+    .indicator-temperature-small {
+        height: 100%;
+        width: 20%;
+        float: right;
+    }
+    .indicator-temperature-temperature-sign {
+        height: 50%;
+    }
     .indicator-temperature-number-small {
         height: 50%;
     }
@@ -828,97 +828,97 @@
 </style>
 <script src="/dozor_js/jquery-1.11.2.min.js"></script>
 <script>
-function resizeMap(){
-    var height = $(".map-container-map-inner-img").height();
-    console.log(height);
-    height = height + 'px';
-    $(".map-container-map-inner-img").width(height);
-}
-
-$(function() {
-    resizeMap();
-
-    $(".item-pop-up-exit").on("click", function(){
-        console.log("click");
-        $(".window-pop-up").hide();
-    });
-
-    $(".col-right-item-pic-icon").on("click", function(){
-        /*console.log("click");
-        $(".window-pop-up").show();*/
-    });
-
-    $(".col-right-item-pic-icon").on("mouseover", function(){
-        console.log("click");
-        $(".window-pop-up").show();
-    });
-    $(".col-right-item-pic-icon").on("mouseout", function(){
-        console.log("click");
-        $(".window-pop-up").hide();
-    });
-
-    $(".col-left-logo-inner").on("click", function(){
-        console.log("click");
-        window.open("/maps.php");
-    });
-
-    setInterval(function() {
-        console.log('fetch data');
-        fetchData();
-
-
-
-        }, 7000);
-    function fetchData(){
-        $.ajax({
-            url: 'dozor_ajax/getdata.php',
-            success: function(data){
-                console.log(data);
-            }
-        });
+    function resizeMap(){
+        var height = $(".map-container-map-inner-img").height();
+        console.log(height);
+        height = height + 'px';
+        $(".map-container-map-inner-img").width(height);
     }
 
-    function fetchData() {
-        $.ajax({
-            url: 'dozor_ajax/getdata.php',
-            success: function (data) {
-                /*var obj = jQuery.parseJSON(data);
-                var lastvalue = obj['items'][23675]['lastvalue'];
-                lastvalueArr = lastvalue.split('.');
-                $('.indicator-temperature-number-big').text(lastvalueArr[0]);
-                lastvalueArr2 = lastvalueArr[1].split('');
-                //console.log(lastvalueArr2);
-                $('.indicator-temperature-number-small').text('.' + lastvalueArr2[0]);
-                var temp_indicator_color;*/
+    $(function() {
+        resizeMap();
 
-                //obj['trigger'][13563] = {'triggerid' : 1, 1: 2};
-                /*obj['trigger'][13561] = {'triggerid': 1, 1: 2};
-                console.log(obj['trigger']);
-
-                if (!$.isEmptyObject(obj['trigger'][13563])) {
-                    temp_indicator_color = '#bb6767';
-                } else if (!$.isEmptyObject(obj['trigger'][13561])) {
-                    temp_indicator_color = '#ffda73';
-                } else {
-                    temp_indicator_color = '#00a070';
-                }
-
-                console.log('temp_indicator_color ' + temp_indicator_color);
-
-                $('.col-right-item-pic-icon-indicator-temperature').css('background', temp_indicator_color);
-                $('.col-right-item-pic-icon').css('background', temp_indicator_color);
-
-                $('.complex-engineering .menu-top-level-item-indicator-half').each(function( index ) {
-                    $(this).removeClass('red');
-                    $(this).removeClass('green');
-                    $(this).removeClass('yellow');
-                    $(this).css('background', temp_indicator_color);
-                });*/
-            }
+        $(".item-pop-up-exit").on("click", function(){
+            console.log("click");
+            $(".window-pop-up").hide();
         });
-    };
 
-});
+        $(".col-right-item-pic-icon").on("click", function(){
+            /*console.log("click");
+             $(".window-pop-up").show();*/
+        });
+
+        $(".col-right-item-pic-icon").on("mouseover", function(){
+            console.log("click");
+            $(".window-pop-up").show();
+        });
+        $(".col-right-item-pic-icon").on("mouseout", function(){
+            console.log("click");
+            $(".window-pop-up").hide();
+        });
+
+        $(".col-left-logo-inner").on("click", function(){
+            console.log("click");
+            window.open("/maps.php");
+        });
+
+        setInterval(function() {
+            console.log('fetch data');
+            fetchData();
+        }, 6000);
+        var colorIndicatorArr = {
+            'indicator_color_red' : '#bb676',
+            'indicator_color_yellow' : '#ffda73',
+            'indicator_color_green' : '#00a070'
+        };
+
+
+        function fetchData() {
+            $.ajax({
+                url: 'dozor_ajax/getdata.php',
+                success: function (data) {
+                    var obj = jQuery.parseJSON(data);
+                    var lastvalue = obj['items'][23675]['lastvalue'];
+                    lastvalueArr = lastvalue.split('.');
+                    $('.indicator-temperature-number-big').text(lastvalueArr[0]);
+                    lastvalueArr2 = lastvalueArr[1].split('');
+                    //console.log(lastvalueArr2);
+                    $('.indicator-temperature-number-small').text('.' + lastvalueArr2[0]);
+                    var temp_indicator_color;
+
+                    //obj['trigger'][13563] = {'triggerid' : 1, 1: 2};
+                    //obj['trigger'][13561] = {'triggerid': 1, 1: 2};
+                    console.log(obj['trigger']);
+
+                    if (!$.isEmptyObject(obj['trigger'][13564])) {
+                        temp_indicator_color = '#bb6767';
+                    } else if (!$.isEmptyObject(obj['trigger'][13562])) {
+                        temp_indicator_color = '#ffda73';
+                    } else {
+                        temp_indicator_color = '#00a070';
+                    }
+
+                    console.log('temp_indicator_color ' + temp_indicator_color);
+
+                    $('.col-right-item-pic-icon-indicator-temperature').css('background', temp_indicator_color);
+                    $('.col-right-item-pic-icon').css('background', temp_indicator_color);
+
+                    $('.complex-engineering .menu-top-level-item-indicator-half').each(function( index ) {
+                        $(this).removeClass('red');
+                        $(this).removeClass('green');
+                        $(this).removeClass('yellow');
+                        $(this).css('background', temp_indicator_color);
+                    });
+                    if(temp_indicator_color == '#bb6767' ||  temp_indicator_color == '#ffda73'){
+                        $('.menu-top-level-item-indicator-num-inner p').text(1);
+                    }else{
+                        $('.menu-top-level-item-indicator-num-inner p').text('');
+                    }
+
+                }
+            });
+        };
+    });
 </script>
 <body>
 <div class="dozor-main-inner">
@@ -945,19 +945,14 @@ $(function() {
                                 </div>
                             </div>
                             <div class="menu-top-level-item-indicator-color">
-                                <div class="menu-top-level-item-indicator-color2 mod">
+                                <div class="menu-top-level-item-indicator-color2">
                                     <div class="menu-top-level-item-indicator-color-inner">
-                                        <div class="menu-top-level-item-indicator-half red">
+                                        <div class="menu-top-level-item-indicator-half">
                                         </div>
-                                        <div class="menu-top-level-item-indicator-half yellow">
+                                        <div class="menu-top-level-item-indicator-half">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="menu-top-level-item-indicator-num">
-                            <div class="menu-top-level-item-indicator-num-inner">
-                                <p>5</p>
                             </div>
                         </div>
                     </div>
@@ -973,15 +968,21 @@ $(function() {
                                 </div>
                             </div>
                         </div>
+
                         <div class="menu-top-level-item-indicator-color">
-                            <div class="menu-top-level-item-indicator-color2">
-                                <div class="menu-top-level-item-indicator-color-inner">
-                                    <div class="menu-top-level-item-indicator-half">
+                            <div class="menu-top-level-item-indicator-color2 mod">
+                                <div class="menu-top-level-item-indicator-color-inner complex-engineering">
+                                    <div class="menu-top-level-item-indicator-half red">
                                     </div>
-                                    <div class="menu-top-level-item-indicator-half">
+                                    <div class="menu-top-level-item-indicator-half yellow">
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="menu-top-level-item-indicator-num">
+                        <div class="menu-top-level-item-indicator-num-inner">
+                            <p>5</p>
                         </div>
                     </div>
                     <div class="menu-top-level-item-indicator-num hidden">
@@ -1124,13 +1125,13 @@ $(function() {
                     </div>
                 </div>
                 <div class="map-container-map">
-                   <div class="map-container-map-inner">
+                    <div class="map-container-map-inner">
                         <div class="map-container-map-inner-img">
                             <div class="indicator-pic system_water">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
-                                          <!--<img src="/dozor_images/system_remote_access_control.png"/>-->
+                                            <!--<img src="/dozor_images/system_remote_access_control.png"/>-->
                                         </div>
                                     </div>
                                 </div>
@@ -1161,12 +1162,12 @@ $(function() {
                                     </div>
                                 </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 </body>

@@ -374,6 +374,23 @@
         text-align: center;
         cursor: pointer;
     }
+   /* .col-right-item-pic-icon:hover .window-pop-up{
+
+        display: block !important;
+
+    }
+
+    .col-right-item-pic-icon:hover .map-container-floor-inner{
+
+       background: grey;
+
+    }
+    .col-right-item-pic-icon:hover{
+
+        background: grey;
+
+    }*/
+
     .col-right-item-pic-icon div {
         display: table-cell;
         vertical-align: middle;
@@ -823,7 +840,7 @@ $(function() {
         }
     }*/
     if(! jQuery.browser.mobile){
-        $(".col-right-item-pic-icon").on("mouseover", function(){
+        $(".col-right-item-pic-icon").on("mouseenter", function(){
             console.log("click");
             var total_container_width = $('.map-container-map-inner-img').width();
             var total_container_height = $('.map-container-map-inner-img').height();
@@ -868,7 +885,7 @@ $(function() {
                 $(".window-pop-up").addClass('display_block');
             }
         });
-
+        /*$(".col-right-item-pic-icon").mouseenter($.debounce(popupMouseOver, 1000));*/
         function popupMouseOver(){
             console.log("click");
             var total_container_width = $('.map-container-map-inner-img').width();
@@ -883,8 +900,8 @@ $(function() {
 
             var icon_left = parseInt(parent.css('left'));
             var icon_top = parseInt(parent.css('top'));
-            /*var icon_bottom = parseInt(parent.css('bottom'));
-             var icon_right = parseInt(parent.css('right'));*/
+            var icon_bottom = parseInt(parent.css('bottom'));
+             var icon_right = parseInt(parent.css('right'));
 
             var window_pop_up_width = 320;
             var window_pop_up_height = 215;
@@ -908,7 +925,7 @@ $(function() {
             $(".window-pop-up").css('bottom', popup_corner_bottom);
             $(".window-pop-up").css('right', popup_corner_right);
 
-            /*console.log('window_pop_up_width ' +window_pop_up_width + ' '  +'window_pop_up_height '+ window_pop_up_height);
+            console.log('window_pop_up_width ' +window_pop_up_width + ' '  +'window_pop_up_height '+ window_pop_up_height);
              console.log('icon_left '+icon_left + ' icon_top '  + icon_top);
              var left_corner = parseInt(icon_left) - window_pop_up_width + 'px';
              var bottom_corner = window_pop_up_height - parseInt(icon_top) - (parseInt(icon_top) - parseInt(icon_bottom))  + 'px';
@@ -916,7 +933,8 @@ $(function() {
              $(".window-pop-up").css('left', left_corner);
              $(".window-pop-up").css('top', icon_top);
              $(".window-pop-up").css('bottom', bottom_corner);
-             $(".window-pop-up").css('right', icon_left);*/
+             $(".window-pop-up").css('right', icon_left);
+
             if($(".window-pop-up").hasClass('display_none')) {
                 $(".window-pop-up").removeClass('display_none');
             }
@@ -927,15 +945,31 @@ $(function() {
         }
 
 
-        $(".col-right-item-pic-icon").on("mouseout", function(){
-            console.log("click");
+        $(".col-right-item-pic-icon").on("mouseleave", function(){
+            console.log("mouseout");
             //$(".window-pop-up").hide();
+
             if($(".window-pop-up").hasClass('display_block')) {
                 $(".window-pop-up").removeClass('display_block');
             }
-
             if(! $(".window-pop-up").hasClass('display_none')) {
                 $(".window-pop-up").addClass('display_none');
+            }
+
+        });
+
+        $('.window-pop-up').on('mouseenter', function(){
+            console.log("window-pop-up mouseenter");
+            if($(".window-pop-up").hasClass('display_none')) {
+                $(".window-pop-up").removeClass('display_none');
+                $(".window-pop-up").addClass('display_block')
+            }
+        });
+        $('.window-pop-up').on('mouseleave', function(){
+            console.log("window-pop-up mouseenter");
+            if($(".window-pop-up").hasClass('display_block')) {
+                $(".window-pop-up").removeClass('display_block');
+                $(".window-pop-up").addClass('display_none')
             }
         });
 
