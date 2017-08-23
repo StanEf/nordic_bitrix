@@ -38,6 +38,7 @@
     }
     body {
         margin: 0px;
+        position: relative;
     }
     .red {
         background: #bb6767 !important;
@@ -86,7 +87,7 @@
        text-align: center;
        display: table-cell;
        vertical-align: middle;
-       font-size: 40px;
+       font-size: 30px;
    }
 
     .col-left-logo-text{
@@ -392,6 +393,7 @@
         float: left;
         width: 18%;
         margin-right: 1%;
+        display: none;
 
     }
     .info-status-block-item-indicator{
@@ -408,6 +410,7 @@
        font-size: 18px;
        box-sizing: border-box;
        padding-bottom: 15px;
+
    }
     .item-engineering-complex {
         width: 32.7%;
@@ -551,7 +554,59 @@
         margin-bottom: 10px;
     }
 
+    .window-pop-up {
+        position: absolute;
+        top: 30%;
+        bottom: 40%;
+        left: 25%;
+        right: 25%;
+        z-index: 100;
+        display: none;
+    }
+    .window-pop-up-inner {
+        z-index: 100;
+        background: white;
+        border-radius: 5px;
+        padding: 10px;
+        width: 300px;
+        margin: auto;
+    }
+    .window-pop-up-inner>div{
+        border-bottom: 1px solid darkgray;
 
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .item-room-and-exit {
+        display: inline-block;
+        width: 100%;
+    }
+    .item-room-title {
+        font-family: "RobotoRegular";
+        float: left;
+    }
+    .item-pop-up-exit {
+        float: right;
+        cursor: pointer;
+    }
+    .item-pop-up-exit img {
+        /*height: 40px;*/
+        width: 20px;
+    }
+
+    .display_block{
+        display: block;
+    }
+    .display_none {
+        display: none;
+    }
+
+    @media (max-width: 1500px) {
+        .col-left-logo-inner {
+            font-size: 26px;
+        }
+    }
 
     @media (max-width: 1400px) {
         .items-block {
@@ -562,8 +617,14 @@
         .items-block {
             font-size: 14px;
         }
+        .col-left-logo-inner {
+            font-size: 21px;
+        }
     }
     @media (max-width: 1024px) {
+        .col-left-logo-inner {
+            font-size: 19px;
+        }
         .col-right-double-left-item {
             height: 50px;
         }
@@ -642,6 +703,222 @@
         }
     }
 </style>
+
+<script src="/dozor_js/jquery-1.11.2.min.js"></script>
+<script src="/dozor_js/jquery.ba-throttle-debounce.min.js"></script>
+<script src="/dozor_js/detectmobiledevice.js"></script>
+<script src="/dozor_js/jquery.debounce-1.0.5.js"></script>
+
+<script>
+$(function() {
+
+    if(! jQuery.browser.mobile){
+        $(".col-right-item-pic-icon.work").on("mouseenter", function(){
+            console.log("click");
+
+           //var dfdf =  $(".items-block").getBoundingClientRect();
+
+            var total_container_width = $('body').width();
+            var total_container_height = $('body').height();
+            console.log('total_container_width ' + total_container_width);
+            console.log('total_container_height ' + total_container_height);
+            var parent = $(this).closest('.col-right-item-pic');
+            var elem_coord = this.getBoundingClientRect();
+            //var elem_coord = $(".col-right-item-pic-icon.work.ww").getBoundingClientRect();
+
+            console.log(' elem_coord icon_right ' + elem_coord.right);
+            console.log(' elem_coord icon_top ' + elem_coord.top);
+
+            var icon_right = elem_coord.right;
+            var icon_top = elem_coord.top;
+
+            var window_pop_up_width = 320;
+            var window_pop_up_height = 215;
+            console.log('window_pop_up_height ' + window_pop_up_height);
+            console.log('window_pop_up_width ' + window_pop_up_width);
+
+            var popup_corner_left = icon_right;
+            popup_corner_left = popup_corner_left + 'px';
+
+            var popup_corner_right = total_container_width - icon_right;
+            popup_corner_right = popup_corner_right + 'px';
+
+            var popup_corner_top = icon_top + 'px';
+            var popup_corner_bottom = total_container_height - icon_top - window_pop_up_height;
+            popup_corner_bottom = popup_corner_bottom + 'px';
+
+            console.log('popup_corner_left ' + popup_corner_left);
+            console.log('popup_corner_right ' + popup_corner_right);
+            console.log('popup_corner_top ' + popup_corner_top);
+            console.log('popup_corner_bottom ' + popup_corner_bottom);
+
+            $(".window-pop-up").css('left', popup_corner_left);
+            $(".window-pop-up").css('top', popup_corner_top);
+            $(".window-pop-up").css('bottom', popup_corner_bottom);
+            $(".window-pop-up").css('right', popup_corner_right);
+
+            if($(".window-pop-up").hasClass('display_none')) {
+                $(".window-pop-up").removeClass('display_none');
+            }
+
+            if(! $(".window-pop-up").hasClass('display_block')) {
+                $(".window-pop-up").addClass('display_block');
+            }
+        });
+
+        $(".col-right-item-pic-icon.work").on("mouseleave", function(){
+            console.log("mouseout");
+            if($(".window-pop-up").hasClass('display_block')) {
+                $(".window-pop-up").removeClass('display_block');
+            }
+            if(! $(".window-pop-up").hasClass('display_none')) {
+                $(".window-pop-up").addClass('display_none');
+            }
+        });
+
+        $('.window-pop-up').on('mouseenter', function(){
+            console.log("window-pop-up mouseenter");
+            if($(".window-pop-up").hasClass('display_none')) {
+                $(".window-pop-up").removeClass('display_none');
+                $(".window-pop-up").addClass('display_block')
+            }
+        });
+
+        $('.window-pop-up').on('mouseleave', function(){
+            console.log("window-pop-up mouseenter");
+            if($(".window-pop-up").hasClass('display_block')) {
+                $(".window-pop-up").removeClass('display_block');
+                $(".window-pop-up").addClass('display_none')
+            }
+        });
+
+
+    }else{
+        $(".col-right-item-pic-icon.work").on("click", function(){
+            /*console.log("click");*/
+            $(".window-pop-up").show();
+        });
+        $(".item-pop-up-exit").on("click", function(){
+            console.log("click");
+            $(".window-pop-up").hide();
+        });
+    }
+    $(".col-left-logo-inner").on("click", function(){
+        console.log("click");
+        window.open("/maps.php");
+    });
+
+
+    fetchData();
+    setInterval(function() {
+        console.log('fetch data');
+        fetchData();
+    }, 6000);
+
+    var colorIndicatorArr = {
+        'indicator_color_red' : '#bb676',
+        'indicator_color_yellow' : '#ffda73',
+        'indicator_color_green' : '#00a070'
+    };
+
+    function fetchData() {
+        $.ajax({
+            url: 'dozor_ajax/getdata.php',
+            success: function (data) {
+                var obj = jQuery.parseJSON(data);
+                var temp_indicator_color;
+
+                //obj['trigger'][13591] = {'triggerid' : 1, 1: 2}; // верхний бак переполнен
+                //obj['trigger'][13589] = {'triggerid': 1, 1: 2}; // верхний бак пустой
+
+                var water_trigger_state;
+                if (!$.isEmptyObject(obj['trigger'][13591])) {
+                    water_indicator_color = '#bb6767';
+                    water_trigger_state = 2;
+                } else if (!$.isEmptyObject(obj['trigger'][13589])) {
+                    water_indicator_color = '#ffda73';
+                    water_trigger_state = 1;
+                } else {
+                    water_indicator_color = '#00a070';
+                    water_trigger_state = 0;
+                }
+
+                obj['trigger'][13563] = {'triggerid' : 1, 1: 2}; // t > 80
+                //obj['trigger'][13561] = {'triggerid': 1, 1: 2}; // t > 50
+                console.log(obj['trigger']);
+
+                var temperature_trigger_state;
+                if (!$.isEmptyObject(obj['trigger'][13563])) {
+                    temperature_indicator_color = '#bb6767';
+                    temperature_trigger_state = 2;
+                } else if (!$.isEmptyObject(obj['trigger'][13561])) {
+                    temperature_indicator_color = '#ffda73';
+                    temperature_trigger_state = 1;
+                } else {
+                    temperature_indicator_color = '#00a070';
+                    temperature_trigger_state = 0;
+                }
+
+                $(".col-right-item-pic-icon.work.water").attr("data-state", water_trigger_state);
+                console.log('water_indicator_color ' + water_indicator_color);
+
+                $(".col-right-item-pic-icon.work.water").css('background', water_indicator_color);
+                var counter_error_water =  '';
+
+                if(water_indicator_color === '#bb6767' ||  water_indicator_color === '#ffda73'){
+                    counter_error_water = 1;
+                }
+                console.log('counter_error_water ' + counter_error_water);
+                $(".col-right-item-pic-icon.work.temperature").attr("data-state", temperature_trigger_state);
+                console.log('temperature_indicator_color ' + temperature_indicator_color);
+
+                $(".col-right-item-pic-icon.work.temperature").css('background', temperature_indicator_color);
+                var counter_error_temperature =  '';
+                if(temperature_indicator_color === '#bb6767' ||  temperature_indicator_color === '#ffda73'){
+                    counter_error_temperature = 1;
+                }
+                $(".col-right-item-pic-icon.work.water").attr("data-state", water_trigger_state);
+
+                $("#menu-indicator-color-water .menu-top-level-item-indicator-half").each(function(){
+                    $(this).removeClass('red');
+                    $(this).removeClass('green');
+                    $(this).removeClass('yellow');
+                    $(this).css('background', water_indicator_color);
+                });
+                $("#menu-indicator-counter-water p").text(counter_error_water);
+
+                $(".col-right-item-pic-icon.work.temperature").attr("data-state", temperature_trigger_state);
+
+                $("#menu-indicator-color-temperature .menu-top-level-item-indicator-half").each(function(){
+                    $(this).removeClass('red');
+                    $(this).removeClass('green');
+                    $(this).removeClass('yellow');
+                    $(this).css('background', temperature_indicator_color);
+                });
+                $("#menu-indicator-counter-temperature p").text(counter_error_temperature);
+
+                if(water_trigger_state == 2){
+                    $(".info-status-block-item.water2").css("display", "block");
+                }else if(water_trigger_state == 1){
+                    $(".info-status-block-item.water1").css("display", "block");
+                }else{
+                    $(".info-status-block-item.water0").css("display", "block");
+                }
+
+                if(temperature_trigger_state == 2){
+                    $(".info-status-block-item.temperature2").css("display", "block");
+                }else if(temperature_trigger_state == 1){
+                    $(".info-status-block-item.temperature1").css("display", "block");
+                }else{
+                    $(".info-status-block-item.temperature0").css("display", "block");
+                }
+            }
+        });
+    };
+
+
+});
+</script>
 <body>
 <div class="dozor-main-inner">
     <div class="col-left">
@@ -650,85 +927,14 @@
             <!--<div class="col-left-logo-inner-pre">-->
                 <div class="col-left-logo-inner">
                     <div class="col-left-logo-text">
-                        ДОЗОР
+                        Панель<br/>
+                        администратора
                     </div>
                 </div>
             <!--</div>-->
         </div>
 
         <div class="col-left-menu">
-        <!--    <div class="menu-item-top-outer">
-                <div class="menu-item-top menu-item-top-top">
-                    <div class="menu-item-top2">
-                        <div class="menu-item-top-inner">
-                            <div class="menu-item-top-inner-text">
-                                Инженерный<br>комплекс
-                            </div>
-                            <div class="menu-item-indicator-cell">
-                                <div class="menu-item-indicator">
-                                    <div class="menu-item-indicator-half">
-                                    </div>
-                                    <div class="menu-item-indicator-half">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-item-top-outer">
-                <div class="menu-item-top">
-                    <div class="menu-item-top2">
-                        <div class="menu-item-top-inner">
-                            <div class="menu-item-top-inner-text">
-                                THA - 1500
-                            </div>
-                            <div class="menu-item-indicator-cell">
-                                <div class="menu-item-indicator">
-                                    <div class="menu-item-indicator-half">
-                                    </div>
-                                    <div class="menu-item-indicator-half">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item-indicator-num">
-                    <div class="menu-item-indicator-num-inner">
-                        5
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="menu-top-level-item-outer">
-                <div class="menu-top-level-item">
-                    <div class="menu-top-level-item-text-and-indicator-color">
-                        <div class="menu-top-level-item-text">
-                            <div class="menu-top-level-item-text-inner">
-                                THA - 1500
-                            </div>
-                        </div>
-                        <div class="menu-top-level-item-indicator-color">
-                            <div class="menu-top-level-item-indicator-color2">
-                                <div class="menu-top-level-item-indicator-color-inner">
-                                    <div class="menu-top-level-item-indicator-half">
-                                    </div>
-                                    <div class="menu-top-level-item-indicator-half">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-top-level-item-indicator-num">
-                        <div class="menu-top-level-item-indicator-num-inner">
-                            5
-                        </div>
-                    </div>
-                </div>
-
-            </div>-->
             <div class="menu-top-level-item-outer">
                 <div class="menu-top-level-item">
                     <div class="menu-top-level-item2">
@@ -740,9 +946,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="menu-top-level-item-indicator-color">
+                            <div class="menu-top-level-item-indicator-color water">
                                 <div class="menu-top-level-item-indicator-color2 mod">
-                                    <div class="menu-top-level-item-indicator-color-inner">
+                                    <div class="menu-top-level-item-indicator-color-inner" id="menu-indicator-color-water">
                                         <div class="menu-top-level-item-indicator-half red">
                                         </div>
                                         <div class="menu-top-level-item-indicator-half yellow">
@@ -752,8 +958,8 @@
                             </div>
                         </div>
                         <div class="menu-top-level-item-indicator-num">
-                            <div class="menu-top-level-item-indicator-num-inner">
-                                <p>5</p>
+                            <div class="menu-top-level-item-indicator-num-inner" id="menu-indicator-counter-water">
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -770,21 +976,22 @@
                                     THA - 1500
                                 </div>
                             </div>
+
                         </div>
-                        <div class="menu-top-level-item-indicator-color">
-                            <div class="menu-top-level-item-indicator-color2">
-                                <div class="menu-top-level-item-indicator-color-inner">
-                                    <div class="menu-top-level-item-indicator-half">
+                        <div class="menu-top-level-item-indicator-color temperature">
+                            <div class="menu-top-level-item-indicator-color2 mod">
+                                <div class="menu-top-level-item-indicator-color-inner" id="menu-indicator-color-temperature">
+                                    <div class="menu-top-level-item-indicator-half red">
                                     </div>
-                                    <div class="menu-top-level-item-indicator-half">
+                                    <div class="menu-top-level-item-indicator-half yellow">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="menu-top-level-item-indicator-num hidden">
-                        <div class="menu-top-level-item-indicator-num-inner">
-                            <p>5</p>
+                    <div class="menu-top-level-item-indicator-num">
+                        <div class="menu-top-level-item-indicator-num-inner" id="menu-indicator-counter-temperature">
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -853,40 +1060,67 @@
         <div class="col-right-inner">
             <div class="info-status-block">
                 <div class="info-status-block-inner">
-                    <div class="info-status-block-item">
+                    <div class="info-status-block-item temperature0">
                         <div class="info-status-block-item-indicator green"></div>
                         <div class="info-status-block-item-title">
                             ТНA - 1500<br/>ИСПРАВЕН
                         </div>
                     </div>
-                    <div class="info-status-block-item">
+                    <div class="info-status-block-item water0">
+                        <div class="info-status-block-item-indicator green"></div>
+                        <div class="info-status-block-item-title">
+                            ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>ИСПРАВЕН
+                        </div>
+                    </div>
+                    <div class="info-status-block-item water1">
                         <div class="info-status-block-item-indicator yellow"></div>
                         <div class="info-status-block-item-title">
                             ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
                         </div>
                     </div>
-                    <div class="info-status-block-item">
+                    <div class="info-status-block-item water2">
                         <div class="info-status-block-item-indicator red"></div>
                         <div class="info-status-block-item-title">
                             ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
                         </div>
                     </div>
-                    <div class="info-status-block-item">
-                        <div class="info-status-block-item-indicator red"></div>
+                    <div class="info-status-block-item temperature1">
+                        <div class="info-status-block-item-indicator yellow"></div>
                         <div class="info-status-block-item-title">
-                            ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
+                            ТНA - 1500<br/>НЕ ИСПРАВЕН
                         </div>
                     </div>
-                    <div class="info-status-block-item">
+                    <div class="info-status-block-item temperature2">
                         <div class="info-status-block-item-indicator red"></div>
                         <div class="info-status-block-item-title">
-                            ИНЖЕНЕРНЫЙ КОМПЛЕКС<br/>НЕ ИСПРАВЕН
+                            ТНA - 1500<br/>НЕ ИСПРАВЕН
                         </div>
                     </div>
 
                 </div>
             </div>
             <div class="items-block">
+                <div class="window-pop-up">
+                    <div class="window-pop-up-inner">
+                        <div class="item-room-and-exit">
+                            <div class="item-room-title">
+                                Помещение 032
+                            </div>
+                            <div class="item-pop-up-exit">
+                                <img src="/dozor_images/multiply.png">
+                            </div>
+                        </div>
+                        <div class="item-scheme">
+                            Показать схему
+                        </div>
+                        <div class="item-characteristics">
+                            Показать характеристики и чертежи устройства
+                        </div>
+                        <div class="item-disconnection">
+                            Отключить устройство
+                        </div>
+                    </div>
+                </div>
                 <div class="item-engineering-complex">
                     <div class="item-engineering-complex-inner">
                         <div class="item-engineering-complex-inner-title">
@@ -894,9 +1128,9 @@
                         </div>
                         <div class="col-right-item">
                             <div class="col-right-item-pic">
-                                <div class="col-right-item-pic-icon">
+                                <div class="col-right-item-pic-icon work water">
                                     <div>
-                                    <img src="/dozor_images/system_water.png"/>
+                                        <img src="/dozor_images/system_water.png"/>
                                     </div>
                                 </div>
                             </div>
@@ -1122,7 +1356,7 @@
                                     </div>
                                     <div class="col-right-double-left-item">
                                         <div class="col-right-item-pic">
-                                            <div class="col-right-item-pic-icon">
+                                            <div class="col-right-item-pic-icon work temperature">
                                                 <div>
                                                     <img src="/dozor_images/system_radio_dish.png"/>
                                                 </div>

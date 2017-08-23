@@ -865,6 +865,7 @@ function resizeMap(){
     console.log(height);
     height = height + 'px';
     $(".map-container-map-inner-img").width(height);
+    $(".map-container-map-inner-img img").width(height);
 }
 
 $(function() {
@@ -928,44 +929,19 @@ $(function() {
         }
     });
 
-/*    function doShow(){
-        console.log('doShow');
-        if($(".window-pop-up").hasClass('display_none')) {
-            $(".window-pop-up").removeClass('display_none');
-        }
-
-        if(! $(".window-pop-up").hasClass('display_block')) {
-            $(".window-pop-up").addClass('display_block');
-        }
-    }
-
-    function doHide(){
-        if($(".window-pop-up").hasClass('display_block')) {
-            $(".window-pop-up").removeClass('display_block');
-        }
-
-        if(! $(".window-pop-up").hasClass('display_none')) {
-            $(".window-pop-up").addClass('display_none');
-        }
-    }*/
-
-
     var video_width = $(".col-left-video-video").width();
-
-   // var video_height = $(".col-left-video-video").height();
     var video_height = video_width * 0.625;
-    /*console.log('video_width '+ video_width);
-    console.log('video_height '+ video_height);*/
+
     $(".col-left-video-video").width(video_width);
     $(".col-left-video-video").height(video_height);
     $(".col-left-video-video img").width(video_width);
     $(".col-left-video-video img").height(video_height);
 
-$(".col-left-video-video").on("click", function(){
-    var src = $(this).find("img").attr("src");
-    $(this).find("img").remove();
-    setTimeout(function(){window.open(src);}, 1000);
-});
+    $(".col-left-video-video").on("click", function(){
+        var src = $(this).find("img").attr("src");
+        $(this).find("img").remove();
+        setTimeout(function(){window.open(src);}, 1000);
+    });
 
     if(! jQuery.browser.mobile){
         $(".col-right-item-pic-icon.work").on("mouseenter", function(){
@@ -1057,6 +1033,7 @@ $(".col-left-video-video").on("click", function(){
         console.log('fetch data');
         fetchData();
     }, 6000);
+
     var colorIndicatorArr = {
         'indicator_color_red' : '#bb676',
         'indicator_color_yellow' : '#ffda73',
@@ -1304,7 +1281,7 @@ $(".col-left-video-video").on("click", function(){
                 <div class="map-container-map">
                    <div class="map-container-map-inner">
                         <div class="map-container-map-inner-img">
-                            <img width='774px' src='/dozor_images/map_route.png'/>
+                            <img  src='/dozor_images/map_route.png'/>
 
                             <div class="indicator-pic indicator-pic-system-water" data-state="1">
                                 <div class="col-right-item-pic">
