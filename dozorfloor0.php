@@ -102,7 +102,7 @@
         font-family: "RobotoLight";
         font-style: semibold;
         font-size: 24px;
-        height: calc(100% - 340px);
+        height: 650px;
         margin-bottom: -30%;
     }
     .menu-top-level-item-outer {
@@ -269,6 +269,12 @@
        border: 1px solid black;
         background: white;
         height: -webkit-fill-available;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    .col-left-video-video img{
+        /*height: 100%;
+        width: 100%;*/
     }
 
     .col-right {
@@ -759,6 +765,9 @@
         .col-left-logo-inner {
             font-size: 21px;
         }
+        .col-left-menu {
+            height: 550px;
+        }
     }
     @media (max-width: 1024px) {
         .col-left-logo-inner {
@@ -766,6 +775,7 @@
         }
         .col-left-menu{
             font-size: 20px;
+            height: 510px;
         }
         .items-block {
             font-size: 12px;
@@ -938,6 +948,25 @@ $(function() {
             $(".window-pop-up").addClass('display_none');
         }
     }*/
+
+
+    var video_width = $(".col-left-video-video").width();
+
+   // var video_height = $(".col-left-video-video").height();
+    var video_height = video_width * 0.625;
+    /*console.log('video_width '+ video_width);
+    console.log('video_height '+ video_height);*/
+    $(".col-left-video-video").width(video_width);
+    $(".col-left-video-video").height(video_height);
+    $(".col-left-video-video img").width(video_width);
+    $(".col-left-video-video img").height(video_height);
+
+$(".col-left-video-video").on("click", function(){
+    var src = $(this).find("img").attr("src");
+    $(this).find("img").remove();
+    setTimeout(function(){window.open(src);}, 1000);
+});
+
     if(! jQuery.browser.mobile){
         $(".col-right-item-pic-icon.work").on("mouseenter", function(){
             console.log("click");
@@ -1218,7 +1247,7 @@ $(function() {
                 Помещение №4
             </div>
             <div class="col-left-video-video">
-
+                <img src="http://10.12.0.202:81/video2.mjpg" />
             </div>
         </div>
     </div>
