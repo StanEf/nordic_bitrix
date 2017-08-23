@@ -484,7 +484,7 @@
     }
 
     .map-info-status-block-item {
-
+        cursor: pointer;
         float: right;
         height: 100px;
         width: 100px;
@@ -494,10 +494,16 @@
         display: table;
         margin-left: 3%;
     }
+    .map-info-status-block-item-selected {
+        background: #4d5c71;
+    }
     .map-info-status-block-item-inner {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
+    }
+    .map-info-status-block-item-inner .selected {
+        display: none;
     }
     .map-info-status-block-item-inner img {
         max-width: 60px;
@@ -644,8 +650,9 @@
         background-size: contain;
         position: relative;
     }
-    .map-container-map-inner-img {
-        
+    .map-container-map-inner-img>img {
+        width: 774px;
+        display: none;
     }
 
 
@@ -681,10 +688,56 @@
 
 }
 
-    .system_water {
+    .indicator-pic-system-water {
         position: absolute;
-        left: 75%;
-        top: 26%;
+        left: 76%;
+        top: 24%;
+    }
+    .indicator-pic-system-energy {
+        position: absolute;
+        left: 53%;
+        top: 18%;
+    }
+    .indicator-pic-system-fire-fighting {
+        position: absolute;
+        left: 35%;
+        top: 35%;
+    }
+    .indicator-pic-system-conditioning {
+        position: absolute;
+        left: 19%;
+        top: 20%;
+    }
+    .indicator-pic-system-supervision1 {
+        position: absolute;
+        left: 10%;
+        top: 36%;
+    }
+    .indicator-pic-system-supervision2 {
+        position: absolute;
+        left: 56%;
+        top: 78%;
+    }
+    .indicator-pic-system-supervision3 {
+        position: absolute;
+        left: 55%;
+        top: 60%;
+    }
+    .indicator-pic-system-water2 {
+        position: absolute;
+        left: 62%;
+        top: 57%;
+    }
+    .indicator-pic-system-fire-alarm {
+        position: absolute;
+        left: 28%;
+        top: 80%;
+    }
+
+    .indicator-pic-system-remote-access-control {
+        position: absolute;
+        left: 47%;
+        top: 85%;
     }
 
     @media (max-width: 1500px) {
@@ -812,12 +865,58 @@ $(function() {
         $(".window-pop-up").hide();
     });
 
-    $(".col-right-item-pic-icon").on("click", function(){
-        /*console.log("click");
-        $(".window-pop-up").show();*/
+    $(".button-map-show-route").on("click", function(){
+        console.log('button-map-route-show');
+
+        if($(this).attr('data-selected') == 0){
+            $(this).attr('data-selected', '1');
+            $(this).find(".map-info-status-block-item-inner .selected").show();
+            $(this).find(".map-info-status-block-item-inner .unselected").hide();
+        }else{
+            $(this).attr('data-selected', '0');
+            $(this).find(".map-info-status-block-item-inner .unselected").show();
+            $(this).find(".map-info-status-block-item-inner .selected").hide();
+        }
+
+        $(".map-container-map-inner-img>img").toggle();
+
+        if($(this).hasClass("map-info-status-block-item-selected")){
+            $(this).removeClass("map-info-status-block-item-selected");
+        }else{
+            $(this).addClass("map-info-status-block-item-selected");
+        }
+
     });
 
+    $(".indicator-pic").each(function(){
+        if($(this).attr("data-state") == 0){
+            $(this).hide();
+        }
+    });
 
+    $(".button-map-show-items-all").on("click", function(){
+        console.log('button-map-show-all');
+
+        if($(this).attr('data-selected') == 0){
+            $(this).attr('data-selected', '1');
+            $(this).addClass("map-info-status-block-item-selected");
+            $(this).find(".map-info-status-block-item-inner .selected").show();
+            $(this).find(".map-info-status-block-item-inner .unselected").hide();
+            $(".indicator-pic").each(function(){
+                $(this).show();
+            });
+        }else{
+            $(this).attr('data-selected', '0');
+            $(this).removeClass("map-info-status-block-item-selected");
+            $(this).find(".map-info-status-block-item-inner .unselected").show();
+            $(this).find(".map-info-status-block-item-inner .selected").hide();
+            $(".indicator-pic").each(function(){
+                if($(this).attr("data-state") == 0){
+                    $(this).hide();
+                }
+            });
+        }
+    });
 
 /*    function doShow(){
         console.log('doShow');
@@ -840,14 +939,14 @@ $(function() {
         }
     }*/
     if(! jQuery.browser.mobile){
-        $(".col-right-item-pic-icon").on("mouseenter", function(){
+        $(".col-right-item-pic-icon.work").on("mouseenter", function(){
             console.log("click");
             var total_container_width = $('.map-container-map-inner-img').width();
             var total_container_height = $('.map-container-map-inner-img').height();
             console.log('total_container_width ' + total_container_width);
             console.log('total_container_height ' + total_container_height);
 
-            var parent = $(".col-right-item-pic-icon").closest('.indicator-pic');
+            var parent = $(".col-right-item-pic-icon.work").closest('.indicator-pic');
 
             console.log('icon_left ' + parent.css('left'));
             console.log('icon_top ' + parent.css('top'));
@@ -885,67 +984,8 @@ $(function() {
                 $(".window-pop-up").addClass('display_block');
             }
         });
-        /*$(".col-right-item-pic-icon").mouseenter($.debounce(popupMouseOver, 1000));*/
-        /*function popupMouseOver(){
-            console.log("click");
-            var total_container_width = $('.map-container-map-inner-img').width();
-            var total_container_height = $('.map-container-map-inner-img').height();
-            console.log('total_container_width ' + total_container_width);
-            console.log('total_container_height ' + total_container_height);
 
-            var parent = $(".col-right-item-pic-icon").closest('.indicator-pic');
-
-            console.log('icon_left ' + parent.css('left'));
-            console.log('icon_top ' + parent.css('top'));
-
-            var icon_left = parseInt(parent.css('left'));
-            var icon_top = parseInt(parent.css('top'));
-            var icon_bottom = parseInt(parent.css('bottom'));
-             var icon_right = parseInt(parent.css('right'));
-
-            var window_pop_up_width = 320;
-            var window_pop_up_height = 215;
-            console.log('window_pop_up_height ' + window_pop_up_height);
-            console.log('window_pop_up_width ' + window_pop_up_width);
-            var popup_corner_left = icon_left - window_pop_up_width;
-            popup_corner_left = popup_corner_left + 'px';
-            var popup_corner_right = total_container_width - icon_left;
-            popup_corner_right = popup_corner_right + 'px';
-            var popup_corner_top = icon_top + 'px';
-            var popup_corner_bottom = total_container_height - icon_top - window_pop_up_height;
-            popup_corner_bottom = popup_corner_bottom + 'px';
-
-            console.log('popup_corner_left ' + popup_corner_left);
-            console.log('popup_corner_right ' + popup_corner_right);
-            console.log('popup_corner_top ' + popup_corner_top);
-            console.log('popup_corner_bottom ' + popup_corner_bottom);
-
-            $(".window-pop-up").css('left', popup_corner_left);
-            $(".window-pop-up").css('top', popup_corner_top);
-            $(".window-pop-up").css('bottom', popup_corner_bottom);
-            $(".window-pop-up").css('right', popup_corner_right);
-
-            console.log('window_pop_up_width ' +window_pop_up_width + ' '  +'window_pop_up_height '+ window_pop_up_height);
-             console.log('icon_left '+icon_left + ' icon_top '  + icon_top);
-             var left_corner = parseInt(icon_left) - window_pop_up_width + 'px';
-             var bottom_corner = window_pop_up_height - parseInt(icon_top) - (parseInt(icon_top) - parseInt(icon_bottom))  + 'px';
-             console.log('left_corner ' + left_corner + ' '  + 'bottom_corner '+ bottom_corner);
-             $(".window-pop-up").css('left', left_corner);
-             $(".window-pop-up").css('top', icon_top);
-             $(".window-pop-up").css('bottom', bottom_corner);
-             $(".window-pop-up").css('right', icon_left);
-
-            if($(".window-pop-up").hasClass('display_none')) {
-                $(".window-pop-up").removeClass('display_none');
-            }
-
-            if(! $(".window-pop-up").hasClass('display_block')) {
-                $(".window-pop-up").addClass('display_block');
-            }
-        }*/
-
-
-        $(".col-right-item-pic-icon").on("mouseleave", function(){
+        $(".col-right-item-pic-icon.work").on("mouseleave", function(){
             console.log("mouseout");
             if($(".window-pop-up").hasClass('display_block')) {
                 $(".window-pop-up").removeClass('display_block');
@@ -971,16 +1011,9 @@ $(function() {
             }
         });
 
-    /*    $(".col-right-item-pic-icon").mouseover($.debounce(doShow, 300));
-        $(".col-right-item-pic-icon").mouseout($.debounce(doHide, 300));*/
-
-        $(".col-right-item-pic-icon").on("click", function(){
-
-            /*$(".window-pop-up").show();*/
-        });
 
     }else{
-        $(".col-right-item-pic-icon").on("click", function(){
+        $(".col-right-item-pic-icon.work").on("click", function(){
             /*console.log("click");*/
              $(".window-pop-up").show();
         });
@@ -989,6 +1022,68 @@ $(function() {
         console.log("click");
         window.open("/maps.php");
     });
+
+    fetchData();
+    setInterval(function() {
+        console.log('fetch data');
+        fetchData();
+    }, 6000);
+    var colorIndicatorArr = {
+        'indicator_color_red' : '#bb676',
+        'indicator_color_yellow' : '#ffda73',
+        'indicator_color_green' : '#00a070'
+    };
+
+
+    function fetchData() {
+        $.ajax({
+            url: 'dozor_ajax/getdata.php',
+            success: function (data) {
+                var obj = jQuery.parseJSON(data);
+                var lastvalue = obj['items'][23675]['lastvalue'];
+                lastvalueArr = lastvalue.split('.');
+                $('.indicator-temperature-number-big').text(lastvalueArr[0]);
+                lastvalueArr2 = lastvalueArr[1].split('');
+                //console.log(lastvalueArr2);
+                $('.indicator-temperature-number-small').text('.' + lastvalueArr2[0]);
+                var temp_indicator_color;
+
+                obj['trigger'][13591] = {'triggerid' : 1, 1: 2};
+                //obj['trigger'][13561] = {'triggerid': 1, 1: 2};
+                console.log(obj['trigger']);
+                var tigger_state;
+                if (!$.isEmptyObject(obj['trigger'][13591])) {
+                    temp_indicator_color = '#bb6767';
+                    trigger_state = 2;
+                } else if (!$.isEmptyObject(obj['trigger'][13589])) {
+                    temp_indicator_color = '#ffda73';
+                    trigger_state = 1;
+                } else {
+                    temp_indicator_color = '#00a070';
+                    trigger_state = 0;
+                }
+                $(".indicator-pic-system-water").attr("data-state", trigger_state);
+                console.log('temp_indicator_color ' + temp_indicator_color);
+
+                $('.col-right-item-pic-icon-indicator-temperature').css('background', temp_indicator_color);
+                $('.col-right-item-pic-icon.work').css('background', temp_indicator_color);
+
+                $('.complex-engineering .menu-top-level-item-indicator-half').each(function( index ) {
+                    $(this).removeClass('red');
+                    $(this).removeClass('green');
+                    $(this).removeClass('yellow');
+                    $(this).css('background', temp_indicator_color);
+                });
+                if(temp_indicator_color == '#bb6767' ||  temp_indicator_color == '#ffda73'){
+                    $('.menu-top-level-item-indicator-num-inner p').text(1);
+                }else{
+                    $('.menu-top-level-item-indicator-num-inner p').text('');
+                }
+
+            }
+        });
+    };
+
 
 });
 </script>
@@ -1131,19 +1226,22 @@ $(function() {
         <div class="col-right-inner">
             <div class="map-info-status-block">
                 <div class="map-info-status-block-inner">
-                    <div class="map-info-status-block-item">
+                    <div class="map-info-status-block-item button-map-show-route" data-selected="0">
                         <div class="map-info-status-block-item-inner">
-                            <img src="/dozor_images/route.png"/>
+                            <img src="/dozor_images/route.png" class="unselected"/>
+                            <img src="/dozor_images/route_selected.png" class="selected"/>
                         </div>
                     </div>
-                    <div class="map-info-status-block-item">
+                    <div class="map-info-status-block-item button-map-alarm" data-selected="0">
                         <div class="map-info-status-block-item-inner">
-                            <img src="/dozor_images/alarm.png"/>
+                            <img src="/dozor_images/alarm.png" class="unselected"/>
+                            <img src="/dozor_images/alarm_selected.png" class="selected"/>
                         </div>
                     </div>
-                    <div class="map-info-status-block-item">
+                    <div class="map-info-status-block-item button-map-show-items-all" data-selected="0">
                         <div class="map-info-status-block-item-inner">
-                            <img src="/dozor_images/glaz.png"/>
+                            <img src="/dozor_images/glaz.png" class="unselected"/>
+                            <img src="/dozor_images/glaz_selected.png" class="selected"/>
                         </div>
                     </div>
                 </div>
@@ -1177,7 +1275,77 @@ $(function() {
                 <div class="map-container-map">
                    <div class="map-container-map-inner">
                         <div class="map-container-map-inner-img">
-                            <div class="indicator-pic system_water">
+                            <img width='774px' src='/dozor_images/map_route.png'/>
+
+                            <div class="indicator-pic indicator-pic-system-water" data-state="1">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon work">
+                                        <div>
+                                            <img src="/dozor_images/system_water.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="indicator-pic indicator-pic-system-energy" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_energy.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="indicator-pic indicator-pic-system-fire-fighting" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_fire_fighting.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="indicator-pic indicator-pic-system-conditioning" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_conditioning.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="indicator-pic indicator-pic-system-supervision1" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_supervision.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="indicator-pic indicator-pic-system-supervision2" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_supervision.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="indicator-pic indicator-pic-system-supervision3" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_supervision.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="indicator-pic indicator-pic-system-water2" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1186,6 +1354,28 @@ $(function() {
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="indicator-pic indicator-pic-system-fire-alarm" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_fire_alarm.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="indicator-pic indicator-pic-system-remote-access-control" data-state="0">
+                                <div class="col-right-item-pic">
+                                    <div class="col-right-item-pic-icon">
+                                        <div>
+                                            <img src="/dozor_images/system_remote_access_control.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="window-pop-up">
                                 <div class="window-pop-up-inner">
                                     <div class="item-room-and-exit">
