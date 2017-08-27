@@ -53,23 +53,23 @@
     .hidden {
         display: none !important;
     }
-   .dozor-main-inner {
-       /*margin-left: 12%;
-       margin-right: 12%;
-       border: 1px solid black;*/
-       height: 100vh;
-       background: #d9d9d9;
-       font-family: "RobotoLight";
-   }
+    .dozor-main-inner {
+        /*margin-left: 12%;
+        margin-right: 12%;
+        border: 1px solid black;*/
+        height: 100vh;
+        background: #d9d9d9;
+        font-family: "RobotoLight";
+    }
     .col-left{
-       width: 23%;
+        width: 23%;
         display: inline-block;
         height: 100%;
         background: #003e63;
         float: left;
     }
     .col-left-logo {
-       width: 100%;
+        width: 100%;
         height: 140px;
         color: white;
 
@@ -79,17 +79,17 @@
         display: inline-block;
     }
     .col-left-logo-inner {
-       /*margin-top: 10px;
-       margin-bottom: 10px;*/
-       padding-left: 15%;
-       padding-right: 15%;
+        /*margin-top: 10px;
+        margin-bottom: 10px;*/
+        padding-left: 15%;
+        padding-right: 15%;
 
-       text-align: center;
-       display: table-cell;
-       vertical-align: middle;
-       font-size: 30px;
-       cursor: pointer;
-   }
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 30px;
+        cursor: pointer;
+    }
 
     .col-left-logo-text{
         border: 1px solid white;
@@ -97,18 +97,18 @@
         padding-bottom: 5px;
     }
     .col-left-menu{
-       /* padding-right: 15%;*/
+        /* padding-right: 15%;*/
         color: #003e63;
         font-family: "RobotoLight";
         font-style: semibold;
         font-size: 24px;
-        height: 650px;
+        height: calc(100% - 340px);
         margin-bottom: -30%;
     }
     .menu-top-level-item-outer {
         width: 100%;
         height: 80px;
-        //background: white;
+    //background: white;
         margin-top: 10px;
     }
     .menu-top-level-item {
@@ -195,12 +195,12 @@
     .menu-item-v1-top{
 
         height: 90px;
-        //  margin-top: 10px;
+    //  margin-top: 10px;
         background: #003e63;
         padding-left: 15%;
         padding-right: 15%;
-       /* padding-top: 10px;
-        padding-bottom: 10px;*/
+        /* padding-top: 10px;
+         padding-bottom: 10px;*/
 
     }
     .menu-item-v1-top2{
@@ -253,9 +253,9 @@
 
     .col-left-video {
         width: 100%;
-        //height: 20%;
+        height: 20%;
         vertical-align:bottom;
-        display:table;
+        display:inline-block;
 
         padding: 10px;
         box-sizing: border-box;
@@ -264,27 +264,11 @@
     .col-left-video-title {
         color: white;
         padding: 2px;
-        display: table-cell;
-        vertical-align: middle;
-        width: 150px;
-    }
-    .col-left-video-title div{
-        display: inline;
     }
     .col-left-video-video{
-       //border: 1px solid black;
-        //background: white;
+        border: 1px solid black;
+        background: white;
         height: -webkit-fill-available;
-        box-sizing: border-box;
-        cursor: pointer;
-        display: table-cell;
-        vertical-align: middle;
-        height: 40px;
-    }
-    .col-left-video-video img{
-        /*height: 100%;
-        width: 100%;*/
-        width: 40px;
     }
 
     .col-right {
@@ -320,13 +304,13 @@
         text-align: center;
     }
 
-   .items-block {
-       width: 100%;
-       height: calc(100vh - 140px);
-       font-size: 18px;
-       box-sizing: border-box;
-       padding-bottom: 15px;
-   }
+    .items-block {
+        width: 100%;
+        height: calc(100vh - 140px);
+        font-size: 18px;
+        box-sizing: border-box;
+        padding-bottom: 15px;
+    }
     .item-engineering-complex {
         width: 32.7%;
         height: 100%;
@@ -361,11 +345,11 @@
         box-sizing: border-box;
         vertical-align:top;
     }
-   .item-pt-tha1-inner {
-       border: 1px solid black;
-       height: 100%;
+    .item-pt-tha1-inner {
+        border: 1px solid black;
+        height: 100%;
 
-   }
+    }
 
     .col-right-item {
         width: 94%;
@@ -373,40 +357,23 @@
         padding-left: 3%;
         padding-right: 3%;
         margin-bottom: 10px;
-   }
+    }
     .col-right-item-pic {
         width: 70px;
         float: left;
     }
     .col-right-item-pic-icon {
         float: left;
-        //display: inline-block;
+    //display: inline-block;
         height: 70px;
         width: 70px;
         background: #00a070;
         -webkit-border-radius: 35px;
         display: table;
-        //width: 100%;
+    //width: 100%;
         text-align: center;
         cursor: pointer;
     }
-   /* .col-right-item-pic-icon:hover .window-pop-up{
-
-        display: block !important;
-
-    }
-
-    .col-right-item-pic-icon:hover .map-container-floor-inner{
-
-       background: grey;
-
-    }
-    .col-right-item-pic-icon:hover{
-
-        background: grey;
-
-    }*/
-
     .col-right-item-pic-icon div {
         display: table-cell;
         vertical-align: middle;
@@ -500,7 +467,7 @@
     }
 
     .map-info-status-block-item {
-        cursor: pointer;
+
         float: right;
         height: 100px;
         width: 100px;
@@ -510,16 +477,10 @@
         display: table;
         margin-left: 3%;
     }
-    .map-info-status-block-item-selected {
-        background: #4d5c71;
-    }
     .map-info-status-block-item-inner {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
-    }
-    .map-info-status-block-item-inner .selected {
-        display: none;
     }
     .map-info-status-block-item-inner img {
         max-width: 60px;
@@ -571,9 +532,9 @@
         float: right;
         cursor: pointer;
     }
-.item-disconnection {
-    border-bottom: none !important;
-}
+    .item-disconnection {
+        border-bottom: none !important;
+    }
 
     .map-container-floors-outer {
         width: 100%;
@@ -582,6 +543,7 @@
         padding-bottom: 20px;
     }
     .map-container-floors{
+
         width: 94%;
         padding-right: 3%;
         padding-left: 3%;
@@ -603,7 +565,7 @@
         -ms-justify-content: space-between;
         -o-justify-content: space-between;
         justify-content: space-between;
-
+        display:none;
     }
     .map-container-floor-outer {
         width: 32%;
@@ -628,47 +590,46 @@
         text-align: center;
     }
 
-/*    .map-container-floors:before{
-        content: '';
-        display: block;
+    /*    .map-container-floors:before{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 0;
+        }
+
+        .map-container-floors:after {
+            width: 100%;
+            height: 0;
+            visibility: hidden;
+            overflow: hidden;
+            content: '';
+            display: inline-block;
+        }*/
+
+    .map-container-map{
         width: 100%;
-        height: 0;
+        height: calc(100% - 80px);
+        padding-bottom: 20px;
+        box-sizing: border-box;
+        text-align: center;
     }
-
-    .map-container-floors:after {
-        width: 100%;
-        height: 0;
-        visibility: hidden;
-        overflow: hidden;
-        content: '';
+    .map-container-map-inner {
         display: inline-block;
-    }*/
-
-.map-container-map{
-    width: 100%;
-    height: calc(100% - 80px);
-    padding-bottom: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-.map-container-map-inner {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-}
+        height: 100%;
+        width: 100%;
+    }
     .map-container-map-inner-img {
         display: block;
-        width: ;
+    //width: ;
         margin: 0 auto;
         height: 100%;
-        background-image: url("/dozor_images/map-floor.png");
+        background-image: url("/dozor_images/engine2.png");
         background-repeat:no-repeat;
         background-size: contain;
         position: relative;
     }
-    .map-container-map-inner-img>img {
-        width: 774px;
-        display: none;
+    .map-container-map-inner-img {
+
     }
 
 
@@ -678,10 +639,10 @@
     }
     .col-right-item-pic-icon {
         float: left;
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         background: #00a070;
-        -webkit-border-radius: 25px;
+        -webkit-border-radius: 20px;
         display: table;
 
         text-align: center;
@@ -696,77 +657,78 @@
         vertical-align: middle;
         align-self: center;
     }
-.item-pop-up-exit img {
-    /*height: 40px;*/
-    width: 20px;
-}
-.item-disconnection {
+    .item-pop-up-exit img {
+        /*height: 40px;*/
+        width: 20px;
+    }
+    .item-disconnection {
 
-}
-
-    .indicator-pic-system-water {
-        position: absolute;
-        left: 76%;
-        top: 24%;
-    }
-    .indicator-pic-system-energy {
-        position: absolute;
-        left: 53%;
-        top: 18%;
-    }
-    .indicator-pic-system-fire-fighting {
-        position: absolute;
-        left: 35%;
-        top: 35%;
-    }
-    .indicator-pic-system-conditioning {
-        position: absolute;
-        left: 19%;
-        top: 20%;
-    }
-    .indicator-pic-system-supervision1 {
-        position: absolute;
-        left: 10%;
-        top: 36%;
-    }
-    .indicator-pic-system-supervision2 {
-        position: absolute;
-        left: 56%;
-        top: 78%;
-    }
-    .indicator-pic-system-supervision3 {
-        position: absolute;
-        left: 55%;
-        top: 60%;
-    }
-    .indicator-pic-system-water2 {
-        position: absolute;
-        left: 62%;
-        top: 57%;
-    }
-    .indicator-pic-system-fire-alarm {
-        position: absolute;
-        left: 28%;
-        top: 80%;
     }
 
-    .indicator-pic-system-remote-access-control {
+    .system_water {
         position: absolute;
-        left: 47%;
-        top: 85%;
+        left: 37%;
+        top: 30%;
     }
 
-    .item-scheme-and-video {
-        overflow: hidden;
+    .indicator_temperature {
+        position: absolute;
+        left: 93%;
+        top: 83%;
     }
-    .item-scheme {
+    .col-right-item-pic-indicator-temperature {
+        width: 90px;
         float: left;
-        cursor: pointer;
     }
-    .item-video {
+    .col-right-item-pic-icon-indicator-temperature {
+        float: left;
+        height: 90px;
+        width: 90px;
+        background: #00a070;
+        -webkit-border-radius: 45px;
+        display: table;
+        text-align: center;
+    }
+    .col-right-item-pic-icon-indicator-temperature .in1 {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .col-right-item-pic-icon-indicator-temperature .in1 .in2{
+        margin-left: 7.5px;
+    }
+    .col-right-item-pic-icon-indicator-temperature-inner {
+        float: left;
+        height: 75px;
+        width: 75px;
+        background: white;
+        -webkit-border-radius: 37.5px;
+        display: table;
+        text-align: center;
+    }
+    .col-right-item-pic-icon-indicator-temperature-inner-inner {
+        margin: 10%;
+        height: 80%;
+        width: 80%;
+        color: grey;
+    }
+    .indicator-temperature-number-big {
+        height: 100%;
+        width: 80%;
+        float: left;
+        font-size: 40px;
+    }
+    .indicator-temperature-small {
+        height: 100%;
+        width: 20%;
         float: right;
-        cursor: pointer;
     }
+    .indicator-temperature-temperature-sign {
+        height: 50%;
+    }
+    .indicator-temperature-number-small {
+        height: 50%;
+    }
+
 
     @media (max-width: 1500px) {
         .col-left-logo-inner {
@@ -787,9 +749,6 @@
         .col-left-logo-inner {
             font-size: 21px;
         }
-        .col-left-menu {
-            height: 550px;
-        }
     }
     @media (max-width: 1024px) {
         .col-left-logo-inner {
@@ -797,7 +756,6 @@
         }
         .col-left-menu{
             font-size: 20px;
-            height: 510px;
         }
         .items-block {
             font-size: 12px;
@@ -816,10 +774,10 @@
         }
         .col-right-item-pic-icon {
             float: left;
-            height: 50px;
-            width: 50px;
+            height: 30px;
+            width: 30px;
             background: #00a070;
-            -webkit-border-radius: 25px;
+            -webkit-border-radius: 15px;
             display: table;
 
             text-align: center;
@@ -867,262 +825,184 @@
             font-size: 15px;
         }
     }
-
     .display_block{
         display: block;
     }
     .display_none {
         display: none;
     }
-
 </style>
 <script src="/dozor_js/jquery-1.11.2.min.js"></script>
 <script src="/dozor_js/jquery.ba-throttle-debounce.min.js"></script>
 <script src="/dozor_js/detectmobiledevice.js"></script>
 <script src="/dozor_js/jquery.debounce-1.0.5.js"></script>
-
 <script>
-function resizeMap(){
-    var height = $(".map-container-map-inner-img").height();
-    console.log(height);
-    height = height + 'px';
-    $(".map-container-map-inner-img").width(height);
-    $(".map-container-map-inner-img>img").width(height);
-}
-
-$(function() {
-
-    $(".item-video").on("click", function(){
-        openWindow(700, 600);
-    });
-    function openWindow(width, height){
-        window.open('<?= $link_camera ?>', 'camera', 'width='+width+',height='+height+',toolbar=no,location=no,menubar=no,left='+
-            ((window.innerWidth - width)/2)+',top='+((window.innerHeight - height)/2));
+    function resizeMap(){
+        var height = $(".map-container-map-inner-img").height();
+        console.log(height);
+        height = height + 'px';
+        $(".map-container-map-inner-img").width(height);
     }
 
-    resizeMap();
+    $(function() {
+        resizeMap();
 
-    $(".item-pop-up-exit").on("click", function(){
-        console.log("click");
-        $(".window-pop-up").hide();
-    });
-
-    $(".button-map-show-route").on("click", function(){
-        console.log('button-map-route-show');
-
-        if($(this).attr('data-selected') == 0){
-            $(this).attr('data-selected', '1');
-            $(this).find(".map-info-status-block-item-inner .selected").show();
-            $(this).find(".map-info-status-block-item-inner .unselected").hide();
-        }else{
-            $(this).attr('data-selected', '0');
-            $(this).find(".map-info-status-block-item-inner .unselected").show();
-            $(this).find(".map-info-status-block-item-inner .selected").hide();
-        }
-
-        $(".map-container-map-inner-img>img").toggle();
-
-        if($(this).hasClass("map-info-status-block-item-selected")){
-            $(this).removeClass("map-info-status-block-item-selected");
-        }else{
-            $(this).addClass("map-info-status-block-item-selected");
-        }
-
-    });
-
-    $(".indicator-pic").each(function(){
-        if($(this).attr("data-state") == 0){
-            $(this).hide();
-        }
-    });
-
-    $(".button-map-show-items-all").on("click", function(){
-        console.log('button-map-show-all');
-
-        if($(this).attr('data-selected') == 0){
-            $(this).attr('data-selected', '1');
-            $(this).addClass("map-info-status-block-item-selected");
-            $(this).find(".map-info-status-block-item-inner .selected").show();
-            $(this).find(".map-info-status-block-item-inner .unselected").hide();
-            $(".indicator-pic").each(function(){
-                $(this).show();
-            });
-        }else{
-            $(this).attr('data-selected', '0');
-            $(this).removeClass("map-info-status-block-item-selected");
-            $(this).find(".map-info-status-block-item-inner .unselected").show();
-            $(this).find(".map-info-status-block-item-inner .selected").hide();
-            $(".indicator-pic").each(function(){
-                if($(this).attr("data-state") == 0){
-                    $(this).hide();
-                }
-            });
-        }
-    });
-
-    /*var video_width = $(".col-left-video-video").width();
-    var video_height = video_width * 0.625;
-
-    $(".col-left-video-video").width(video_width);
-    $(".col-left-video-video").height(video_height);
-    $(".col-left-video-video img").width(video_width);
-    $(".col-left-video-video img").height(video_height);*/
-
-    /*$(".col-left-video-video").on("click", function(){
-        var src = $(this).find("img").attr("src");
-        $(this).find("img").remove();
-        setTimeout(function(){window.open(src);}, 1000);
-    });*/
-
-    if(! jQuery.browser.mobile){
-        $(".col-right-item-pic-icon.work").on("mouseenter", function(){
+        $(".item-pop-up-exit").on("click", function(){
             console.log("click");
-            var total_container_width = $('.map-container-map-inner-img').width();
-            var total_container_height = $('.map-container-map-inner-img').height();
-            console.log('total_container_width ' + total_container_width);
-            console.log('total_container_height ' + total_container_height);
-
-            var parent = $(".col-right-item-pic-icon.work").closest('.indicator-pic');
-
-            console.log('icon_left ' + parent.css('left'));
-            console.log('icon_top ' + parent.css('top'));
-
-            var icon_left = parseInt(parent.css('left'));
-            var icon_top = parseInt(parent.css('top'));
-
-            var window_pop_up_width = 320;
-            var window_pop_up_height = 215;
-            console.log('window_pop_up_height ' + window_pop_up_height);
-            console.log('window_pop_up_width ' + window_pop_up_width);
-            var popup_corner_left = icon_left - window_pop_up_width;
-            popup_corner_left = popup_corner_left + 'px';
-            var popup_corner_right = total_container_width - icon_left;
-            popup_corner_right = popup_corner_right + 'px';
-            var popup_corner_top = icon_top + 'px';
-            var popup_corner_bottom = total_container_height - icon_top - window_pop_up_height;
-            popup_corner_bottom = popup_corner_bottom + 'px';
-
-            console.log('popup_corner_left ' + popup_corner_left);
-            console.log('popup_corner_right ' + popup_corner_right);
-            console.log('popup_corner_top ' + popup_corner_top);
-            console.log('popup_corner_bottom ' + popup_corner_bottom);
-
-            $(".window-pop-up").css('left', popup_corner_left);
-            $(".window-pop-up").css('top', popup_corner_top);
-            $(".window-pop-up").css('bottom', popup_corner_bottom);
-            $(".window-pop-up").css('right', popup_corner_right);
-
-            if($(".window-pop-up").hasClass('display_none')) {
-                $(".window-pop-up").removeClass('display_none');
-            }
-
-            if(! $(".window-pop-up").hasClass('display_block')) {
-                $(".window-pop-up").addClass('display_block');
-            }
+            $(".window-pop-up").hide();
         });
 
-        $(".col-right-item-pic-icon.work").on("mouseleave", function(){
-            console.log("mouseout");
-            if($(".window-pop-up").hasClass('display_block')) {
-                $(".window-pop-up").removeClass('display_block');
-            }
-            if(! $(".window-pop-up").hasClass('display_none')) {
-                $(".window-pop-up").addClass('display_none');
-            }
-        });
-
-        $('.window-pop-up').on('mouseenter', function(){
-            console.log("window-pop-up mouseenter");
-            if($(".window-pop-up").hasClass('display_none')) {
-                $(".window-pop-up").removeClass('display_none');
-                $(".window-pop-up").addClass('display_block')
-            }
-        });
-
-        $('.window-pop-up').on('mouseleave', function(){
-            console.log("window-pop-up mouseenter");
-            if($(".window-pop-up").hasClass('display_block')) {
-                $(".window-pop-up").removeClass('display_block');
-                $(".window-pop-up").addClass('display_none')
-            }
+        $(".col-right-item-pic-icon").on("click", function(){
+            /*console.log("click");
+             $(".window-pop-up").show();*/
         });
 
 
-    }else{
-        $(".col-right-item-pic-icon.work").on("click", function(){
-            /*console.log("click");*/
-             $(".window-pop-up").show();
+
+        if(! jQuery.browser.mobile){
+            $(".col-right-item-pic-icon").on("mouseenter", function(){
+                console.log("click");
+                var total_container_width = $('.map-container-map-inner-img').width();
+                var total_container_height = $('.map-container-map-inner-img').height();
+                console.log('total_container_width ' + total_container_width);
+                console.log('total_container_height ' + total_container_height);
+
+                var parent = $(".col-right-item-pic-icon").closest('.indicator-pic');
+
+                console.log('icon_left ' + parent.css('left'));
+                console.log('icon_top ' + parent.css('top'));
+
+                var icon_left = parseInt(parent.css('left'));
+                var icon_top = parseInt(parent.css('top'));
+
+                var window_pop_up_width = 320;
+                var window_pop_up_height = 215;
+                console.log('window_pop_up_height ' + window_pop_up_height);
+                console.log('window_pop_up_width ' + window_pop_up_width);
+                var popup_corner_left = icon_left - window_pop_up_width;
+                popup_corner_left = popup_corner_left + 'px';
+                var popup_corner_right = total_container_width - icon_left;
+                popup_corner_right = popup_corner_right + 'px';
+                var popup_corner_top = icon_top + 'px';
+                var popup_corner_bottom = total_container_height - icon_top - window_pop_up_height;
+                popup_corner_bottom = popup_corner_bottom + 'px';
+
+                console.log('popup_corner_left ' + popup_corner_left);
+                console.log('popup_corner_right ' + popup_corner_right);
+                console.log('popup_corner_top ' + popup_corner_top);
+                console.log('popup_corner_bottom ' + popup_corner_bottom);
+
+                $(".window-pop-up").css('left', popup_corner_left);
+                $(".window-pop-up").css('top', popup_corner_top);
+                $(".window-pop-up").css('bottom', popup_corner_bottom);
+                $(".window-pop-up").css('right', popup_corner_right);
+
+                if($(".window-pop-up").hasClass('display_none')) {
+                    $(".window-pop-up").removeClass('display_none');
+                }
+
+                if(! $(".window-pop-up").hasClass('display_block')) {
+                    $(".window-pop-up").addClass('display_block');
+                }
+            });
+
+            $(".col-right-item-pic-icon").on("mouseleave", function(){
+                console.log("mouseout");
+                if($(".window-pop-up").hasClass('display_block')) {
+                    $(".window-pop-up").removeClass('display_block');
+                }
+                if(! $(".window-pop-up").hasClass('display_none')) {
+                    $(".window-pop-up").addClass('display_none');
+                }
+            });
+
+            $('.window-pop-up').on('mouseenter', function(){
+                console.log("window-pop-up mouseenter");
+                if($(".window-pop-up").hasClass('display_none')) {
+                    $(".window-pop-up").removeClass('display_none');
+                    $(".window-pop-up").addClass('display_block')
+                }
+            });
+
+            $('.window-pop-up').on('mouseleave', function(){
+                console.log("window-pop-up mouseenter");
+                if($(".window-pop-up").hasClass('display_block')) {
+                    $(".window-pop-up").removeClass('display_block');
+                    $(".window-pop-up").addClass('display_none')
+                }
+            });
+        }else{
+            $(".col-right-item-pic-icon").on("click", function(){
+                /*console.log("click");*/
+                $(".window-pop-up").show();
+            });
+        }
+
+
+
+
+        $(".col-left-logo-inner").on("click", function(){
+            console.log("click");
+            window.open("/maps.php");
         });
-    }
-    $(".col-left-logo-inner").on("click", function(){
-        console.log("click");
-        window.open("/maps.php");
+	fetchData();
+        setInterval(function() {
+            console.log('fetch data');
+            fetchData();
+        }, 6000);
+        var colorIndicatorArr = {
+            'indicator_color_red' : '#bb676',
+            'indicator_color_yellow' : '#ffda73',
+            'indicator_color_green' : '#00a070'
+        };
+
+
+        function fetchData() {
+            $.ajax({
+                url: 'dozor_ajax/getdata.php',
+                success: function (data) {
+                    var obj = jQuery.parseJSON(data);
+                    var lastvalue = obj['items'][23675]['lastvalue'];
+                    lastvalueArr = lastvalue.split('.');
+                    $('.indicator-temperature-number-big').text(lastvalueArr[0]);
+                    lastvalueArr2 = lastvalueArr[1].split('');
+                    //console.log(lastvalueArr2);
+                    $('.indicator-temperature-number-small').text('.' + lastvalueArr2[0]);
+                    var temp_indicator_color;
+
+                    //obj['trigger'][13563] = {'triggerid' : 1, 1: 2};
+                    //obj['trigger'][13561] = {'triggerid': 1, 1: 2};
+                    console.log(obj['trigger']);
+
+                    if (!$.isEmptyObject(obj['trigger'][13564])) {
+                        temp_indicator_color = '#bb6767';
+                    } else if (!$.isEmptyObject(obj['trigger'][13562])) {
+                        temp_indicator_color = '#ffda73';
+                    } else {
+                        temp_indicator_color = '#00a070';
+                    }
+
+                    console.log('temp_indicator_color ' + temp_indicator_color);
+
+                    $('.col-right-item-pic-icon-indicator-temperature').css('background', temp_indicator_color);
+                    $('.col-right-item-pic-icon').css('background', temp_indicator_color);
+
+                    $('.complex-engineering .menu-top-level-item-indicator-half').each(function( index ) {
+                        $(this).removeClass('red');
+                        $(this).removeClass('green');
+                        $(this).removeClass('yellow');
+                        $(this).css('background', temp_indicator_color);
+                    });
+                    if(temp_indicator_color == '#bb6767' ||  temp_indicator_color == '#ffda73'){
+                        $('.menu-top-level-item-indicator-num-inner p').text(1);
+                    }else{
+                        $('.menu-top-level-item-indicator-num-inner p').text('');
+                    }
+
+                }
+            });
+        };
     });
-
-    fetchData();
-    setInterval(function() {
-        console.log('fetch data');
-        fetchData();
-    }, 6000);
-
-    var colorIndicatorArr = {
-        'indicator_color_red' : '#bb676',
-        'indicator_color_yellow' : '#ffda73',
-        'indicator_color_green' : '#00a070'
-    };
-
-
-    function fetchData() {
-        $.ajax({
-            url: 'dozor_ajax/getdata.php',
-            success: function (data) {
-                var obj = jQuery.parseJSON(data);
-                var lastvalue = obj['items'][23675]['lastvalue'];
-                lastvalueArr = lastvalue.split('.');
-                $('.indicator-temperature-number-big').text(lastvalueArr[0]);
-                lastvalueArr2 = lastvalueArr[1].split('');
-                //console.log(lastvalueArr2);
-                $('.indicator-temperature-number-small').text('.' + lastvalueArr2[0]);
-                var temperature_indicator_color;
-
-                obj['trigger'][13591] = {'triggerid' : 1, 1: 2};
-                //obj['trigger'][13561] = {'triggerid': 1, 1: 2};
-                console.log(obj['trigger']);
-                var tigger_state;
-                if (!$.isEmptyObject(obj['trigger'][13591])) {
-                    temperature_indicator_color = '#bb6767';
-                    trigger_state = 2;
-                } else if (!$.isEmptyObject(obj['trigger'][13589])) {
-                    temperature_indicator_color = '#ffda73';
-                    trigger_state = 1;
-                } else {
-                    temperature_indicator_color = '#00a070';
-                    trigger_state = 0;
-                }
-                $(".indicator-pic-system-water").attr("data-state", trigger_state);
-                console.log('temperature_indicator_color ' + temperature_indicator_color);
-
-                $('.col-right-item-pic-icon-indicator-temperature').css('background', temperature_indicator_color);
-                $('.col-right-item-pic-icon.work').css('background', temperature_indicator_color);
-
-                $('.complex-engineering .menu-top-level-item-indicator-half').each(function( index ) {
-                    $(this).removeClass('red');
-                    $(this).removeClass('green');
-                    $(this).removeClass('yellow');
-                    $(this).css('background', temperature_indicator_color);
-                });
-                if(temperature_indicator_color == '#bb6767' ||  temperature_indicator_color == '#ffda73'){
-                    $('#menu-indicator-counter-temperature p').text(1);
-                }else{
-                    $('#menu-indicator-counter-temperature p').text('');
-                }
-
-            }
-        });
-    };
-
-
-});
 </script>
 <body>
 <div class="dozor-main-inner">
@@ -1149,19 +1029,14 @@ $(function() {
                                 </div>
                             </div>
                             <div class="menu-top-level-item-indicator-color">
-                                <div class="menu-top-level-item-indicator-color2 mod">
+                                <div class="menu-top-level-item-indicator-color2">
                                     <div class="menu-top-level-item-indicator-color-inner">
-                                        <div class="menu-top-level-item-indicator-half red">
+                                        <div class="menu-top-level-item-indicator-half">
                                         </div>
-                                        <div class="menu-top-level-item-indicator-half yellow">
+                                        <div class="menu-top-level-item-indicator-half">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="menu-top-level-item-indicator-num">
-                            <div class="menu-top-level-item-indicator-num-inner" id="menu-indicator-counter-water">
-                                <p>0</p>
                             </div>
                         </div>
                     </div>
@@ -1177,19 +1052,25 @@ $(function() {
                                 </div>
                             </div>
                         </div>
+
                         <div class="menu-top-level-item-indicator-color">
-                            <div class="menu-top-level-item-indicator-color2">
-                                <div class="menu-top-level-item-indicator-color-inner">
-                                    <div class="menu-top-level-item-indicator-half">
+                            <div class="menu-top-level-item-indicator-color2 mod">
+                                <div class="menu-top-level-item-indicator-color-inner complex-engineering">
+                                    <div class="menu-top-level-item-indicator-half red">
                                     </div>
-                                    <div class="menu-top-level-item-indicator-half">
+                                    <div class="menu-top-level-item-indicator-half yellow">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="menu-top-level-item-indicator-num">
+                        <div class="menu-top-level-item-indicator-num-inner">
+                            <p>5</p>
+                        </div>
+                    </div>
                     <div class="menu-top-level-item-indicator-num hidden">
-                        <div class="menu-top-level-item-indicator-num-inner" id="menu-indicator-color-temperature">
+                        <div class="menu-top-level-item-indicator-num-inner">
                             <p>5</p>
                         </div>
                     </div>
@@ -1252,13 +1133,10 @@ $(function() {
         </div>
         <div class="col-left-video">
             <div class="col-left-video-title">
-                <div>
-                    Помещение №4
-                </div>
+                Помещение №4
             </div>
             <div class="col-left-video-video">
-                <!-- <img src="http://10.12.0.202:81/video2.mjpg" /> -->
-				<img src="/dozor_images/square-video-button_icon.png" width="20px" />
+
             </div>
         </div>
     </div>
@@ -1266,22 +1144,19 @@ $(function() {
         <div class="col-right-inner">
             <div class="map-info-status-block">
                 <div class="map-info-status-block-inner">
-                    <div class="map-info-status-block-item button-map-show-route" data-selected="0">
+                    <div class="map-info-status-block-item">
                         <div class="map-info-status-block-item-inner">
-                            <img src="/dozor_images/route.png" class="unselected"/>
-                            <img src="/dozor_images/route_selected.png" class="selected"/>
+                            <img src="/dozor_images/route.png"/>
                         </div>
                     </div>
-                    <div class="map-info-status-block-item button-map-alarm" data-selected="0">
+                    <div class="map-info-status-block-item">
                         <div class="map-info-status-block-item-inner">
-                            <img src="/dozor_images/alarm.png" class="unselected"/>
-                            <img src="/dozor_images/alarm_selected.png" class="selected"/>
+                            <img src="/dozor_images/alarm.png"/>
                         </div>
                     </div>
-                    <div class="map-info-status-block-item button-map-show-items-all" data-selected="0">
+                    <div class="map-info-status-block-item">
                         <div class="map-info-status-block-item-inner">
-                            <img src="/dozor_images/glaz.png" class="unselected"/>
-                            <img src="/dozor_images/glaz_selected.png" class="selected"/>
+                            <img src="/dozor_images/glaz.png"/>
                         </div>
                     </div>
                 </div>
@@ -1313,123 +1188,29 @@ $(function() {
                     </div>
                 </div>
                 <div class="map-container-map">
-                   <div class="map-container-map-inner">
+                    <div class="map-container-map-inner">
                         <div class="map-container-map-inner-img">
-                            <img  src='/dozor_images/map_route.png'/>
-
-                            <div class="indicator-pic indicator-pic-system-water" data-state="1">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon work">
-                                        <div>
-                                            <img src="/dozor_images/system_water.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="indicator-pic indicator-pic-system-energy" data-state="0">
+                            <div class="indicator-pic system_water">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
-                                            <img src="/dozor_images/system_energy.png"/>
+                                            <!--<img src="/dozor_images/system_remote_access_control.png"/>-->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="indicator-pic indicator-pic-system-fire-fighting" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_fire_fighting.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="indicator-pic indicator-pic-system-conditioning" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_conditioning.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="indicator-pic indicator-pic-system-supervision1" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_supervision.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="indicator-pic indicator-pic-system-supervision2" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_supervision.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="indicator-pic indicator-pic-system-supervision3" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_supervision.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="indicator-pic indicator-pic-system-water2" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_water.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="indicator-pic indicator-pic-system-fire-alarm" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_fire_alarm.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="indicator-pic indicator-pic-system-remote-access-control" data-state="0">
-                                <div class="col-right-item-pic">
-                                    <div class="col-right-item-pic-icon">
-                                        <div>
-                                            <img src="/dozor_images/system_remote_access_control.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
                             <div class="window-pop-up">
                                 <div class="window-pop-up-inner">
                                     <div class="item-room-and-exit">
                                         <div class="item-room-title">
                                             Помещение 032
                                         </div>
+                                        <!--<div class="item-pop-up-exit">
+                                            <img src="/dozor_images/multiply.png">
+                                        </div>-->
                                     </div>
-                                    <div class="item-scheme-and-video">
-                                        <div class="item-scheme">
-                                            Показать схему
-                                        </div>
-                                        <div class="item-video">
-                                            Показать видео
-                                        </div>
+                                    <div class="item-scheme">
+                                        Показать схему
                                     </div>
                                     <div class="item-characteristics">
                                         Показать характеристики и чертежи устройства
@@ -1439,12 +1220,37 @@ $(function() {
                                     </div>
                                 </div>
                             </div>
+                            <div class="indicator-pic indicator_temperature">
+                                <div class="col-right-item-pic-indicator-temperature">
+                                    <div class="col-right-item-pic-icon-indicator-temperature">
+                                        <div class="in1">
+                                            <div class="in2">
+                                                <div class="col-right-item-pic-icon-indicator-temperature-inner">
+                                                    <div class="col-right-item-pic-icon-indicator-temperature-inner-inner">
+                                                        <div class="indicator-temperature-number-big">
+                                                            80
+                                                        </div>
+                                                        <div class="indicator-temperature-small">
+                                                            <div class="indicator-temperature-temperature-sign">
+                                                                o
+                                                            </div>
+                                                            <div class="indicator-temperature-number-small">
+                                                                .2
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 </body>

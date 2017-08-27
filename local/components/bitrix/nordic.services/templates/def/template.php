@@ -92,7 +92,7 @@
                         </div>
                         <div class="services-list-item__title">
                             <div class="services-list-item__title-inner">
-Сопровождение строительства
+Оборудование
 </div>
                         </div>
                         <div class="services-list-item__text">

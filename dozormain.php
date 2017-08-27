@@ -1,3 +1,6 @@
+<?
+$link_camera = 'http://10.12.0.246:81/video2.mjpg';
+?>
 <!DOCTYPE html>
 <html lang="en" data-ng-app="website">
 
@@ -83,7 +86,7 @@
        margin-bottom: 10px;*/
        padding-left: 15%;
        padding-right: 15%;
-
+	   cursor: pointer;
        text-align: center;
        display: table-cell;
        vertical-align: middle;
@@ -586,6 +589,17 @@
         font-family: "RobotoRegular";
         float: left;
     }
+    .item-scheme-and-video {
+        overflow: hidden;
+    }
+    .item-scheme {
+        float: left;
+        cursor: pointer;
+    }
+    .item-video {
+        float: right;
+        cursor: pointer;
+    }
     .item-pop-up-exit {
         float: right;
         cursor: pointer;
@@ -608,11 +622,11 @@
         }
     }
 
-    @media (max-width: 1400px) {
+   /* @media (max-width: 1400px) {
         .items-block {
             font-size: 16px;
         }
-    }
+    }*/
     @media (max-width: 1280px) {
         .items-block {
             font-size: 14px;
@@ -621,7 +635,11 @@
             font-size: 21px;
         }
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1400px) {
+   /* @media (max-width: 1024px) {*/
+        .col-left-logo {
+            height: 100px;
+        }
         .col-left-logo-inner {
             font-size: 19px;
         }
@@ -636,8 +654,31 @@
         }
         .items-block {
             font-size: 12px;
+            height: calc(100vh - 110px);
         }
-
+        .item-outer-first {
+            margin-top: 0px;
+        }
+        .info-status-block {
+            height: 80px;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+        .item-engineering-complex-inner-title {
+            padding-bottom: 10px;
+        }
+        .item-pt-tha1-inner-title {
+            padding-bottom: 10px;
+        }
+        .col-right-item {
+            margin-bottom: 5px;
+        }
+        .col-right-double-left-item{
+            margin-bottom: 5px;
+        }
+        .col-right-double-right-item{
+            margin-bottom: 5px;
+        }
         .col-right-item {
             width: 94%;
             height: 50px;
@@ -698,9 +739,7 @@
             width: 10%;
             position: relative;
         }
-        .info-status-block {
-            font-size: 15px;
-        }
+
     }
 </style>
 
@@ -711,11 +750,21 @@
 
 <script>
 $(function() {
-
+    $(".item-video").on("click", function(){
+        openWindow(700, 600);
+    });
+    function openWindow(width, height){
+        window.open('<?= $link_camera ?>', 'camera', 'width='+width+',height='+height+',toolbar=no,location=no,menubar=no,left='+
+            ((window.innerWidth - width)/2)+',top='+((window.innerHeight - height)/2));
+    }
     if(! jQuery.browser.mobile){
         $(".col-right-item-pic-icon.work").on("mouseenter", function(){
             console.log("click");
-
+            if($(this).hasClass("water")){
+            $(".window-pop-up .item-scheme").html("<a href='/dozorfloor0.php'> Показать схему </a>");
+            }else{
+            $(".window-pop-up .item-scheme").html("<a href='/dozorengine.php'> Показать схему </a>");
+            }
            //var dfdf =  $(".items-block").getBoundingClientRect();
 
             var total_container_width = $('body').width();
@@ -788,9 +837,12 @@ $(function() {
             console.log("window-pop-up mouseenter");
             if($(".window-pop-up").hasClass('display_block')) {
                 $(".window-pop-up").removeClass('display_block');
-                $(".window-pop-up").addClass('display_none')
+                $(".window-pop-up").addClass('display_none');
             }
         });
+
+
+
 
 
     }else{
@@ -808,6 +860,10 @@ $(function() {
         window.open("/maps.php");
     });
 
+	 $(".col-left-logo-inner").on("click", function(){
+        console.log("click");
+        window.open("/maps.php");
+    });
 
     fetchData();
     setInterval(function() {
@@ -899,18 +955,30 @@ $(function() {
 
                 if(water_trigger_state == 2){
                     $(".info-status-block-item.water2").css("display", "block");
+					$(".info-status-block-item.water1").css("display", "none");
+					$(".info-status-block-item.water0").css("display", "none");
                 }else if(water_trigger_state == 1){
                     $(".info-status-block-item.water1").css("display", "block");
+					$(".info-status-block-item.water2").css("display", "none");
+					$(".info-status-block-item.water0").css("display", "none");
                 }else{
                     $(".info-status-block-item.water0").css("display", "block");
+					$(".info-status-block-item.water1").css("display", "none");
+					$(".info-status-block-item.water2").css("display", "none");
                 }
 
                 if(temperature_trigger_state == 2){
                     $(".info-status-block-item.temperature2").css("display", "block");
+					$(".info-status-block-item.temperature1").css("display", "none");
+					$(".info-status-block-item.temperature0").css("display", "none");
                 }else if(temperature_trigger_state == 1){
                     $(".info-status-block-item.temperature1").css("display", "block");
+					$(".info-status-block-item.temperature2").css("display", "none");
+					$(".info-status-block-item.temperature0").css("display", "none");
                 }else{
                     $(".info-status-block-item.temperature0").css("display", "block");
+					$(".info-status-block-item.temperature1").css("display", "none");
+					$(".info-status-block-item.temperature2").css("display", "none");
                 }
             }
         });
@@ -935,7 +1003,7 @@ $(function() {
         </div>
 
         <div class="col-left-menu">
-            <div class="menu-top-level-item-outer">
+            <div class="menu-top-level-item-outer item-outer-first">
                 <div class="menu-top-level-item">
                     <div class="menu-top-level-item2">
                         <div class="menu-top-level-item-text-and-indicator-color">
@@ -1106,12 +1174,17 @@ $(function() {
                             <div class="item-room-title">
                                 Помещение 032
                             </div>
-                            <div class="item-pop-up-exit">
+                           <!-- <div class="item-pop-up-exit">
                                 <img src="/dozor_images/multiply.png">
-                            </div>
+                            </div>-->
                         </div>
-                        <div class="item-scheme">
-                            Показать схему
+                        <div class="item-scheme-and-video">
+                            <div class="item-scheme">
+                                Показать схему
+                            </div>
+                            <div class="item-video">
+                                Показать видео
+                            </div>
                         </div>
                         <div class="item-characteristics">
                             Показать характеристики и чертежи устройства
