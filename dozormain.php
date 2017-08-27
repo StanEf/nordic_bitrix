@@ -877,113 +877,141 @@ $(function() {
         'indicator_color_green' : '#00a070'
     };
 
+    function Item(class_name, trigger_id_high, trigger_id_middle, data){
+        this.class_name = class_name;
+        this.trigger_id_high = trigger_id_high;
+        this.trigger_id_middle = trigger_id_middle;
+        this.getTriggerState = function(data){
+            if (!$.isEmptyObject(data['trigger'][this.trigger_id_high])) {
+                this.trigger_state = 2;
+            } else if (!$.isEmptyObject(data['trigger'][this.trigger_id_middle])) {
+                this.trigger_state = 1;
+            } else {
+                this.trigger_state = 0;
+            }
+        };
+        this.getTriggerState(data);
+        this.getColorFromState = function(){
+            if (this.trigger_state == 2) {
+                this.indicator_color = '#bb6767';
+            } else if (this.trigger_state == 1) {
+                this.indicator_color = '#ffda73';
+            } else {
+                this.indicator_color = '#00a070';
+            }
+        };
+        this.getColorFromState();
+        this.applyIconParameters = function () {
+            $(".col-right-item-pic-icon.work."+this.class_name).attr("data-state", this.trigger_state);
+            $(".col-right-item-pic-icon.work."+this.class_name).css('background', this.indicator_color);
+        };
+        this.applyIconParameters();
+        this.getErrorCounter = function(){
+            if(this.trigger_state !== 0){
+                this.counter_error = 1;
+            }else{
+                this.counter_error = '';
+            }
+
+        }
+        this.getErrorCounter();
+        this.applyMenuItemParameters = function(){
+            var indicator_color = this.indicator_color;
+            $("#menu-indicator-color-"+this.class_name+" .menu-top-level-item-indicator-half").each(function(){
+                $(this).removeClass('red');
+                $(this).removeClass('green');
+                $(this).removeClass('yellow');
+                $(this).css('background', indicator_color);
+            });
+            $("#menu-indicator-counter-"+this.class_name+" p").text(this.counter_error);
+
+        }
+        this.applyMenuItemParameters();
+        this.applyInfoStatus = function(){
+            if(this.trigger_state == 2){
+                $(".info-status-block-item."+this.class_name+"2").css("display", "block");
+                $(".info-status-block-item."+this.class_name+"1").css("display", "none");
+                $(".info-status-block-item."+this.class_name+"0").css("display", "none");
+            }else if(this.trigger_state == 1){
+                $(".info-status-block-item."+this.class_name+"1").css("display", "block");
+                $(".info-status-block-item."+this.class_name+"2").css("display", "none");
+                $(".info-status-block-item."+this.class_name+"0").css("display", "none");
+            }else{
+                $(".info-status-block-item."+this.class_name+"0").css("display", "block");
+                $(".info-status-block-item."+this.class_name+"1").css("display", "none");
+                $(".info-status-block-item."+this.class_name+"2").css("display", "none");
+            }
+        };
+        this.applyInfoStatus();
+
+    }
+
+
+
+    /*function getTriggerState(objData, objItem){
+        var trigger_state;
+        if (!$.isEmptyObject(objData['trigger'][trigger_id_high])) {
+            trigger_state = 2;
+        } else if (!$.isEmptyObject(objData['trigger'][trigger_id_middle])) {
+            trigger_state = 1;
+        } else {
+            trigger_state = 0;
+        }
+        return trigger_state;
+    }
+
+    function getColorFromState(state){
+        var color;
+        if (state == 2) {
+            color = '#bb6767';
+        } else if (state == 1) {
+            color = '#ffda73';
+        } else {
+            color = '#00a070';
+        }
+        return color;
+    }
+    function applyIconParameters(class_name, state, color){
+        $(".col-right-item-pic-icon.work."+class_name).attr("data-state", state);
+        $(".col-right-item-pic-icon.work."+class_name).css('background', color);
+    }
+    function getErrorCounter(state){
+        var counter_error;
+        if(state !== 0){
+            counter_error = 1;
+        }else{
+            counter_error = 0;
+        }
+        return counter_error;
+    }
+    function applyMenuItemParameters(class_name, color, counter_error){
+        $("#menu-indicator-color-"+class_name+" .menu-top-level-item-indicator-half").each(function(){
+            $(this).removeClass('red');
+            $(this).removeClass('green');
+            $(this).removeClass('yellow');
+            $(this).css('background', color);
+        });
+        $("#menu-indicator-counter-"+class_name+" p").text(counter_error);
+    }*/
+
+
+
+
     function fetchData() {
         $.ajax({
             url: 'dozor_ajax/getdata.php',
             success: function (data) {
                 var obj = jQuery.parseJSON(data);
-                var temp_indicator_color;
-
+                console.log(obj);
                 //obj['trigger'][13591] = {'triggerid' : 1, 1: 2}; // верхний бак переполнен
                 //obj['trigger'][13589] = {'triggerid': 1, 1: 2}; // верхний бак пустой
-
-                var water_trigger_state;
-                if (!$.isEmptyObject(obj['trigger'][13591])) {
-                    water_indicator_color = '#bb6767';
-                    water_trigger_state = 2;
-                } else if (!$.isEmptyObject(obj['trigger'][13589])) {
-                    water_indicator_color = '#ffda73';
-                    water_trigger_state = 1;
-                } else {
-                    water_indicator_color = '#00a070';
-                    water_trigger_state = 0;
-                }
-
-                obj['trigger'][13563] = {'triggerid' : 1, 1: 2}; // t > 80
+                var Water = new Item('water', '13591', '13589', obj);
+                //obj['trigger'][13563] = {'triggerid' : 1, 1: 2}; // t > 80
                 //obj['trigger'][13561] = {'triggerid': 1, 1: 2}; // t > 50
-                console.log(obj['trigger']);
-
-                var temperature_trigger_state;
-                if (!$.isEmptyObject(obj['trigger'][13563])) {
-                    temperature_indicator_color = '#bb6767';
-                    temperature_trigger_state = 2;
-                } else if (!$.isEmptyObject(obj['trigger'][13561])) {
-                    temperature_indicator_color = '#ffda73';
-                    temperature_trigger_state = 1;
-                } else {
-                    temperature_indicator_color = '#00a070';
-                    temperature_trigger_state = 0;
-                }
-
-                $(".col-right-item-pic-icon.work.water").attr("data-state", water_trigger_state);
-                console.log('water_indicator_color ' + water_indicator_color);
-
-                $(".col-right-item-pic-icon.work.water").css('background', water_indicator_color);
-                var counter_error_water =  '';
-
-                if(water_indicator_color === '#bb6767' ||  water_indicator_color === '#ffda73'){
-                    counter_error_water = 1;
-                }
-                console.log('counter_error_water ' + counter_error_water);
-                $(".col-right-item-pic-icon.work.temperature").attr("data-state", temperature_trigger_state);
-                console.log('temperature_indicator_color ' + temperature_indicator_color);
-
-                $(".col-right-item-pic-icon.work.temperature").css('background', temperature_indicator_color);
-                var counter_error_temperature =  '';
-                if(temperature_indicator_color === '#bb6767' ||  temperature_indicator_color === '#ffda73'){
-                    counter_error_temperature = 1;
-                }
-                $(".col-right-item-pic-icon.work.water").attr("data-state", water_trigger_state);
-
-                $("#menu-indicator-color-water .menu-top-level-item-indicator-half").each(function(){
-                    $(this).removeClass('red');
-                    $(this).removeClass('green');
-                    $(this).removeClass('yellow');
-                    $(this).css('background', water_indicator_color);
-                });
-                $("#menu-indicator-counter-water p").text(counter_error_water);
-
-                $(".col-right-item-pic-icon.work.temperature").attr("data-state", temperature_trigger_state);
-
-                $("#menu-indicator-color-temperature .menu-top-level-item-indicator-half").each(function(){
-                    $(this).removeClass('red');
-                    $(this).removeClass('green');
-                    $(this).removeClass('yellow');
-                    $(this).css('background', temperature_indicator_color);
-                });
-                $("#menu-indicator-counter-temperature p").text(counter_error_temperature);
-
-                if(water_trigger_state == 2){
-                    $(".info-status-block-item.water2").css("display", "block");
-					$(".info-status-block-item.water1").css("display", "none");
-					$(".info-status-block-item.water0").css("display", "none");
-                }else if(water_trigger_state == 1){
-                    $(".info-status-block-item.water1").css("display", "block");
-					$(".info-status-block-item.water2").css("display", "none");
-					$(".info-status-block-item.water0").css("display", "none");
-                }else{
-                    $(".info-status-block-item.water0").css("display", "block");
-					$(".info-status-block-item.water1").css("display", "none");
-					$(".info-status-block-item.water2").css("display", "none");
-                }
-
-                if(temperature_trigger_state == 2){
-                    $(".info-status-block-item.temperature2").css("display", "block");
-					$(".info-status-block-item.temperature1").css("display", "none");
-					$(".info-status-block-item.temperature0").css("display", "none");
-                }else if(temperature_trigger_state == 1){
-                    $(".info-status-block-item.temperature1").css("display", "block");
-					$(".info-status-block-item.temperature2").css("display", "none");
-					$(".info-status-block-item.temperature0").css("display", "none");
-                }else{
-                    $(".info-status-block-item.temperature0").css("display", "block");
-					$(".info-status-block-item.temperature1").css("display", "none");
-					$(".info-status-block-item.temperature2").css("display", "none");
-                }
+                var Temperature = new Item('temperature', '13563', '13561', obj);
             }
         });
     };
-
 
 });
 </script>
