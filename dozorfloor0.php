@@ -704,53 +704,53 @@
 
 }
 
-    .indicator-pic-system-water {
+    .indicator-pic.system-water-0 {
         position: absolute;
         left: 76%;
         top: 24%;
     }
-    .indicator-pic-system-energy {
+    .indicator-pic.system-energy {
         position: absolute;
         left: 53%;
         top: 18%;
     }
-    .indicator-pic-system-fire-fighting {
+    .indicator-pic.system-fire-fighting {
         position: absolute;
         left: 35%;
         top: 35%;
     }
-    .indicator-pic-system-conditioning {
+    .indicator-pic.system-conditioning {
         position: absolute;
         left: 19%;
         top: 20%;
     }
-    .indicator-pic-system-supervision1 {
+    .indicator-pic.system-supervision1 {
         position: absolute;
         left: 10%;
         top: 36%;
     }
-    .indicator-pic-system-supervision2 {
+    .indicator-pic.system-supervision2 {
         position: absolute;
         left: 56%;
         top: 78%;
     }
-    .indicator-pic-system-supervision3 {
+    .indicator-pic.system-supervision3 {
         position: absolute;
         left: 55%;
         top: 60%;
     }
-    .indicator-pic-system-water2 {
+    .indicator-pic.system-water-1 {
         position: absolute;
         left: 62%;
         top: 57%;
     }
-    .indicator-pic-system-fire-alarm {
+    .indicator-pic.system-fire-alarm {
         position: absolute;
         left: 28%;
         top: 80%;
     }
 
-    .indicator-pic-system-remote-access-control {
+    .indicator-pic.system-remote-access-control {
         position: absolute;
         left: 47%;
         top: 85%;
@@ -889,6 +889,20 @@ function resizeMap(){
     $(".map-container-map-inner-img").width(height);
     $(".map-container-map-inner-img>img").width(height);
 }
+function setupIndicatorStatePicToZero(){
+	$(".indicator-pic").each(function(){
+		$(this).attr("data-state", "0");
+	});
+}
+function changeIndicatorVisible(){
+	$(".indicator-pic").each(function(){
+		if($(this).attr("data-state") === "0"){
+			$(this).hide();
+		}else{
+			$(this).show();
+		}
+	});
+}
 
 $(function() {
 
@@ -929,13 +943,13 @@ $(function() {
         }
 
     });
-
+/*
     $(".indicator-pic").each(function(){
         if($(this).attr("data-state") == 0){
             $(this).hide();
         }
     });
-
+*/
     $(".button-map-show-items-all").on("click", function(){
         console.log('button-map-show-all');
 
@@ -1054,6 +1068,7 @@ $(function() {
              $(".window-pop-up").show();
         });
     }
+	
     $(".col-left-logo-inner").on("click", function(){
         console.log("click");
         window.open("/maps.php");
@@ -1063,7 +1078,7 @@ $(function() {
     setInterval(function() {
         console.log('fetch data');
         fetchData();
-    }, 6000);
+    }, 10000);
 
     var colorIndicatorArr = {
         'indicator_color_red' : '#bb676',
@@ -1071,52 +1086,101 @@ $(function() {
         'indicator_color_green' : '#00a070'
     };
 
+	function Item(class_category, class_group, class_element, trigger_id_high, trigger_id_middle, data){
+		this.class_category = class_category;
+		this.class_group = class_group;
+        this.class_element = class_element;
+        this.trigger_id_high = trigger_id_high;
+        this.trigger_id_middle = trigger_id_middle;
+        this.getTriggerState = function(data){
+            if (!$.isEmptyObject(data['trigger'][this.trigger_id_high])) {
+                this.trigger_state = 2;
+            } else if (!$.isEmptyObject(data['trigger'][this.trigger_id_middle])) {
+                this.trigger_state = 1;
+            } else {
+                this.trigger_state = 0;
+            }
+        };
+        this.getTriggerState(data);
+        this.getColorFromState = function(){
+            if (this.trigger_state == 2) {
+                this.indicator_color = '#bb6767';
+            } else if (this.trigger_state == 1) {
+                this.indicator_color = '#ffda73';
+            } else {
+                this.indicator_color = '#00a070';
+            }
+        };
+        this.getColorFromState();
+        this.applyIconParameters = function () {
+            $(".indicator-pic.system-"+this.class_element+" .col-right-item-pic-icon").attr("data-state", this.trigger_state);
+            $(".indicator-pic.system-"+this.class_element+" .col-right-item-pic-icon").css('background', this.indicator_color);
+        };
+        this.applyIconParameters();
+        this.getErrorCounter = function(){
+            if(this.trigger_state !== 0){
+                this.counter_error = 1;
+            }else{
+                this.counter_error = '';
+            }
+        }
+        this.getErrorCounter();
+        this.applyMenuItemParameters = function(){
+            var indicator_color = this.indicator_color;
+            $(".menu-top-level-item.category-"+this.class_category+" .menu-top-level-item-indicator-half").each(function(){
+                $(this).removeClass('red');
+                $(this).removeClass('green');
+                $(this).removeClass('yellow');
+                $(this).css('background', indicator_color);
+            });
+            $(".category-"+this.class_category+" .menu-top-level-item-indicator-num  p").text(this.counter_error);
+
+        }
+        this.applyMenuItemParameters();
+		/*
+		this.setupIndicatorPicToZero = function(){
+			$(".indicator-pic").each(function(){
+				$(this).attr("data-state", "0");
+			});
+			return true;
+		};
+		*/
+		this.showGroupElements = function(){
+			if(this.trigger_state === 0){
+				$(".indicator-pic.system-"+this.class_group).each(function(){
+					$(this).attr("data-state", "1");
+					console.log($(this));
+				});
+			}else{
+				$(".indicator-pic.system-"+this.class_element).attr("data-state", "1");
+			}
+		};
+		this.showGroupElements();
+		
+		console.log();
+		console.log("this.class_category " + this.class_category);
+		console.log("this.class_group " + this.class_group);
+		console.log("this.class_element " + this.class_element);
+		console.log("this.trigger_id_high " + this.trigger_id_high);
+		console.log("this.trigger_id_middle " + this.trigger_id_middle);
+		console.log("this.trigger_state " + this.trigger_state);
+		console.log("this.indicator_color " + this.indicator_color);
+		console.log("this.counter_error " + this.counter_error);
+    }
 
     function fetchData() {
         $.ajax({
             url: 'dozor_ajax/getdata.php',
             success: function (data) {
-                var obj = jQuery.parseJSON(data);
-                var lastvalue = obj['items'][23675]['lastvalue'];
-                lastvalueArr = lastvalue.split('.');
-                $('.indicator-temperature-number-big').text(lastvalueArr[0]);
-                lastvalueArr2 = lastvalueArr[1].split('');
-                //console.log(lastvalueArr2);
-                $('.indicator-temperature-number-small').text('.' + lastvalueArr2[0]);
-                var temperature_indicator_color;
-
-                obj['trigger'][13591] = {'triggerid' : 1, 1: 2};
-                //obj['trigger'][13561] = {'triggerid': 1, 1: 2};
-                console.log(obj['trigger']);
-                var tigger_state;
-                if (!$.isEmptyObject(obj['trigger'][13591])) {
-                    temperature_indicator_color = '#bb6767';
-                    trigger_state = 2;
-                } else if (!$.isEmptyObject(obj['trigger'][13589])) {
-                    temperature_indicator_color = '#ffda73';
-                    trigger_state = 1;
-                } else {
-                    temperature_indicator_color = '#00a070';
-                    trigger_state = 0;
-                }
-                $(".indicator-pic-system-water").attr("data-state", trigger_state);
-                console.log('temperature_indicator_color ' + temperature_indicator_color);
-
-                $('.col-right-item-pic-icon-indicator-temperature').css('background', temperature_indicator_color);
-                $('.col-right-item-pic-icon.work').css('background', temperature_indicator_color);
-
-                $('.complex-engineering .menu-top-level-item-indicator-half').each(function( index ) {
-                    $(this).removeClass('red');
-                    $(this).removeClass('green');
-                    $(this).removeClass('yellow');
-                    $(this).css('background', temperature_indicator_color);
-                });
-                if(temperature_indicator_color == '#bb6767' ||  temperature_indicator_color == '#ffda73'){
-                    $('#menu-indicator-counter-temperature p').text(1);
-                }else{
-                    $('#menu-indicator-counter-temperature p').text('');
-                }
-
+                var obj = jQuery.parseJSON(data);				
+				setupIndicatorStatePicToZero();
+				//obj['trigger'][13591] = {'triggerid' : 1, 1: 2}; // верхний бак переполнен
+                //obj['trigger'][13589] = {'triggerid': 1, 1: 2}; // верхний бак пустой
+                var Water = new Item('engineering-complex', 'water', 'water-0', '13591', '13589', obj);
+				//obj['trigger'][13563] = {'triggerid' : 1, 1: 2}; // t > 80
+                //obj['trigger'][13561] = {'triggerid': 1, 1: 2}; // t > 50               
+				var Temperature = new Item('tha1500','temperature', 'temperature-0', '13563', '13561', obj);
+				changeIndicatorVisible();		
             }
         });
     };
@@ -1138,7 +1202,7 @@ $(function() {
         </div>
         <div class="col-left-menu">
             <div class="menu-top-level-item-outer">
-                <div class="menu-top-level-item">
+                <div class="menu-top-level-item category-engineering-complex">
                     <div class="menu-top-level-item2">
                         <div class="menu-top-level-item-text-and-indicator-color">
                             <div class="menu-top-level-item-text">
@@ -1150,7 +1214,7 @@ $(function() {
                             </div>
                             <div class="menu-top-level-item-indicator-color">
                                 <div class="menu-top-level-item-indicator-color2 mod">
-                                    <div class="menu-top-level-item-indicator-color-inner">
+                                    <div class="menu-top-level-item-indicator-color-inner" id="menu-indicator-color-water">
                                         <div class="menu-top-level-item-indicator-half red">
                                         </div>
                                         <div class="menu-top-level-item-indicator-half yellow">
@@ -1161,14 +1225,14 @@ $(function() {
                         </div>
                         <div class="menu-top-level-item-indicator-num">
                             <div class="menu-top-level-item-indicator-num-inner" id="menu-indicator-counter-water">
-                                <p>0</p>
+                                <p></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="menu-top-level-item-outer">
-                <div class="menu-top-level-item">
+                <div class="menu-top-level-item category-tha1500">
                     <div class="menu-top-level-item-text-and-indicator-color">
                         <div class="menu-top-level-item-text">
                             <div class="menu-top-level-item-text-inner">
@@ -1179,7 +1243,7 @@ $(function() {
                         </div>
                         <div class="menu-top-level-item-indicator-color">
                             <div class="menu-top-level-item-indicator-color2">
-                                <div class="menu-top-level-item-indicator-color-inner">
+                                <div class="menu-top-level-item-indicator-color-inner" id="menu-indicator-color-temperature">
                                     <div class="menu-top-level-item-indicator-half">
                                     </div>
                                     <div class="menu-top-level-item-indicator-half">
@@ -1188,9 +1252,9 @@ $(function() {
                             </div>
                         </div>
                     </div>
-                    <div class="menu-top-level-item-indicator-num hidden">
-                        <div class="menu-top-level-item-indicator-num-inner" id="menu-indicator-color-temperature">
-                            <p>5</p>
+                    <div class="menu-top-level-item-indicator-num">
+                        <div class="menu-top-level-item-indicator-num-inner" id="menu-indicator-counter-temperature">
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -1250,6 +1314,7 @@ $(function() {
                 </div>
             </div>
         </div>
+		<!--
         <div class="col-left-video">
             <div class="col-left-video-title">
                 <div>
@@ -1257,10 +1322,11 @@ $(function() {
                 </div>
             </div>
             <div class="col-left-video-video">
-                <!-- <img src="http://10.12.0.202:81/video2.mjpg" /> -->
+                <!-- <img src="http://10.12.0.202:81/video2.mjpg" /> 
 				<img src="/dozor_images/square-video-button_icon.png" width="20px" />
             </div>
         </div>
+		-->
     </div>
     <div class="col-right">
         <div class="col-right-inner">
@@ -1317,7 +1383,7 @@ $(function() {
                         <div class="map-container-map-inner-img">
                             <img  src='/dozor_images/map_route.png'/>
 
-                            <div class="indicator-pic indicator-pic-system-water" data-state="1">
+                            <div class="indicator-pic system-water system-water-0" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon work">
                                         <div>
@@ -1327,7 +1393,7 @@ $(function() {
                                 </div>
                             </div>
 
-                            <div class="indicator-pic indicator-pic-system-energy" data-state="0">
+                            <div class="indicator-pic system-energy" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1337,7 +1403,7 @@ $(function() {
                                 </div>
                             </div>
 
-                            <div class="indicator-pic indicator-pic-system-fire-fighting" data-state="0">
+                            <div class="indicator-pic system-fire-fighting" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1347,7 +1413,7 @@ $(function() {
                                 </div>
                             </div>
 
-                            <div class="indicator-pic indicator-pic-system-conditioning" data-state="0">
+                            <div class="indicator-pic system-conditioning" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1357,7 +1423,7 @@ $(function() {
                                 </div>
                             </div>
 
-                            <div class="indicator-pic indicator-pic-system-supervision1" data-state="0">
+                            <div class="indicator-pic system-supervision1" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1366,7 +1432,7 @@ $(function() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="indicator-pic indicator-pic-system-supervision2" data-state="0">
+                            <div class="indicator-pic system-supervision2" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1375,7 +1441,7 @@ $(function() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="indicator-pic indicator-pic-system-supervision3" data-state="0">
+                            <div class="indicator-pic system-supervision3" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1385,7 +1451,7 @@ $(function() {
                                 </div>
                             </div>
 
-                            <div class="indicator-pic indicator-pic-system-water2" data-state="0">
+                            <div class="indicator-pic system-water system-water-1" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1395,7 +1461,7 @@ $(function() {
                                 </div>
                             </div>
 
-                            <div class="indicator-pic indicator-pic-system-fire-alarm" data-state="0">
+                            <div class="indicator-pic system-fire-alarm" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>
@@ -1405,7 +1471,7 @@ $(function() {
                                 </div>
                             </div>
 
-                            <div class="indicator-pic indicator-pic-system-remote-access-control" data-state="0">
+                            <div class="indicator-pic system-remote-access-control" data-state="0">
                                 <div class="col-right-item-pic">
                                     <div class="col-right-item-pic-icon">
                                         <div>

@@ -1,5 +1,5 @@
 <?
-$link_camera = 'http://10.12.0.246:81/video2.mjpg';
+$link_camera = 'http://10.12.0.250:81/video2.mjpg';
 ?>
 <!DOCTYPE html>
 <html lang="en" data-ng-app="website">
@@ -670,9 +670,6 @@ $link_camera = 'http://10.12.0.246:81/video2.mjpg';
         .item-pt-tha1-inner-title {
             padding-bottom: 10px;
         }
-        .col-right-item {
-            margin-bottom: 5px;
-        }
         .col-right-double-left-item{
             margin-bottom: 5px;
         }
@@ -684,7 +681,7 @@ $link_camera = 'http://10.12.0.246:81/video2.mjpg';
             height: 50px;
             padding-left: 3%;
             padding-right: 3%;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .col-right-item-pic {
             width: 50px;
@@ -1072,7 +1069,6 @@ $(function() {
                                     THA - 1500
                                 </div>
                             </div>
-
                         </div>
                         <div class="menu-top-level-item-indicator-color temperature">
                             <div class="menu-top-level-item-indicator-color2 mod">
@@ -1560,6 +1556,7 @@ $(function() {
                                             </div>
                                         </div>
                                     </div>
+									<!--
                                     <div class="col-right-double-left-item">
                                         <div class="col-right-item-pic">
                                             <div class="col-right-item-pic-icon">
@@ -1568,7 +1565,6 @@ $(function() {
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-right-item-title">
                                             <div class="col-right-item-pic-line">
                                                 <div>
@@ -1579,10 +1575,10 @@ $(function() {
                                                     СИСТЕМА УПРАВЛЕНИЯ<br/>ГЕКСАПОДОМ
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </div>                                    
+									</div>		
+									-->									
                                 </div>
-
                             </div>
                             <div class="col-right-double-right">
                                 <div class="col-right-double-left-inner">
