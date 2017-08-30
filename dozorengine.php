@@ -837,6 +837,19 @@
     .display_none {
         display: none;
     }
+
+    .item-scheme-and-video {
+        overflow: hidden;
+    }
+    .item-scheme {
+        float: left;
+        cursor: pointer;
+    }
+    .item-video {
+        float: right;
+        cursor: pointer;
+    }
+
 </style>
 <script src="/dozor_js/jquery-1.11.2.min.js"></script>
 <script src="/dozor_js/jquery.ba-throttle-debounce.min.js"></script>
@@ -937,6 +950,20 @@ function Item(class_category, class_group, class_element, trigger_id_high, trigg
 $(function() {
 	fetchData();
 	resizeMap();
+
+	$(".item-video").on("click", function(){
+        openWindow(700, 600);
+    });
+    function openWindow(width, height){
+        if(window.location.hostname == 'nordiceng.primesoftpro.ru'){
+            var camera_link = 'http://10.12.0.14:81/video2.mjpg';
+        }else{
+            var camera_link = 'http://'+window.location.hostname+':81/video2.mjpg';
+        }
+
+        window.open(camera_link, 'camera', 'width='+width+',height='+height+',toolbar=no,location=no,menubar=no,left='+
+            ((window.innerWidth - width)/2)+',top='+((window.innerHeight - height)/2));
+    }
 	
 	if(! jQuery.browser.mobile){
 		console.log('not mobile');
@@ -1290,8 +1317,13 @@ $(".col-left-logo-inner").on("click", function(){
                                             <img src="/dozor_images/multiply.png">
                                         </div>-->
                                     </div>
-                                    <div class="item-scheme">
-                                        Показать схему
+                                    <div class="item-scheme-and-video">
+                                        <div class="item-scheme">
+                                            Показать схему
+                                        </div>
+                                        <div class="item-video">
+                                            Показать видео
+                                        </div>
                                     </div>
                                     <div class="item-characteristics">
                                         Показать характеристики и чертежи устройства

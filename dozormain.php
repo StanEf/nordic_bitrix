@@ -1,5 +1,13 @@
 <?
 $link_camera = 'http://10.12.0.250:81/video2.mjpg';
+
+?>
+<?
+//$GLOBALS["HOST_CAMERA"] = "host camera";
+/*$_COOKIE["HOST_CAMERA"] = "host camera";
+echo '$_COOKIE<pre>';
+print_r($_COOKIE);
+echo '</pre>000';*/
 ?>
 <!DOCTYPE html>
 <html lang="en" data-ng-app="website">
@@ -751,7 +759,13 @@ $(function() {
         openWindow(700, 600);
     });
     function openWindow(width, height){
-        window.open('<?= $link_camera ?>', 'camera', 'width='+width+',height='+height+',toolbar=no,location=no,menubar=no,left='+
+        if(window.location.hostname == 'nordiceng.primesoftpro.ru'){
+            var camera_link = 'http://10.12.0.14:81/video2.mjpg';
+        }else{
+            var camera_link = 'http://'+window.location.hostname+':81/video2.mjpg';
+        }
+
+        window.open(camera_link, 'camera', 'width='+width+',height='+height+',toolbar=no,location=no,menubar=no,left='+
             ((window.innerWidth - width)/2)+',top='+((window.innerHeight - height)/2));
     }
     if(! jQuery.browser.mobile){

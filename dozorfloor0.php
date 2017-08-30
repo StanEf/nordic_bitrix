@@ -614,7 +614,10 @@
         text-align: center;
         color: #003e63;
         font-size: 18px;
-
+    }
+    .map-container-floor-outer.selected {
+        background: #4d5c71;
+        color: white;
     }
     .map-container-floor {
         display: table;
@@ -910,7 +913,13 @@ $(function() {
         openWindow(700, 600);
     });
     function openWindow(width, height){
-        window.open('<?= $link_camera ?>', 'camera', 'width='+width+',height='+height+',toolbar=no,location=no,menubar=no,left='+
+        if(window.location.hostname == 'nordiceng.primesoftpro.ru'){
+            var camera_link = 'http://10.12.0.14:81/video2.mjpg';
+        }else{
+            var camera_link = 'http://'+window.location.hostname+':81/video2.mjpg';
+        }
+
+        window.open(camera_link, 'camera', 'width='+width+',height='+height+',toolbar=no,location=no,menubar=no,left='+
             ((window.innerWidth - width)/2)+',top='+((window.innerHeight - height)/2));
     }
 
@@ -1189,6 +1198,15 @@ $(function() {
 });
 </script>
 <body>
+<?
+/*echo '$_COOKIE<pre>';
+print_r($_COOKIE);
+echo '</pre>000';
+$GLOBALS["HOST_CAMERA"] = "host camera";
+echo '<pre>';
+print_r($GLOBALS);
+echo '</pre>000';*/
+?>
 <div class="dozor-main-inner">
     <div class="col-left">
 
@@ -1362,7 +1380,7 @@ $(function() {
                                 </div>
                             </div>
                         </div>
-                        <div class="map-container-floor-outer">
+                        <div class="map-container-floor-outer selected">
                             <div class="map-container-floor">
                                 <div class="map-container-floor-inner">
                                     Первый этаж
