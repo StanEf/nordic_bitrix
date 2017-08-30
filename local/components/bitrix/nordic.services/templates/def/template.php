@@ -44,18 +44,21 @@
                         </div>
                         <div class="services-list-item__title">
                             <div class="services-list-item__title-inner">
-Проектирование
+                                Проектирование
                             </div>
                         </div>
                         <div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
-Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
-</div>
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="services-list-item services-list-item-right">
                     <div class="services-list-item-inner">
+                        <div class="services-list-item__link">
+                            <a href="/services/consulting/"></a>
+                        </div>
                         <div class="services-list-item__background-opacity"></div>
                         <div class="services-list-item__background">
                             <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-consulting.jpg" alt="Логотип" />
@@ -67,13 +70,13 @@
                         </div>
                         <div class="services-list-item__title">
                             <div class="services-list-item__title-inner">
-Консалтинг
+                                Консалтинг
                             </div>
                         </div>
                         <div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
-Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
-</div>
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,13 +95,13 @@
                         </div>
                         <div class="services-list-item__title">
                             <div class="services-list-item__title-inner">
-Сопровождение строительства
-</div>
+                                 Сопровождение строительства
+                            </div>
                         </div>
                         <div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
-Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
-</div>
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,13 +118,13 @@
                         </div>
                         <div class="services-list-item__title">
                             <div class="services-list-item__title-inner">
-Сопровождение строительства
-</div>
+                                Сопровождение строительства
+                            </div>
                         </div>
                         <div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
-Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
-</div>
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,18 +141,17 @@
                         </div>
                         <div class="services-list-item__title">
                             <div class="services-list-item__title-inner">
-Послегарантийное
+                                Послегарантийное
                                 обслуживание
                                 </div>
                         </div>
                         <div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
-Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
-</div>
+                                Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 

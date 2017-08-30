@@ -37,7 +37,7 @@
                 <ul>
                     <li class=""><a href="/services/engineering/">Инжиниринг</a></li>
                     <li class=""><a href="/services/projects/">Проэктирование</a></li>
-                    <li class=""><a href="#">Консалтинг</a></li>
+                    <li class=""><a href="/services/consulting/">Консалтинг</a></li>
                     <li class=""><a href="#">Производство оборудования</a></li>
                     <li class=""><a href="#">Сопровождение строительства</a></li>
                     <li class=""><a href="#">Послегарантийное обслуживание</a></li>
@@ -181,7 +181,8 @@
     $(function() {
 
         autoResizePictureOnPageEngineering();
-
+        //autoResizePictureOnPageConsulting();
+        setTimeout(autoResizePictureOnPageConsulting, 500);
         /*setTimeout(autoResizeVideoOnMain, 500);*/
     });
     $(window).resize(function() {
@@ -190,6 +191,7 @@
         autoResizeVideoOnMain();
 
         autoResizePictureOnPageEngineering();
+        autoResizePictureOnPageConsulting();
     });
     function autoResizeServicesOnMain(){
         if(location.pathname == '/' || location.pathname == '/index.php' || location.pathname == '/services/') {
@@ -256,6 +258,13 @@
         if(location.pathname == '/services/engineering/') {
             var page_engineering_picture_height = $(".page-engineering__picture img").height();
             $(".page-engineering__picture").height(page_engineering_picture_height);
+        }
+    }
+    function autoResizePictureOnPageConsulting(){
+        if(location.pathname == '/services/consulting/') {
+            var page_consulting_picture_height = $(".page-consulting__picture img").height();
+            console.log('page_consulting_picture_height ' + page_consulting_picture_height);
+            $(".page-consulting__picture").height(page_consulting_picture_height);
         }
     }
 
