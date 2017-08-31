@@ -1,14 +1,3 @@
-<?
-$link_camera = 'http://10.12.0.250:81/video2.mjpg';
-
-?>
-<?
-//$GLOBALS["HOST_CAMERA"] = "host camera";
-/*$_COOKIE["HOST_CAMERA"] = "host camera";
-echo '$_COOKIE<pre>';
-print_r($_COOKIE);
-echo '</pre>000';*/
-?>
 <!DOCTYPE html>
 <html lang="en" data-ng-app="website">
 

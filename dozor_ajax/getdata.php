@@ -9,8 +9,8 @@ $arr = json_decode($str, true);
 print_r($GLOBALS);
 echo '</pre>000';*/
 //$arr["trigger"][13591] = array('trigger_id' => 1, '3' => 3);
-$arr["trigger"][13589] = array('trigger_id' => 1, '3' => 3);
-$arr["trigger"][13563] = array('trigger_id' => 1, '3' => 3);
+//$arr["trigger"][13589] = array('trigger_id' => 1, '3' => 3);
+//$arr["trigger"][13563] = array('trigger_id' => 1, '3' => 3);
 //$arr["trigger"][13561] = array('trigger_id' => 1, '3' => 3);
 /*
 */
