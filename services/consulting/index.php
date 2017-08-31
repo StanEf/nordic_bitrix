@@ -10,7 +10,7 @@
         </div>
         <div style="clear: both;"></div>
         <div class="page-consulting__picture">
-            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-engineering.jpg" alt="" />
+            <img src="<?= SITE_TEMPLATE_PATH ?>/img/services-consulting.jpg" alt="" />
         </div>
         <div style="clear: both;"></div>
         <div class="page-consulting__text">
