@@ -95,7 +95,7 @@
                         </div>
                         <div class="services-list-item__title">
                             <div class="services-list-item__title-inner">
-                                 Сопровождение строительства
+                                Производство оборудования
                             </div>
                         </div>
                         <div class="services-list-item__text">

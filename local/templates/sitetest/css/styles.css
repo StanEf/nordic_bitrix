@@ -676,13 +676,18 @@ li {
     color: #0d4863;
     text-align: left;
     margin-top: 70px;
+    margin-bottom: 30px;
     max-width: 400px;
 }
-.page-about-company__picture {
-    float: left;
-    margin-top: 30px;
-    margin-bottom: 50px;
+.page-about-company__picture-outer {
     max-width: 800px;
+}
+.page-about-company__picture {
+    /*float: left;
+    margin-top: 30px;
+    margin-bottom: 50px;*/
+    max-width: 500px;
+    margin: 0 auto;
 }
 .page-about-company__picture img {
     width: 100%;
@@ -693,9 +698,10 @@ li {
     font-weight: 300;
     font-style: normal;
     max-width: 800px;
-    text-align: left;
-    margin-bottom: 100px;
+    text-align: justify;
+   /* margin-bottom: 100px;*/
 }
+
 .page-about-company-text__caption {
     font-size: 23px;
 }
@@ -703,6 +709,35 @@ li {
     font-size: 15px;
     padding: 20px 70px 20px 50px;
 
+}
+
+blockquote {
+    background: #f7f7f7;
+    border-left: 1px solid #bbb;
+    font-style: italic;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+blockquote:before {
+    color: #bbb;
+    content: "\201C"; /* Непечатаемый символ слева */
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: -.4em;
+}
+
+blockquote:after {
+    color: #bbb;
+    content: "\201D"; /* Непечатаемый символ справа */
+    font-size: 3em;
+    line-height: 0.1em;
+    vertical-align: -.45em;
+}
+
+blockquote > p:first-child {
+    display: inline;
 }
 
 .page-engineering-inner {
@@ -822,12 +857,22 @@ li {
 .page-consulting-text__text {
     font-size: 15px;
     padding: 20px 70px 20px 50px;
+}
+.page-consulting-text__text ol {
+    line-height: 2;
+}
+.page-consulting-text__text ol li{
+    list-style-type: inherit;
 
 }
-.page-consulting-text__text li{
+.page-consulting-text__text ul {
+    line-height: 1.5;
+}
+.page-consulting-text__text ul li{
     padding-left: 20px;
     list-style-type: inherit;
     list-style-position: inside;
+    list-style-image: url('../img/tick-small.png');
 }
 
 .page-services-text {
