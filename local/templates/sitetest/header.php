@@ -10,7 +10,14 @@
     <?$APPLICATION->ShowHead()?>
     <link rel="shortcut icon" href="<?= SITE_TEMPLATE_PATH ?>/img/f_logo.ico" type="image/x-icon">
     <link href="<?= SITE_TEMPLATE_PATH ?>/css/styles.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/vendor/fancybox/jquery.fancybox.css">
+
+    <link href="<?= SITE_TEMPLATE_PATH ?>/css/styles.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/iphone.css" media="only screen and (max-device-width: 480px)" />
+
+
+    <link rel="stylesheet" type="text/css" href="<?/*=SITE_TEMPLATE_PATH*/?>/vendor/fancybox/jquery.fancybox.css">
+
+
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/css/font-awesome.min.css">
    <!-- <link rel="stylesheet" type="text/css" href="<?/*= SITE_TEMPLATE_PATH */?>/slider/css/slideshow.css">
     <link rel="stylesheet" type="text/css" href="<?/*= SITE_TEMPLATE_PATH */?>/slider/example.css">

@@ -431,7 +431,7 @@ li {
 }
 .services-list-item {
     display: block;
-    float:left;
+    //float:left;
     width: 320px;
     height: 219px;
     margin-right: 10px;
