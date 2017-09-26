@@ -893,12 +893,18 @@ function resizeMap(){
     $(".map-container-map-inner-img>img").width(height);
 }
 function setupIndicatorStatePicToZero(){
-	$(".indicator-pic").each(function(){
-		$(this).attr("data-state", "0");
-	});
+    var button_state_items_show_all = $(".button-map-show-items-all").attr("data-selected");
+
+    if(button_state_items_show_all === 0) {
+        console.log('button_state_items_show_all ' + button_state_items_show_all);
+        $(".indicator-pic").each(function () {
+            $(this).attr("data-state", "0");
+        });
+    }
 }
 function changeIndicatorVisible(){
 	$(".indicator-pic").each(function(){
+	    console.log($(this).attr("data-state"));
 		if($(this).attr("data-state") === "0"){
 			$(this).hide();
 		}else{
@@ -962,15 +968,16 @@ $(function() {
     $(".button-map-show-items-all").on("click", function(){
         console.log('button-map-show-all');
 
-        if($(this).attr('data-selected') == 0){
+        if($(this).attr('data-selected') == 0){ //активация кнопки
             $(this).attr('data-selected', '1');
             $(this).addClass("map-info-status-block-item-selected");
             $(this).find(".map-info-status-block-item-inner .selected").show();
             $(this).find(".map-info-status-block-item-inner .unselected").hide();
             $(".indicator-pic").each(function(){
                 $(this).show();
+                $(this).attr("data-state", 1);
             });
-        }else{
+        }else{  //деактивация кнопки
             $(this).attr('data-selected', '0');
             $(this).removeClass("map-info-status-block-item-selected");
             $(this).find(".map-info-status-block-item-inner .unselected").show();
@@ -978,6 +985,7 @@ $(function() {
             $(".indicator-pic").each(function(){
                 if($(this).attr("data-state") == 0){
                     $(this).hide();
+                    //$(this).attr("data-state", 1);
                 }
             });
         }

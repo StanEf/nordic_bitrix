@@ -9,3 +9,6 @@ upload/
 /local/templates/sitetest/video/
 slider/
 /slick/
+.bottom.menu.php
+.left.menu_ext.php
+
