@@ -359,6 +359,7 @@ li {
     text-align: left;
     font-family: Open Sans Light, Raleway, sans-serif;
     font-size: 14px;
+    text-align: justify;
 }
 
 .about-company-images {
@@ -585,7 +586,7 @@ li {
     left: 25%;
 }
 .last-news-list-item__title{
-    width: 280px;
+    width: 100%;
     top: 10%;
     position: absolute;
     font-family: Open Sans Light, Raleway, sans-serif;
@@ -593,9 +594,11 @@ li {
     font-size: 26px;
     color: white;
     text-align: left;
-    margin-left: 25px;
+    //margin-left: 25px;
     z-index: 2;
     line-height: 115%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .last-news-list-item__title:hover{
     color: #0d4863;
@@ -1664,6 +1667,23 @@ blockquote > p:first-child {
     }
 }
 
+@media (max-width: 1200px) {
+    .about-company-text__text {
+        max-width: 100%;
+    }
+   /* .about-company-text {
+        width: 100%;
+    }
+    .about-company-images {
+        margin-top: 30px;
+        width: 100%;
+    }
+    .about-company-images__image {
+        float: left;
+        width: 50%;
+    }*/
+}
+
 @media (max-width: 1024px) {
     #logo {
         margin-left: 12%;
@@ -1722,6 +1742,9 @@ blockquote > p:first-child {
     .page-project-inner {
         margin-left: 2%;
         margin-right: 2%;
+    }
+    .about-company-text__text {
+        max-width: 100%;
     }
 }
 @media (max-width: 985px) {
