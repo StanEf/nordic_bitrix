@@ -65,10 +65,12 @@ $APPLICATION->SetTitle("Главная страница"); ?><!--<div class="car
 	</div>
 	<div style="clear: both;">
 	</div>
+<!--
 	<div class="services__text">
 		 Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах Текстовый блок об услугах
 	</div>
-	<div class="services-list services-list-main">
+-->
+<div class="services-list services-list-main">
 		 <?$ElementID = $APPLICATION->IncludeComponent(
         "bitrix:nordic.services",
         "def",
