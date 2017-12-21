@@ -24,7 +24,8 @@ if(isset($_POST["template"])) {
                 "IBLOCK_TYPE" => "site_information",
                 "NEWS_COUNT" => 3,
                 "SORT_BY1" => "TIMESTAMP_X",
-                "SORT_ORDER1" => "DESC"
+                "SORT_ORDER1" => "DESC",
+                "NAME_TRUNCATE_LEN" => 100,
             ),
             $component
         );

@@ -92,21 +92,20 @@ echo '</pre>';*/
         </div>
     </div>
     <?endif;?>
+	<?if(!empty($arResult["PROPERTIES"]["FEATURES"]["VALUE"])):?>
     <div class="page-project-features">
         <div class="page-project-features-title project-title">
             ФУНКЦИОНАЛЬНЫЕ ОСОБЕННОСТИ
         </div>
         <div class="page-project-features-text project-text">
             <ul>
-                <?if(!empty($arResult["PROPERTIES"]["FEATURES"]["VALUE"])):?>
-                    <?foreach($arResult["PROPERTIES"]["FEATURES"]["VALUE"] as $feature):?>
-                        <li><?= $feature ?></li>
-                    <?endforeach;?>
-                <?endif;?>
+				<?foreach($arResult["PROPERTIES"]["FEATURES"]["VALUE"] as $feature):?>
+					<li><?= $feature ?></li>
+				<?endforeach;?>
             </ul>
         </div>
-
     </div>
+	<?endif;?>
     <div class="page-project-characteristics">
         <div class="page-project-characteristics-title project-title">
             ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ

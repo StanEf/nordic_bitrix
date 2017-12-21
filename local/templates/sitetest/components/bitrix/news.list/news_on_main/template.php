@@ -1,11 +1,13 @@
 <?/*
 echo 'template news_on_main';
 */?><!--
---><?/* echo 'news_on_detail';
+--><? 
+/*
+echo 'news_on_detail';
 echo __LINE__ . ' $arResult <pre style="text-align: left;">';
 print_r($arResult);
 echo '</pre>';
-
+/*
 echo __LINE__ . ' $arParams <pre style="text-align: left;">';
 print_r($arParams);
 echo '</pre>';

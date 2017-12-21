@@ -9,3 +9,4 @@ upload/
 /local/templates/sitetest/video/
 slider/
 /slick/
+.access.php

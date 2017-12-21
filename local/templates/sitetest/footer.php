@@ -116,10 +116,6 @@
         window.open("about.php", "_self");
     });
 
-    $(".last-news-list-item-inner").on("click", function(){
-        var href = $(this).find(".last-news-list-item__link a").attr("href");
-        window.open(href, "_self");
-    });
     $(".page-news-item-picture").on("click", function(){
         console.log('clickc');
         var href = $(this).closest(".page-news-item").find(".page-news-item__link").attr("href");
@@ -230,8 +226,31 @@
             );
         }
     }
+
+    function loadLastNewsTest() {
+        if(location.pathname == '/news_list_test.php') {
+            var template;
+            if(document.documentElement.clientWidth <= 960){
+                template = 'mobile';
+            } else {
+                template = 'desktop';
+            }
+            $.post(
+                "ajax/main_last_news_test.php",
+                {
+                    template: template
+                },
+                loadLastNewsSuccess
+            );
+        }
+    }
+
     function loadLastNewsSuccess(data){
         $(".last_news_ajax").html(data);
+        $(".last-news-list-item-inner").on("click", function () {
+            var href = $(this).find(".last-news-list-item__link a").attr("href");
+            window.open(href, "_self");
+        });
     }
     function loadMainVideo(){
         console.log("load main video");
@@ -272,6 +291,30 @@
         $(function() {
             /*autoResizeServicesOnMain();*/
             loadLastNews();
+            loadMainVideo();
+        });
+
+        $(window).load(function () {
+            console.log('after load');
+            /*autoResizeVideoOnMain();*/
+            setTimeout(autoResizeVideoOnMain, 500);
+            setTimeout(autoResizeServicesOnMain, 500);
+            /*autoResizeServicesOnMain();*/
+
+        });
+    }
+    if(location.pathname == '/services/') {
+        $(window).load(function () {
+            console.log(location.pathname);
+            setTimeout(autoResizeServicesOnMain, 500);
+            /*autoResizeServicesOnMain();*/
+        });
+    }
+
+    if(location.pathname == '/news_list_test.php') {
+        $(function() {
+            /*autoResizeServicesOnMain();*/
+            loadLastNewsTest();
             loadMainVideo();
         });
 
