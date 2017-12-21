@@ -1887,6 +1887,9 @@ blockquote > p:first-child {
         display: block;
         color: white;
     }
+    .services-list-item-inner:hover .services-list-item__title-inner {
+        font-size: 19px;
+    }
     .services-list-item-inner:hover .services-list-item__text {
         color: #636465;
     }
