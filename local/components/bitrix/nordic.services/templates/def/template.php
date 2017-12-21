@@ -21,11 +21,11 @@
                                 Инжиниринг
                             </div>
                         </div>
-                        <div class="services-list-item__text">
+                        <!--<div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
                                 Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="services-list-item">
@@ -47,11 +47,11 @@
                                 Проектирование
                             </div>
                         </div>
-                        <div class="services-list-item__text">
+                        <!--<div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
                                 Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="services-list-item services-list-item-right">
@@ -73,11 +73,11 @@
                                 Консалтинг
                             </div>
                         </div>
-                        <div class="services-list-item__text">
+                       <!-- <div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
                                 Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div style="clear: both;"></div>
@@ -98,11 +98,11 @@
                                 Производство оборудования
                             </div>
                         </div>
-                        <div class="services-list-item__text">
+                        <!--<div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
                                 Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="services-list-item">
@@ -121,11 +121,11 @@
                                 Сопровождение строительства
                             </div>
                         </div>
-                        <div class="services-list-item__text">
+                        <!--<div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
                                 Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="services-list-item services-list-item-right">
@@ -145,11 +145,11 @@
                                 обслуживание
                                 </div>
                         </div>
-                        <div class="services-list-item__text">
+                        <!--<div class="services-list-item__text">
                             <div class="services-list-item__text-inner">
                                 Суда для арктического плавания. Офшорные сооружения. Паромы и пассажирские суда. Морские
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
