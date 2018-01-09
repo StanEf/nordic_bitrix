@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/iphone.css" media="only screen and (max-device-width: 480px)" />
 
 
-    <link rel="stylesheet" type="text/css" href="<?/*=SITE_TEMPLATE_PATH*/?>/vendor/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/vendor/fancybox/jquery.fancybox.css">
 
 
     <link rel="stylesheet" type="text/css" href="<?= SITE_TEMPLATE_PATH ?>/css/font-awesome.min.css">
@@ -37,6 +37,7 @@
     <!--<link rel="stylesheet" href="css/style.css">-->
 
     <!--<link href='http://fonts.googleapis.com/css?family=Open Sans:300' rel='stylesheet' type='text/css'>-->
+
     <script src="<?= SITE_TEMPLATE_PATH ?>/js/jquery-1.11.2.min.js"></script>
     <script src="<?=SITE_TEMPLATE_PATH?>/vendor/fancybox/jquery.fancybox.js"></script>
 
