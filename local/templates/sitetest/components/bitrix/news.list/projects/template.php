@@ -9,7 +9,20 @@ print_r($arResult);
 echo '</pre>';
 CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE']);*/
 ?>
-
+<style>
+    .page-projects-detail-item__picture{
+        position: static;
+        overflow: hidden;
+    }
+    .page-projects-detail-item__picture img {
+height: 130px;
+        position: static;
+        width: auto;
+    }
+    .page-projects-detail-item__picture img .picture_height_small{
+        width: auto;
+    }
+</style>
 
 <div class="page-projects-detail-list">
     <div class="page-projects-detail-list-inner">
@@ -28,8 +41,31 @@ CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE']);*/
                     <a href="/services/project/<?= $item["CODE"] ?>/"></a>
                 </div>
             </div>
-            <div class="page-projects-detail-item__picture">
-                <img src="<?=CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE'])?>" alt="" />
+            <div class="page-projects-detail-item__picture"
+
+                >
+               
+                <!--<img src="<?/*=CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE'])*/?>" alt="" />-->
+                <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt=""
+
+                    <?
+                    $pictureArr =  CFile::GetFileArray($item['PREVIEW_PICTURE']['ID']);
+                    /*echo '<br/> $pictureArr '. __LINE__.'* ' .  __FILE__ . ' <pre>';
+                    print_r($pictureArr);
+                    echo '</pre>';*/
+                    if($pictureArr['WIDTH'] < 200){
+
+                        /*$val =
+                        echo 'style="margin-left=-'.$val.'px"';*/
+                    }elseif($pictureArr['HEIGHT'] < 130){
+                        /*echo '<br/> $pictureArr '. __LINE__.'* ' .  __FILE__ . ' <pre>';
+                                            print_r($pictureArr);
+                                            echo '</pre>';*/
+                        $val = -(((130/$pictureArr['HEIGHT'])*$pictureArr['WIDTH'])-$pictureArr['WIDTH'])/2;
+                        echo ' style="margin-left:'.$val.'px"';
+                    }
+                    ?>
+                />
             </div>
         </div>
         <?endforeach;?>
