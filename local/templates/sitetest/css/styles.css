@@ -1019,7 +1019,7 @@ blockquote > p:first-child {
 }
 .page-projects-detail-item {
 //border: 1px solid black;
-    width: 200px;
+    width: 250px;
     height: 170px;
     float: left;
     margin-right: 20px;
@@ -1054,7 +1054,7 @@ blockquote > p:first-child {
     font-size: 10px;
 }
 .page-projects-detail-item__picture {
-    width: 200px;
+    width: 250px;
     height: 130px;
     background-color: #d7d7d7;
     position: relative;
@@ -1066,7 +1066,7 @@ blockquote > p:first-child {
     top: 0;
     bottom: 0;
     right: 0;
-    width: 200px;
+    width: 250px;
 }
 .page-projects-detail-item__link {
     display: none;

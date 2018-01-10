@@ -1,13 +1,13 @@
 <?
 
-/*echo 'template projects';
+echo 'template projects';
 echo __LINE__ . ' $arParams <pre style="text-align: left;">';
 print_r($arParams);
 echo '</pre>';
 echo __LINE__ . ' $arResult <pre style="text-align: left;">';
 print_r($arResult);
 echo '</pre>';
-CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE']);*/
+CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE']);
 ?>
 
 
@@ -29,7 +29,8 @@ CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE']);*/
                 </div>
             </div>
             <div class="page-projects-detail-item__picture">
-                <img src="<?=CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE'])?>" alt="" />
+                <!--<img src="<?/*=CFile::GetPath($item['PROPERTIES']['PICTURE']['VALUE'])*/?>" alt="" />-->
+                <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt="" />
             </div>
         </div>
         <?endforeach;?>
