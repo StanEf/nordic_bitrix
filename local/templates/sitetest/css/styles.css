@@ -1056,7 +1056,7 @@ blockquote > p:first-child {
 .page-projects-detail-item__picture {
     width: 250px;
     height: 130px;
-    background-color: #d7d7d7;
+    //background-color: #d7d7d7;
     position: relative;
 }
 .page-projects-detail-item__picture img {
